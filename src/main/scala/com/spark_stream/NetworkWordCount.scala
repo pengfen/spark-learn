@@ -8,9 +8,11 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
   *
   * nc 的安装 sudo apt -y install netcat-traditional
   *
-  * 测试： nc -lk 6789 输入字符
+  * 测试： nc -lk 33333 输入字符
   *
   * 查看控制台
+  *
+  * 注意错误 Restarting receiver with delay 2000 ms: Error connecting to localhost:33333
   */
 object NetworkWordCount {
 
