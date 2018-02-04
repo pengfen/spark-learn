@@ -1,0 +1,122 @@
+file ---> settings ---> Maven ---> Maven home directory: /home/ricky/app/maven-3.3.9 --- Apply (设置maven仓库)
+spark streaming整合flume之push方式
+
+1. 编写配置文件
+flume agent的编写 flume_push_streaming.conf
+
+simple-agent.sources = netcat-source
+simple-agent.sinks = avro-sink
+simple-agent.channels = memory-channel
+
+simple-agent.sources.netcat-source.type = netcat
+simple-agent.sources.netcat-source.bind = ricky
+simple-agent.sources.netcat-source.port = 44444
+
+simple-agent.sinks.avro-sink.type = avro
+simple-agent.sinks.avro-sink.hostname = ricky
+simple-agent.sinks.avro-sink.port = 41414
+
+simple-agent.channels.memory-channel.type = memory
+
+simple-agent.sources.netcat-source.channels = memory-channel
+simple-agent.sinks.avro-sink.channel = memory-channel
+
+知识点
+sublime 列选择(鼠标右键 + shift)
+
+2. 编写代码 FlumePullWordCount
+
+3. 运行代码
+
+4. 运行flume
+flume-ng agent \
+--name simple-agent \
+--conf $FLUME_HOME/conf \
+--conf-file $FLUME_HOME/conf/flume_push_streaming.conf \
+-Dflume.root.logger=INFO,console
+
+5. 发消息
+ricky@ricky:~/app/flume-1.6.0-cdh5.7.0/conf$ telnet localhost 44444
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+a
+OK
+b
+OK
+c
+OK
+
+6. 查看代码控制台
+-------------------------------------------
+Time: 1517147600000 ms
+-------------------------------------------
+(b,1)
+(a,1)
+(c,1)
+
+7. 注意问题
+地址已用
+ps -ef | grep java
+killall java
+
+telnet localhost 44444 出现 connected refused 查看配置文件是否有错
+
+8.打包
+ricky@ricky:~/IdeaProjects/spark$ ls
+pom.xml README.md spark.iml src target
+ricky@ricky:~/IdeaProjects/spark$ pwd
+/home/ricky/IdeaProjects/spark
+ricky@ricky:~/IdeaProjects/spark$ mvn clean package -DskipTests
+
+spark streaming整合flume之pull方式
+1. 编写配置文件
+ricky@ricky:~/app/flume-1.6.0-cdh5.7.0/conf$ cat flume_pull_streaming.conf
+simple-agent.sources = netcat-source
+simple-agent.sinks = spark-sink
+simple-agent.channels = memory-channel
+
+simple-agent.sources.netcat-source.type = netcat
+simple-agent.sources.netcat-source.bind = ricky
+simple-agent.sources.netcat-source.port = 44444
+
+simple-agent.sinks.spark-sink.type = org.apache.spark.streaming.flume.sink.SparkSink
+simple-agent.sinks.spark-sink.hostname = ricky
+simple-agent.sinks.spark-sink.port = 41414
+
+simple-agent.channels.memory-channel.type = memory
+
+simple-agent.sources.netcat-source.channels = memory-channel
+simple-agent.sinks.spark-sink.channel = memory-channel
+
+2. 添加依赖
+groupId = org.apach.spark
+artifactId = spark-streaming-flume-sink_2.11
+version = 2.2.0
+
+groupId = org.scala-lang
+artifactId = scala-library
+version = 2.11.8
+
+groupId = org.apache.commons
+artifactId = commons-lang3
+version = 3.5
+
+3. 编写代码 FlumePullWordCount
+
+4. 启动flume
+flume-ng agent \
+--name simple-agent \
+--conf $FLUME_HOME/conf \
+--conf-file $FLUME_HOME/conf/flume_pull_streaming.conf \
+-Dflume.root.logger=INFO,console
+
+5. 编辑参数
+rikcy 41414
+
+6. 运行代码
+
+7. telnet localhost 44444
+输入内容
+
+8. 查看控制台
