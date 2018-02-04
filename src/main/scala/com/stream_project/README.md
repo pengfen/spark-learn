@@ -82,3 +82,56 @@ flume-ng agent \
 --conf $FLUME_HOME/conf \
 --conf-file /home/ricky/app/flume-1.6.0-cdh5.7.0/conf/streaming_project2.conf \
 -Dflume.root.logger=INFO,console
+
+12. 编写代码 ImoocStatStreamingApp
+
+13. 编写代码 DateUtils
+
+14. 编写代码 ClickLog
+
+功能 统计今天到现在为止实战课程的访问量
+yyyyMMdd courseid
+
+使用数据库来进行存储统计结果 (Spark Streaming把统计结果写入到数据库里面)
+可视化前端根据 yyyyMMdd courseid 把数据库里面的统计结果展示出来
+
+选择什么数据库作为统计结果的存储
+RDBMS: MySQL
+day       course_id  click_count
+20171111  1          10
+20171111  2          10
+
+下一个批次数据进来以后
+20171111 + 1 ===> click_count + 下一个批次的统计结果 ===> 写入到数据库中
+
+NoSQL HBase Redis
+HBase 一个API 非常方便
+20171111 + 1 ===> click_count + 下一个批次的统计结果
+
+启动 Hadoop
+cd $HADOOP_HOME
+sbin/start-dfs.sh
+
+启动 Hbase
+cd $HBASE_HOME
+bin/hbase.sh
+启动 Hbase 客户端
+bin/hbase shell
+
+HBase表设计
+创建表 create 'imooc_course_clickcount', 'info'
+Rowkey设计
+day_courseid
+
+编写代码 CourseClickCount
+
+编写代码 CourseClickCountDAO
+
+16. 编写代码 HBaseUtils
+
+功能 统计今天到现在为止从搜索引擎引流过来的实战课程的访问量
+HBase 表设计
+create 'imooc_course_search_clickcount','info'
+rowKey设计 20171111 + search + 1
+
+编写代码 CourseSearchClickCount
