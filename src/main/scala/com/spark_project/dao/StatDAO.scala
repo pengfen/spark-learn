@@ -12,7 +12,6 @@ import scala.collection.mutable.ListBuffer
   */
 object StatDAO {
 
-
   /**
     * 批量保存DayVideoAccessStat到数据库
     */
