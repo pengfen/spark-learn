@@ -1,7 +1,7 @@
 package com.stream_project
 
-import com.stream_project.dao.CourseClickCountDAO
-import com.stream_project.domain.{ClickLog, CourseClickCount}
+import com.stream_project.dao.{CourseClickCountDAO, CourseSearchClickCountDAO}
+import com.stream_project.domain.{ClickLog, CourseClickCount, CourseSearchClickCount}
 import com.stream_project.utils.DateUtils
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils

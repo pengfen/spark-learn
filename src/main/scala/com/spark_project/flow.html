@@ -1,0 +1,63 @@
+spark sql 离线处理
+
+1. 准备日志
+ricky@ricky:~/data$ cp /media/ricky/资料/spark/data/access.20161111.log.gz .
+ricky@ricky:~/data$ zcat access.20161111.log.gz > access.20161111.log
+head -10000 access.20161111.log >> 10000_access.log
+
+2. 清洗日志文件
+运行 SparkStatFormatJob
+
+3. 查看清洗后的文件
+more output/part-0*
+
+4. 处理 IP
+src/main 目录下创建目录 resources
+ricky@ricky:~/software/ipdatabase/src/main/resources$ pwd
+/home/ricky/software/ipdatabase/src/main/resources
+ricky@ricky:~/software/ipdatabase/src/main/resources$ cp ipDatabase.csv /home/ricky/IdeaProjects/spark-learn/src/main/resources/
+ricky@ricky:~/software/ipdatabase/src/main/resources$ cp ipRegion.xlsx /home/ricky/IdeaProjects/spark-learn/src/main/resources/
+
+5. 对日志文件进行二次清洗
+运行 SparkStatCleanJob
+
+6. 使用数据库
+mysql -uroot -p
+
+use resource
+
+create resource_table day_video_access_topn_stat (
+   day varchar(8) not null,
+   cms_id bigint(10) not null,
+   times bigint(10) not null,
+   primary key (day, cms_id)
+);
+
+create table resource_day_video_city_access_topn_stat(
+   day varchar(8) not null,
+   cms_id bigint(10) not null,
+   city varchar(20) not null,
+   times bigint(10) not null,
+   times_rank int not null,
+   primary key (day, cms_id, city)
+);
+
+create table resource_day_video_traffics_topn_stat (
+    day varchar(8) not null,
+    cms_id bigint(10) not null,
+    traffics bigint(20) not null,
+    primary key (day, cms_id)
+);
+
+6. 修改配置 MySQLUtils
+jdbc:mysql://localhost:3306/resource?user=root&password=123456
+
+7. 统计入库
+运行 TopNStatJob
+
+8. 查看数据库
+select * from resource_day_video_access_topn_stat;
+select * from resource_day_video_city_access_topn_stat;
+select * from resource_day_video_traffics_topn_stat;
+
+9. 数据可视化

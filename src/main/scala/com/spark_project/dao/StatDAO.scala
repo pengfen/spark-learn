@@ -26,7 +26,7 @@ object StatDAO {
 
       connection.setAutoCommit(false) //设置手动提交
 
-      val sql = "insert into day_video_access_topn_stat(day,cms_id,times) values (?,?,?) "
+      val sql = "insert into resource_day_video_access_topn_stat(day,cms_id,times) values (?,?,?) "
       pstmt = connection.prepareStatement(sql)
 
       for (ele <- list) {
@@ -60,7 +60,7 @@ object StatDAO {
 
       connection.setAutoCommit(false) //设置手动提交
 
-      val sql = "insert into day_video_city_access_topn_stat(day,cms_id,city,times,times_rank) values (?,?,?,?,?) "
+      val sql = "insert into resource_day_video_city_access_topn_stat(day,cms_id,city,times,times_rank) values (?,?,?,?,?) "
       pstmt = connection.prepareStatement(sql)
 
       for (ele <- list) {
@@ -95,7 +95,7 @@ object StatDAO {
 
       connection.setAutoCommit(false) //设置手动提交
 
-      val sql = "insert into day_video_traffics_topn_stat(day,cms_id,traffics) values (?,?,?) "
+      val sql = "insert into resource_day_video_traffics_topn_stat(day,cms_id,traffics) values (?,?,?) "
       pstmt = connection.prepareStatement(sql)
 
       for (ele <- list) {
@@ -120,9 +120,9 @@ object StatDAO {
     */
   def deleteData(day: String): Unit = {
 
-    val tables = Array("day_video_access_topn_stat",
-      "day_video_city_access_topn_stat",
-      "day_video_traffics_topn_stat")
+    val tables = Array("resource_day_video_access_topn_stat",
+      "resource_day_video_city_access_topn_stat",
+      "resource_day_video_traffics_topn_stat")
 
     var connection:Connection = null
     var pstmt:PreparedStatement = null

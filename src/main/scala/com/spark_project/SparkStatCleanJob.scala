@@ -13,7 +13,7 @@ object SparkStatCleanJob {
       .config("spark.sql.parquet.compression.codec","gzip")
       .master("local[2]").getOrCreate()
 
-    val accessRDD = spark.sparkContext.textFile("/Users/rocky/data/imooc/access.log")
+    val accessRDD = spark.sparkContext.textFile("/home/ricky/data/access.log")
 
     //accessRDD.take(10).foreach(println)
 
@@ -25,7 +25,7 @@ object SparkStatCleanJob {
     //    accessDF.show(false)
 
     accessDF.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
-      .partitionBy("day").save("/Users/rocky/data/imooc/clean2")
+      .partitionBy("day").save("/home/ricky/data/clean")
 
     spark.stop
   }

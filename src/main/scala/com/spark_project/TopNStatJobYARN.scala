@@ -1,7 +1,7 @@
 package com.spark_project
 
 import com.spark_project.dao.StatDAO
-import com.spark_project.domain.DayVideoTrafficsStat
+import com.spark_project.domain.{DayCityVideoAccessStat, DayVideoAccessStat, DayVideoTrafficsStat}
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SparkSession}

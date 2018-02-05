@@ -1,7 +1,7 @@
 package com.spark_project
 
 import com.spark_project.utils.DateUtils
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SaveMode, SparkSession}
 
 /**
   * 第一步清洗：抽取出我们所需要的指定列的数据
@@ -30,7 +30,7 @@ object SparkStatFormatJob {
       val traffic = splits(9)
       //      (ip, DateUtils.parse(time), url, traffic)
       DateUtils.parse(time) + "\t" + url + "\t" + traffic + "\t" + ip
-    }).saveAsTextFile("file:///Users/rocky/data/imooc/output/")
+    }).saveAsTextFile("file:///home/ricky/data/output/")
 
     spark.stop()
   }
