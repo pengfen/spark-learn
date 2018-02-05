@@ -2,7 +2,7 @@ File ---> New --- Project ---> Maven ---> 选中 create from archetype ---> org.
 com
 spark-project
 
-相关工具类
+相关工具类 (java/online.utils)
 
 1. 编写 DateUtils 日期时间工具类
 
@@ -20,3 +20,5 @@ spark-project
 4. 编写 StringUtils 字符串工具类
 
 5. 编写 ValidUtils 校验工具类
+
+6. 编写 MySQLUtils MySQL操作工具类
