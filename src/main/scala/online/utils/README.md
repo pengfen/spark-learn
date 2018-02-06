@@ -21,4 +21,12 @@ spark-project
 
 5. 编写 ValidUtils 校验工具类
 
-6. 编写 MySQLUtils MySQL操作工具类
+6. 编写 MySQLUtils MySQL操作工具 ConfigurationManager
+
+7. 编写 JdbcCRUD
+
+8. 编写 Singleton
+
+9. 编写 Constants
+
+10. 编写 JDBCHelper
