@@ -27,3 +27,10 @@ java.netty
 2. 编写 SerTask
 
 3. 编写 DesTask
+
+callback
+1. 编写 Data
+2. 编写 Fetcher
+3. 编写 FetcherCallback
+4. 编写 MyFetcher
+5. 编写 Worker
