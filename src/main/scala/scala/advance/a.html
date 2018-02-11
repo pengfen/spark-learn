@@ -1,0 +1,53 @@
+高阶函数
+高阶函数包含 作为值的函数 匿名函数 闭包 柯里化
+
+1. 作为值的函数 可以像任何其他数据类型一样被传递和操作的函数 每当你想要给算法传入具体动作时这个特性就会变昨非常有用
+
+scala> val arr = Array(1, 2, 3, 4, 5)
+arr: Array[Int] = Array(1, 2, 3, 4, 5)
+
+scala> val fun1 = (x: Int) => x * 2 // 定义一个函数并将函数赋给变量fun1
+fun1: Int => Int = <function1>
+
+scala> arr.map(fun1) // 将函数作为参数传入map方法中
+res5: Array[Int] = Array(2, 4, 6, 8, 10)
+定义函数时格式 val 变量名 = (输入参数类型和个数) => 函数实现和返回值类型和个数
+= 表示将函数赋给一个变量
+=> 左面表示输入参数名称 类型和个数 右边表示函数的实现和返回值类型和参数个数
+
+2. 匿名函数
+scala> arr.map((x: Int) => x * 2) // 直接将匿名函数传入到map方法中 效果和前面一样 比较精简一些
+res6: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> arr.map(x => x * 2)
+res7: Array[Int] = Array(2, 4, 6, 8, 10)
+
+scala> arr.map(_*2)
+res8: Array[Int] = Array(2, 4, 6, 8, 10)
+
+3. 将方法转换成函数
+
+scala> def m(x: Int) = x * 3 // 定义一个方法
+m: (x: Int)Int
+
+scala> val fun2 = m _ // 下划线将方法转换成了函数
+fun2: Int => Int = <function1>
+
+scala> val arr = Array(1, 2, 3, 4, 5)
+arr: Array[Int] = Array(1, 2, 3, 4, 5)
+
+scala> arr.map(fun2) // 将函数传入map方法中
+res2: Array[Int] = Array(3, 6, 9, 12, 15)
+
+4. 柯里化
+scala> def m(x: Int) = (y: Int) => x * y
+m: (x: Int)Int => Int
+
+scala> val func = m(3) // 将一个参数3传进函数后 彻底变成了一个函数 val func = (y: Int) => 3 * y
+func: Int => Int = <function1>
+
+scala> func(5) // 然后在调用这个函数并传递第二个参数 得到最终结果
+res3: Int = 15
+
+scala> m(3)(5) // def m(x: Int)(y: Int) = x * y
+res4: Int = 15

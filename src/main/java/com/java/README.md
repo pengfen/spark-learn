@@ -21,6 +21,8 @@ java.nio
 
 java.netty
 
+java.annotation
+
 序列化
 1. 编写 Task
 
@@ -34,3 +36,6 @@ callback
 3. 编写 FetcherCallback
 4. 编写 MyFetcher
 5. 编写 Worker
+
+futures
+编写 FutureExample

@@ -1,0 +1,17 @@
+Java内置线程模型                                Scala actor模型
+"共享数据-锁"模型(share data and lock)          share nothing
+每个object有一个monitor 监视多线程对共享数据的访问  不共享数据 actor之间通过message通讯
+如锁的代码段 用synchronized标识
+死锁问题
+每个线程内部是顺序执行的                          每个actor内部是顺序执行的
+
+Actor方法执行顺序
+1. 首先调用start()方法启动Actor
+2. 调用start()方法后其act()方法会被执行
+3. 向Actor发送消息
+
+发送消息的方式
+!   发送异步消息 没有返回值
+!?  发送同步消息 等待返回值
+!!  发送异步消息 返回值是Future[Any]
+

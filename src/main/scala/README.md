@@ -21,3 +21,5 @@ com.spark_project spark sql 项目
 
 online 电商项目
 
+scala scala 学习
+
