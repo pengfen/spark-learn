@@ -13,16 +13,16 @@ object UrlCount {
 
   def main(args: Array[String]): Unit = {
     //LoggerLevel.setStreamingLogLevels()
-    val Array(zkQuorum, groupId, topics, numThreads, hdfs) = args
-    val conf = new SparkConf().setAppName("UrlCount")
-    val ssc = new StreamingContext(conf, Seconds(2))
-    ssc.checkpoint(hdfs)
-    val topicMap = topics.split(",").map((_,numThreads.toInt)).toMap
-    val lines = KafkaUtils.createStream(ssc, zkQuorum, groupId, topicMap, StorageLevel.MEMORY_AND_DISK).map(_._2)
-    val urls = lines.map(x=>(x.split(" ")(6), 1))
-    val result = urls.updateStateByKey(updateFunc, new HashPartitioner(ssc.sparkContext.defaultParallelism), true)
-    result.print()
-    ssc.start()
-    ssc.awaitTermination()
+//    val Array(zkQuorum, groupId, topics, numThreads, hdfs) = args
+//    val conf = new SparkConf().setAppName("UrlCount")
+//    val ssc = new StreamingContext(conf, Seconds(2))
+//    ssc.checkpoint(hdfs)
+//    val topicMap = topics.split(",").map((_,numThreads.toInt)).toMap
+//    val lines = KafkaUtils.createStream(ssc, zkQuorum, groupId, topicMap, StorageLevel.MEMORY_AND_DISK).map(_._2)
+//    val urls = lines.map(x=>(x.split(" ")(6), 1))
+//    val result = urls.updateStateByKey(updateFunc, new HashPartitioner(ssc.sparkContext.defaultParallelism), true)
+//    result.print()
+//    ssc.start()
+//    ssc.awaitTermination()
   }
 }

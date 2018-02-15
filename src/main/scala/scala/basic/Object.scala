@@ -1,7 +1,8 @@
 package scala.basic
 
+import java.io.IOException
+
 import scala.collection.mutable.ArrayBuffer
-import scala.sys.process.processInternal.IOException
 
 object Object {
 
@@ -64,8 +65,8 @@ class Queen private(val name: String, prop: Array[String], private var age: Int 
 object Queen{
   def main(args: Array[String]) {
     //私有的构造器，只有在其伴生对象中使用
-    val q = new Queen("hatano", Array("蜡烛", "皮鞭"), 20)
-    println(q.description())
+    //val q = new Queen("hatano", Array("蜡烛", "皮鞭"), 20)
+    //println(q.description())
   }
 }
 
@@ -127,8 +128,8 @@ object ApplyDemo {
     //调用了Array伴生对象的apply方法
     //def apply(x: Int, xs: Int*): Array[Int]
     //arr1中只有一个元素5
-    val arr1 = Array(5)
-    println(arr1.toBuffer)
+    //val arr1 = Array(5)
+    //println(arr1.toBuffer)
 
     //new了一个长度为5的array，数组里面包含5个null
     var arr2 = new Array(5)

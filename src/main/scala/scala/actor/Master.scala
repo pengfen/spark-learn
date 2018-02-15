@@ -1,9 +1,10 @@
 package scala.actor
 
 import scala.concurrent.duration._
-import akka.actor.{Props, ActorSystem, Actor}
+import akka.actor.{Actor, ActorSystem, Props}
 import akka.actor.Actor.Receive
 import com.typesafe.config.ConfigFactory
+import org.apache.hadoop.hbase.protobuf.generated.ZooKeeperProtos.Master
 
 import scala.collection.mutable
 
@@ -78,6 +79,6 @@ object Master {
     //ActorSystem是单例的，用来创建Actor
     val actorSystem = ActorSystem.create("MasterActorSystem", config)
     //启动Actor，Master会被实例化，生命周期方法会被调用
-    actorSystem.actorOf(Props[Master], "Master")
+    //actorSystem.actorOf(Props[Master], "Master")
   }
 }

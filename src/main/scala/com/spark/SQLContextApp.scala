@@ -9,13 +9,20 @@ import org.apache.spark.SparkConf
   * SQLContext的使用:
   * 注意：IDEA是在本地，而测试数据是在服务器上 ，能不能在本地进行开发测试的？
   *
-  * Program argumets: file:///home/ricky/data/people.json
+1. 编写代码
+
+2. 运行代码
+Program argumets: file:///home/ricky/data/people.json
 [hadoop@base data]$ cat people.json
 {"name":"ricky"}
 {"name":"caopeng"}
 {"name":"peng"}
 
-  * mvn clean package -DskipTests
+3. 打包
+mvn clean package -DskipTests
+
+4. 正式环境运行
+
   */
 object SQLContextApp {
 

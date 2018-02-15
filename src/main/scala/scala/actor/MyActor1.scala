@@ -1,5 +1,7 @@
 package scala.actor
 
+import scala.actors.Actor
+
 
 object MyActor1 extends Actor{
   //重新act方法

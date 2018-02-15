@@ -1,8 +1,9 @@
 package scala.actor
 
 import java.util.UUID
+
 import scala.concurrent.duration._
-import akka.actor.{ActorSelection, Props, ActorSystem, Actor}
+import akka.actor.{Actor, ActorSelection, ActorSystem, Props}
 import akka.actor.Actor.Receive
 import com.typesafe.config.ConfigFactory
 
@@ -53,6 +54,6 @@ object Worker {
     val config = ConfigFactory.parseString(configStr)
     val actorSystem = ActorSystem("WorkerActorSystem", config)
     //启动Actor，Master会被实例化，生命周期方法会被调用
-    actorSystem.actorOf(Props[Worker], "Worker")
+    //actorSystem.actorOf(Props[Worker], "Worker")
   }
 }
