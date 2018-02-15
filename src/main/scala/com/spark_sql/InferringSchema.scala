@@ -3,6 +3,20 @@ package com.spark_sql
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
+/**
+  *
+  cd $SPARK_HOME
+
+  bin/spark-submit \
+  --class com.spark_sql InferringSchema \
+  --master spark://ricky:7077 \
+  /home/ricky/IdeaProjects/spark-learn/sparktrain-1.0.jar \
+  hdfs://ricky:9200/person.txt \
+  hdfs://ricky/out
+
+  查看运行结果
+  hdfs dfs -cat hdfs://ricky:9200/out/part*
+  */
 // 通过反射推断
 object InferringSchema {
 
