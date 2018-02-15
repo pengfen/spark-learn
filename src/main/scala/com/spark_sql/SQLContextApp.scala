@@ -1,4 +1,4 @@
-package com.spark
+package com.spark_sql
 
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SQLContext
@@ -27,6 +27,11 @@ mvn clean package -DskipTests
 object SQLContextApp {
 
   def main(args: Array[String]) {
+    if (args.length != 1) {
+      // file:///home/ricky/data/people.json
+      System.err.println("Usage: <SQLContextApp> in_path")
+      System.exit(1)
+    }
 
     val path = args(0)
 

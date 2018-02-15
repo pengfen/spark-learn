@@ -36,3 +36,7 @@
 4. 编写代码 SparkSessionApp
 
 5. 编写代码 SparkSQLThriftServerApp
+
+6. 编写代码 SQLDemo
+
+7. 编写代码 InferringSchema

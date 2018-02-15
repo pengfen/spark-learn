@@ -1,4 +1,4 @@
-package com.spark
+package com.spark_sql
 
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.{SparkConf, SparkContext}

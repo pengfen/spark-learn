@@ -1,4 +1,4 @@
-package com.spark
+package com.spark_sql
 
 import java.sql.DriverManager
 
@@ -8,6 +8,12 @@ import java.sql.DriverManager
 object SparkSQLThriftServerApp {
 
   def main(args: Array[String]) {
+
+    if (args.length != 3) {
+      // jdbc:hive2://ricky:14000 hadoop
+      System.err.println("Usage: <SparkSQLThriftServerApp> url username password")
+      System.exit(1)
+    }
 
     Class.forName("org.apache.hive.jdbc.HiveDriver")
 
