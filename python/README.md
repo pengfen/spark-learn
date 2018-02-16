@@ -11,3 +11,5 @@
 6. 编写 thread.py (python 多线程) 测试时无效
 
 7. object 对象
+
+8. 编写 test.py 测试对象
