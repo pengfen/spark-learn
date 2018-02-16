@@ -4,4 +4,8 @@
 
 3. 编写 func.py (python 函数)
 
-4. 编写 module.py(python 模块)
+4. 编写 module.py (python 模块)
+
+5. 编写 io.py (python io)
+
+6. 编写 thread.py (python 多线程)
