@@ -43,3 +43,7 @@ git add .
 git commit -a -m f
 git remote add origin https://github.com/pengfen/spark-learn.git
 git push -u origin master
+
+python python 学习
+
+src spark,scala,flume,kafka ... 学习
