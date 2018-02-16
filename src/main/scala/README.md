@@ -4,6 +4,8 @@ com.spark_basic spark基础
 
 com.spark_rdd spark rdd
 
+com.spark_game spark操作游戏日志
+
 spark sql 介绍
 com.spark
 
@@ -25,4 +27,6 @@ com.stream_project spark streaming 项目
 online 电商项目
 
 scala scala 学习
+
+python python 学习
 
