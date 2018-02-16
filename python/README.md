@@ -8,4 +8,6 @@
 
 5. 编写 io.py (python io)
 
-6. 编写 thread.py (python 多线程)
+6. 编写 thread.py (python 多线程) 测试时无效
+
+7. object 对象
