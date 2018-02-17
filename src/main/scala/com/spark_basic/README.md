@@ -2,6 +2,8 @@ basic.html  基础
 
 arith.html spark 算子
 
+zk.html    zk安装
+
 scala.html scala安装
 
 maven.html maven安装
