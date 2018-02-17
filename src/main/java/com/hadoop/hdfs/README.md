@@ -1,3 +1,9 @@
+1. 编写 HdfsClientDemo
+cd $HADOOP_HOME
+sbin/start-dfs.sh
+
+2. 编写 HdfsStreamAccess
+
 1. 编写 UserLoginAction
 
 2. 编写 MyHdfsClient
@@ -14,8 +20,3 @@
 
 
 8. 编写 GenerateLog
-
-
-9. 编写 HdfsClientDemo
-
-10. 编写 HdfsStreamAccess
