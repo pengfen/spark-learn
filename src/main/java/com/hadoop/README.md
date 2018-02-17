@@ -5,6 +5,7 @@
 3. 编写 MyServer
 
 4. 编写 SomeServiceImpl
+启动 MyServer ---> 运行 MyClient ---> 输出内容:心跳成功！
 
 
 5. 编写 HdfsClientDemo

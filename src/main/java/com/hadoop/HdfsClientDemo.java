@@ -15,7 +15,7 @@ import org.junit.Test;
 /**
  *
  * 客户端去操作hdfs时，是有一个用户身份的
- * 默认情况下，hdfs客户端api会从jvm中获取一个参数来作为自己的用户身份：-DHADOOP_USER_NAME=hadoop
+ * 默认情况下，hdfs客户端api会从jvm中获取一个参数来作为自己的用户身份：-DHADOOP_USER_NAME=ricky
  *
  * 也可以在构造客户端fs对象时，通过参数传递进去
  * @author
@@ -28,57 +28,94 @@ public class HdfsClientDemo {
     public void init() throws Exception{
 
         conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://master:9000");
+        conf.set("fs.defaultFS", "hdfs://ricky:9000");
 
         //拿到一个文件系统操作的客户端实例对象
         /*fs = FileSystem.get(conf);*/
         //可以直接传入 uri和用户身份
-        fs = FileSystem.get(new URI("hdfs://master:9000"),conf,"hadoop"); //最后一个参数为用户名
+        fs = FileSystem.get(new URI("hdfs://ricky:9000"),conf,"ricky"); //最后一个参数为用户名
     }
 
+    /**
+     * hadoop fs -put wel.txt /access.log.copy
+     * 1. 编写 testUpload 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法 class 类 method 方法
+     * 3. 启动dfs  cd $HADOOP_HOME ---> sbin/start-dfs.sh
+     * 4. 运行方法
+     * 5. 查看是否上传成功 hadoop fs -ls /
+     * @throws Exception
+     */
     @Test
     public void testUpload() throws Exception {
-
         Thread.sleep(2000);
-        fs.copyFromLocalFile(new Path("G:/access.log"), new Path("/access.log.copy"));
+        fs.copyFromLocalFile(new Path("/home/ricky/data/wel.txt"), new Path("/access.log.copy"));
         fs.close();
     }
 
 
+    /**
+     * 1. 编写 testDownload 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法  class 类  method 方法
+     * 3. 运行方法
+     * 4. 查看是否下载成功
+     * @throws Exception
+     */
     @Test
     public void testDownload() throws Exception {
-
-        fs.copyToLocalFile(new Path("/access.log.copy"), new Path("d:/"));
+        fs.copyToLocalFile(new Path("/access.log.copy"), new Path("/home/ricky/data/wel2.txt"));
         fs.close();
     }
 
+    /**
+     * 1. 编写 testConf 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法  class 类  method 方法
+     * 3. 运行方法
+     */
     @Test
     public void testConf(){
         Iterator<Entry<String, String>> iterator = conf.iterator();
         while (iterator.hasNext()) {
             Entry<String, String> entry = iterator.next();
-            System.out.println(entry.getValue() + "--" + entry.getValue());//conf加载的内容
+            System.out.println(entry.getValue() + "--" + entry.getValue()); // conf加载的内容
         }
     }
 
     /**
-     * 创建目录
+     * 创建目录 hadoop fs -mkdir /aaa/bbb
+     * 1. 编写 mkdirTest 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法  class 类  method 方法
+     * 3. 运行方法
+     * 4. hadoop fs -ls /
      */
     @Test
-    public void makdirTest() throws Exception {
+    public void mkdirTest() throws Exception {
         boolean mkdirs = fs.mkdirs(new Path("/aaa/bbb"));
-        System.out.println(mkdirs);
+        System.out.println(mkdirs); // true
     }
 
     /**
-     * 删除
+     * 删除目录 hadoop fs -rmr /aaa
+     * 1. 编写 deleteTest 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法  class 类  method 方法
+     * 3. 运行方法
+     * 4. hadoop fs -ls /
      */
     @Test
     public void deleteTest() throws Exception{
         boolean delete = fs.delete(new Path("/aaa"), true);//true， 递归删除
-        System.out.println(delete);
+        System.out.println(delete); // true
     }
 
+    /**
+     * 查看dfs上所有的文件 hadoop fs -ls /
+     * 1. 编写 listTest 方法
+     * 2. 配置 Edit Configuration ---> Junit ---> name: 类.方法  class 类  method 方法
+     * 3. 运行方法
+     * 4. 查看结果
+     * person.txt---hdfs://ricky:9000/person.txt
+     * wel.txt---hdfs://ricky:9000/wc/wel.txt
+     * @throws Exception
+     */
     @Test
     public void listTest() throws Exception{
 
@@ -98,13 +135,12 @@ public class HdfsClientDemo {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://master:9000");
+        conf.set("fs.defaultFS", "hdfs://ricky:9000");
         //拿到一个文件系统操作的客户端实例对象
         FileSystem fs = FileSystem.get(conf);
 
-        fs.copyFromLocalFile(new Path("G:/access.log"), new Path("/access.log.copy"));
+        fs.copyFromLocalFile(new Path("/home/ricky/data/access.log"), new Path("/access.log.copy"));
         fs.close();
     }
-
 
 }
