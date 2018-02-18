@@ -32,15 +32,15 @@ object SQLDemo {
     System.setProperty("user.name", "ricky")
     val personRdd = sc.textFile("hdfs://ricky:9200/person.txt").map(line => {
       val fields = line.split(",")
-      Person(fields(0).toLong, fields(1), fields(2).toInt)
+      //Person(fields(0).toLong, fields(1), fields(2).toInt)
     })
 
-    import sqlContext.implicits._
-    val personDf = personRdd.toDF()
-
-    personDf.registerTempTable("t_person")
-
-    sqlContext.sql("select * from t_person where age >= 20 order by age desc limit 2").show()
+//    import sqlContext.implicits._
+//    val personDf = personRdd.toDF()
+//
+//    personDf.registerTempTable("t_person")
+//
+//    sqlContext.sql("select * from t_person where age >= 20 order by age desc limit 2").show()
 //    +---+--------+---+
 //    | id|    name|age|
 //    +---+--------+---+
@@ -52,7 +52,7 @@ object SQLDemo {
   }
 }
 
-case class Person(id: Long, name: String, age: Int)
+//case class Person(id: Long, name: String, age: Int)
 
 // 1. 创建文件 person.txt(三列 id,name,age) 然后上传到hdfs
 // hadoop hdfs -put person.txt /

@@ -1,4 +1,5 @@
-spark 单点安装
+spark安装(单节点)
+
 1. 下载
 百度云下载 https://pan.baidu.com/s/1dFYaCM1
 
@@ -12,6 +13,54 @@ vi .bashrc
 export SPARK_HOME=/home/ricky/app/spark-2.2.0-bin-2.6.0-cdh5.7.0
 export PATH=$PATH:$SPARK_HOME/bin
 
-3. 启动
+4. 删除 *.cmd (方便快速定位)
+cd $SPARK_HOME
+rm -rf *.cmd
+
+5. 启动 (local模式)
 cd $SPARK_HOME
 bin/spark-shell --master local[2]
+
+参考 http://spark.apache.org/docs/latest/submitting-applications.html
+http://localhost:4040/
+
+6. 启动 (standalone模式 ---> 需要修改配置文件)
+cd $SPARK_HOME/conf
+cp spark-env.sh.template spark-env.sh
+vi spark-env.sh
+SPARK_MASTER_HOST=ricky
+SPARK_WORKER_CORES=2
+SPARK_WORKER_MEMORY=2g
+SPARK_WORKER_INSTANCES=1
+
+sbin/start-master.sh sbin/start-slaves.sh (启动主从节点 --- 集群 也可以使用sbin/start-all.sh)
+http://localhost:8080/
+
+bin/spark-shell --master spark://ricky:7077
+bin/spark-shell --master spark://ricky:7077 --executor-cores 2 --executor-memory 2g
+
+7. spark的简单使用
+scala> val file = spark.sparkContext.textFile("file:///home/ricky/data/spark/basic/wc.txt")
+file: org.apache.spark.rdd.RDD[String] = file:///home/ricky/data/spark/basic/wc.txt MapPartitionsRDD[5] at textFile at <console>:23
+
+scala> val wordCounts = file.flatMap(line => line.split(",")).map((word => (word, 1))).reduceByKey(_ + _)
+wordCounts: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[8] at reduceByKey at <console>:25
+
+scala> wordCounts.collect
+
+localhost:8080 spark-shell state为waiting时，终端运行无用
+
+scala> val file = spark.sparkContext.textFile("file:///home/ricky/data/spark/basic/wc.txt")
+file: org.apache.spark.rdd.RDD[String] = file:///home/ricky/data/spark/basic/wc.txt MapPartitionsRDD[6] at textFile at <console>:23
+
+scala> val wc = file.flatMap(_.split(" ")).map((_,1)).reduceByKey(_+_)
+wc: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[9] at reduceByKey at <console>:25
+
+scala> wc.collect
+res2: Array[(String, Int)] = Array((hello,welcome,1), (hello,world,welcome,1))
+
+scala> val wc = file.flatMap(_.split(",")).map((_,1)).reduceByKey(_+_)
+wc: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[12] at reduceByKey at <console>:25
+
+scala> wc.collect
+res3: Array[(String, Int)] = Array((hello,2), (welcome,2), (world,1))

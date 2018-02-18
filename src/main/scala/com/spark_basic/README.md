@@ -1,3 +1,5 @@
+数据输入源 /home/ricky/data/spark/basic
+
 basic.html  基础
 
 arith.html spark 算子
