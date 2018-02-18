@@ -13,12 +13,12 @@
 
 8. 编写 HdfsDemo
 
-9. 编写 UploadFile
 
-10. 编写 StreamAccess
 
 rpc
 
 hdfs hdfs 操作
 
 hive
+
+problem.html 问题集

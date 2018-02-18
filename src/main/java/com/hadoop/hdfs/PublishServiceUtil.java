@@ -10,7 +10,7 @@ public class PublishServiceUtil {
     public static void main(String[] args) throws Exception {
         Builder builder = new RPC.Builder(new Configuration());
         builder.setBindAddress("localhost")
-                .setPort(8888)
+                .setPort(9991)
                 .setProtocol(ClientNamenodeProtocol.class)
                 .setInstance(new MyNameNode());
 
@@ -26,11 +26,6 @@ public class PublishServiceUtil {
 
         Server server2 = builder2.build();
         server2.start();
-
-
-
-
-
 
     }
 
