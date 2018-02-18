@@ -149,6 +149,13 @@
       <version>1.6.0</version>
     </dependency>
 
+    <!-- hive jdbc 依赖 -->
+    <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-jdbc</artifactId>
+      <version>1.2.1</version>
+    </dependency>
+
     <!-- Ip 地址处理 -->
     <dependency>
       <groupId>com.ggstar</groupId>

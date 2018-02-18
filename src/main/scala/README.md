@@ -24,6 +24,9 @@ com.stream_concord spark streaming 整合流
 
 com.stream_project spark streaming 项目
 
+hive 介绍
+com.hive
+
 online 电商项目
 
 scala scala 学习
