@@ -13,4 +13,13 @@ rpc
 
 hive
 
+shell 定时采集日志
+1. 编写 uploadFile2Hdfs.v1.sh
+
+2. 编写 uploadFile2Hdfs.v2.sh
+
+3. 编写 crontab.txt
+
+mr (map reduce)
+
 problem.html 问题集
