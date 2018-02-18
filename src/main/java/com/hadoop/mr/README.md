@@ -15,6 +15,13 @@ spark-learn.jar ---> pom.xml (artifactId)
 自定义切分
 6. 编写 ProvincePartitioner
 
-7. 编写 ProvinceFlowCount
+7. 编写 ProvinceFlowCount (修改FlowCount)
 
 排序
+1. 编写 FlowCountSort
+
+2. 编写 Test (测试排序)
+
+3. 编写 InfoBean
+
+4. 编写 RJoin

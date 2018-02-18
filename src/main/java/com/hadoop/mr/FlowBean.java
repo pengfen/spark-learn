@@ -21,6 +21,12 @@ public class FlowBean implements Writable{
         this.sumFlow = upFlow + dFlow;
     }
 
+    // 排序时添加
+    public void set(long upFlow, long dFlow) {
+        this.upFlow = upFlow;
+        this.dFlow = dFlow;
+        this.sumFlow = upFlow + dFlow;
+    }
 
     public long getUpFlow() {
         return upFlow;
@@ -35,16 +41,13 @@ public class FlowBean implements Writable{
         this.dFlow = dFlow;
     }
 
-
     public long getSumFlow() {
         return sumFlow;
     }
 
-
     public void setSumFlow(long sumFlow) {
         this.sumFlow = sumFlow;
     }
-
 
     /**
      * 序列化方法
@@ -53,9 +56,7 @@ public class FlowBean implements Writable{
         out.writeLong(upFlow);
         out.writeLong(dFlow);
         out.writeLong(sumFlow);
-
     }
-
 
     /**
      * 反序列化方法
@@ -68,7 +69,6 @@ public class FlowBean implements Writable{
     }
 
     public String toString() {
-
         return upFlow + "\t" + dFlow + "\t" + sumFlow;
     }
 
