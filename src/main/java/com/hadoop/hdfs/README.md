@@ -13,7 +13,7 @@ sbin/start-dfs.sh
 cd $HADOOP_HOME
 sbin/start-dfs.sh
 
-
+rpc ---> 参看 rpc 目录
 6. 编写 MyNameNode
 
 7. 编写 PublishServiceUtil
