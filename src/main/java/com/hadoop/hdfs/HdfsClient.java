@@ -1,4 +1,4 @@
-package com.hadoop;
+package com.hadoop.hdfs;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class HdfsClient {
         // new Configuration();的时候，它就会去加载jar包中的hdfs-default.xml
         // 然后再加载classpath下的hdfs-site.xml
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://master:9000");
+        conf.set("fs.defaultFS", "hdfs://ricky:9000");
         /**
          * 参数优先级： 1、客户端代码中设置的值 2、classpath下的用户自定义配置文件 3、然后是服务器的默认配置
          */
@@ -39,7 +39,7 @@ public class HdfsClient {
 //		 fs = FileSystem.get(conf);
 
         // 如果这样去获取，那conf里面就可以不要配"fs.defaultFS"参数，而且，这个客户端的身份标识已经是hadoop用户
-        fs = FileSystem.get(new URI("hdfs://master:9000"), conf, "hadoop");
+        fs = FileSystem.get(new URI("hdfs://ricky:9000"), conf, "ricky");
 
         // 获取文件系统相关信息
         DatanodeInfo[] dataNodeStats = ((DistributedFileSystem) fs).getDataNodeStats();
@@ -58,7 +58,7 @@ public class HdfsClient {
     public void testAddFileToHdfs() throws Exception {
 
         // 要上传的文件所在的本地路径
-        Path src = new Path("g:/apache-flume-1.6.0-bin.tar.gz");
+        Path src = new Path("/home/ricky/data/apache-flume-1.6.0-bin.tar.gz");
         // 要上传到hdfs的目标路径
         Path dst = new Path("/");
         fs.copyFromLocalFile(src, dst);
@@ -76,7 +76,7 @@ public class HdfsClient {
     public void testDownloadFileToLocal() throws IllegalArgumentException, IOException {
 
 //		fs.copyToLocalFile(new Path("/apache-flume-1.6.0-bin.tar.gz"), new Path("d:/"));
-        fs.copyToLocalFile(false,new Path("/apache-flume-1.6.0-bin.tar.gz"), new Path("d:/"),true);
+        fs.copyToLocalFile(false,new Path("/apache-flume-1.6.0-bin.tar.gz"), new Path("/home/ricky/data/"),true);
         fs.close();
 
     }
@@ -159,9 +159,6 @@ public class HdfsClient {
 
         }
 
-
-
     }
-
 
 }

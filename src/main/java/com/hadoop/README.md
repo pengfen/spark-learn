@@ -7,17 +7,9 @@
 4. 编写 SomeServiceImpl
 启动 MyServer ---> 运行 MyClient ---> 输出内容:心跳成功！
 
-6. 编写 ConfigurationReasearch
-
-7. 编写 HdfsClient
-
-8. 编写 HdfsDemo
-
-
+hdfs hdfs 操作 (相当于 hadoop fs -command ...)
 
 rpc
-
-hdfs hdfs 操作
 
 hive
 
