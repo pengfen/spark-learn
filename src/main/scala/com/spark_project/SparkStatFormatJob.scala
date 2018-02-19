@@ -13,6 +13,7 @@ object SparkStatFormatJob {
     val spark = SparkSession.builder().appName("SparkStatFormatJob")
       .master("local[2]").getOrCreate()
 
+    //val in = "file:///home/ricky/"
     val acccess = spark.sparkContext.textFile("file:///home/ricky/data/10000_access.log")
 
     //acccess.take(10).foreach(println)

@@ -8,7 +8,7 @@ import java.sql.{Connection, PreparedStatement, DriverManager}
 object MySQLUtils {
 
   /**
-    * 获取数据库连接
+    * 获取数据库连接 (java方式)
     */
   def getConnection() = {
     DriverManager.getConnection("jdbc:mysql://localhost:3306/resource?user=root&password=123456")

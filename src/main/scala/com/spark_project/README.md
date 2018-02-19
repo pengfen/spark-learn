@@ -46,21 +46,27 @@ mvn install:install-file -Dfile=/home/ricky/software/ipdatabase/target/ipdatabas
 </dependency>
 
 按照需求完成统计信息并将统计结果入库
-编写代码 TopNStatJob
+8. 编写代码 TopNStatJob
 
-编写代码 MySQLUtils
+9. 编写代码 MySQLUtils
 
-编写代码 DayVideoAccessStat
+10. 编写代码 DayVideoAccessStat
 
-编写代码 StatDAO
+11. 编写代码 StatDAO
 
 需求二 按地市统计网站最受欢迎的Top N课程
-编写代码 DayCityVideoAccessStat
+12. 编写代码 DayCityVideoAccessStat
 
 需求三 按流量统计网站最受欢迎的Top N课程
-编写代码 DayVideoTrafficsStat
+13. 编写代码 DayVideoTrafficsStat
 
 改造在yarn上运行
-编写代码 SparkStatCleanJobYARN
+14. 编写代码 SparkStatCleanJobYARN
 
-编写代码 TopNStatJobYARN
+15. 编写代码 TopNStatJobYARN
+
+flow.html 项目运行
+
+viedo.html java项目显示视图
+
+flow2.html 项目升级版

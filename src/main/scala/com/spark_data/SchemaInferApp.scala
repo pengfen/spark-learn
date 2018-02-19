@@ -25,6 +25,7 @@ object SchemaInferApp {
 //    |-- gender: string (nullable = true)
 //    |-- height: long (nullable = true)
 //    |-- name: string (nullable = true)
+    // 如果 height 中有小数点，会自动转换成double类型
 
     df.show()
 //    +------+------+-------+

@@ -5,6 +5,10 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
 
 /**
   * 使用Spark完成我们的数据清洗操作
+  *
+  * 1. 编写代码
+  *
+  * 2. 测试
   */
 object SparkStatCleanJob {
 
@@ -12,6 +16,8 @@ object SparkStatCleanJob {
     val spark = SparkSession.builder().appName("SparkStatCleanJob")
       .config("spark.sql.parquet.compression.codec","gzip")
       .master("local[2]").getOrCreate()
+
+    val in = "/home/ricky/data/spark/project/access.log";
 
     val accessRDD = spark.sparkContext.textFile("/home/ricky/data/access.log")
 
