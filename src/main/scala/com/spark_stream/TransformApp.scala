@@ -11,12 +11,35 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
   * ...
   *
   * _2 第二下标对应的值
+  *
+  * 访问日志 ===> DStream
+  * 20180219,zs
+  * 20180219,ls
+  * 20180219,ww
+  * ===> (zs: 20180219,zs)(ls: 20180219,ls)(ww: 20180219,ww)
+  *
+  * 黑名单列表 ===> RDD zs ls
+  * ===> (zs: true)(ls: true)
+  *
+  * leftjoin
+  * (zs: <20180219,zs>, <true>)
+  * (ls: <20180219,ls>, <true>)
+  * (ww: <20180219,ww>, <false>)
+  *
+  * 端口监听 nc -lk 9999
+  *
+  * 运行代码
+  *
+  * 输入
+  * 20180219,zs
+  * 20180219,ls
+  * 20180219,ww
   */
 object TransformApp {
 
   def main(args: Array[String]): Unit = {
 
-    val sparkConf = new SparkConf().setMaster("local[2]").setAppName("NetworkWordCount")
+    val sparkConf = new SparkConf().setMaster("local[2]").setAppName("TransformApp")
 
     /**
       * 创建StreamingContext需要两个参数：SparkConf和batch interval

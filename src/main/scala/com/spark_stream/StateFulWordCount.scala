@@ -4,6 +4,9 @@ import com.spark_utils.LoggerLevels
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
 
+/**
+  * 使用 Spark Streaming 完成有状态统计
+  */
 object StateFulWordCount {
 
 
@@ -23,21 +26,39 @@ object StateFulWordCount {
     //StreamingContext
     val conf = new SparkConf().setAppName("StateFulWordCount").setMaster("local[2]")
     val sc = new SparkContext(conf)
+    // 如果使用了stateful的算子 必须要设置 checkpoint
+    // 在生产环境中 建议checkpoint设置到HDFS的某个文件夹中
+    // ssc.checkpoint(".")
     //updateStateByKey必须设置setCheckpointDir
-    sc.setCheckpointDir("c://ck")
+    sc.setCheckpointDir(".")
     val ssc = new StreamingContext(sc, Seconds(5))
 
-    val ds = ssc.socketTextStream("172.16.0.11", 8888)
+    val ds = ssc.socketTextStream("localhost", 9999)
+
+    val result = ds.flatMap(_.split(" ")).map((_, 1))
+    val state = result.updateStateByKey[Int](updateFunction _)
+    state.print()
     //DStream是一个特殊的RDD
     //hello tom hello jerry
-    val result = ds.flatMap(_.split(" ")).map((_, 1)).updateStateByKey(updateFunc, new HashPartitioner(sc.defaultParallelism), true)
-
-    result.print()
+    //val result = ds.flatMap(_.split(" ")).map((_, 1)).updateStateByKey(updateFunc, new HashPartitioner(sc.defaultParallelism), true)
+    //result.print()
 
     ssc.start()
 
     ssc.awaitTermination()
 
+  }
+
+  /**
+    * 把当前的数据去更新已忣的或者是以前的数据
+    * @param currentValues 当前的数据
+    * @param preValues 以前的数据
+    * @return
+    */
+  def updateFunction(currentValues: Seq[Int], preValues: Option[Int]): Option[Int] = {
+    val current = currentValues.sum
+    val pre = preValues.getOrElse(0)
+    Some(current + pre)
   }
 }
 

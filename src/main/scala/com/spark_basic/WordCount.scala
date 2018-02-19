@@ -1,5 +1,7 @@
 package com.spark_basic
 
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -48,6 +50,8 @@ object WordCount {
       System.exit(1)
     }
 
+    val Array(in, out) = args
+
     // 1. 使用file
     //val in = "file:///home/ricky/data/spark/basic/wc.txt"
     //val in = "/home/ricky/data/spark/basic/wc.txt"
@@ -71,7 +75,16 @@ object WordCount {
     // saveAsTextFile 将结果写到
     // sc.textFile(in).flatMap(_.split(",")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
 
-    sc.textFile(args(0)).flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(args(1))
+    sc.textFile(in).flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
+
+// spark streaming 统计单词
+//    val ssc = new StreamingContext(conf, Seconds(5));
+//    val lines = ssc.socketTextStream("localhost", 33333)
+//    val words = lines.flatMap(_.split(" "))
+//    val wordCounts = words.map(x => (x, 1)).reduceByKey(_ + _)
+//    wordCounts.print()
+//    ssc.start()
+//    ssc.awaitTermination()
 
     sc.stop()
   }

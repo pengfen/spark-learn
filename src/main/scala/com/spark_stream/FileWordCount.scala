@@ -27,7 +27,7 @@ object FileWordCount {
     val sparkConf = new SparkConf().setMaster("local").setAppName("FileWordCount")
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
-    val lines = ssc.textFileStream("file:///home/ricky/data/data")
+    val lines = ssc.textFileStream("file:///home/ricky/data/spark_stream")
 
     val result = lines.flatMap(_.split(" ")).map((_,1)).reduceByKey(_+_)
     result.print()

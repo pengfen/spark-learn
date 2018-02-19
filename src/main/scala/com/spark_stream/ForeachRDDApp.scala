@@ -7,6 +7,13 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
   * 使用Spark Streaming完成词频统计，并将结果写入到MySQL数据库中
+  *
+  * spark_learn数据库建表
+  *  create table wordcount (
+  * word varchar(50) default null,
+  * wordcount int(10) default null
+  * )
+  *
   */
 object ForeachRDDApp {
 
