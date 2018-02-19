@@ -62,8 +62,57 @@ mvn install:install-file -Dfile=/home/ricky/software/ipdatabase/target/ipdatabas
 
 改造在yarn上运行
 14. 编写代码 SparkStatCleanJobYARN
+打包 (注意 pom.xml中需要添加plugin 查看一下内存使用free)
+<plugin>
+<artifactId>maven-assembly-plugin</artifactId>
+<configuration>
+  <archive>
+    <manifest>
+      <mainClass></mainClass>
+    </manifest>
+  </archive>
+  <descriptorRefs>
+    <descriptorRef>jar-with-dependencies</descriptorRef>
+  </descriptorRefs>
+</configuration>
+</plugin>
+mvn assembly:assembly
+
+上传jar文件至服务器
+cp target/spark-learn-1.0-jar-with-dependencies.jar ~/spark-jar/
+
+hadoop fs -mkdir -p /spark_sql/input
+hadoop fs -put access.log /spark_sql/input
+编写stat_clean.sh
+
+运行后查看结果 hadoop fs -ls /spark_sql/clean
+hadoop fs -ls /spark_sql/clean/day=20170511
+
+spark-shell --master local[2] --jars ~/software/mysql-connector-java-5.1.27-bin.jar
+scala> spark.read.format("parquet").load("hdfs://ricky:9000/spark_sql/clean/day=20170511/part-00000-8a01791b-dc80-430f-91de-01e8542ca258.c000.snappy.parquet").show(false)
++----------------------------------+-------+-----+-------+---------------+----+-------------------+
+|url                               |cmsType|cmsId|traffic|ip             |city|time               |
++----------------------------------+-------+-----+-------+---------------+----+-------------------+
+|http://www.imooc.com/video/4500   |video  |4500 |304    |218.75.35.226  |未知  |2017-05-11 14:09:14|
+|http://www.imooc.com/video/14623  |video  |14623|69     |202.96.134.133 |未知  |2017-05-11 15:25:05|
+|http://www.imooc.com/article/17894|article|17894|115    |202.96.134.133 |未知  |2017-05-11 07:50:01|
+|http://www.imooc.com/article/17896|article|17896|804    |218.75.35.226  |未知  |2017-05-11 02:46:43|
+
+处理城市
+上传资源文件至服务器
+cp ipDatabase.csv ~/spark-jar/
+cp ipRegion.xlsx ~/spark-jar/
+scala> spark.read.format("parquet").load("hdfs://ricky:9000/spark_sql/clean/day=20170511/part-00000-88083103-69f4-4901-b030-821fddacc0fc.c000.snappy.parquet").show(false)
++----------------------------------+-------+-----+-------+---------------+----+-------------------+
+|url                               |cmsType|cmsId|traffic|ip             |city|time               |
++----------------------------------+-------+-----+-------+---------------+----+-------------------+
+|http://www.imooc.com/video/4500   |video  |4500 |304    |218.75.35.226  |浙江省 |2017-05-11 14:09:14|
+|http://www.imooc.com/video/14623  |video  |14623|69     |202.96.134.133 |广东省 |2017-05-11 15:25:05|
+|http://www.imooc.com/article/17894|article|17894|115    |202.96.134.133 |广东省 |2017-05-11 07:50:01|
 
 15. 编写代码 TopNStatJobYARN
+打包 mvn assembly:assembly
+编写 top_n.sh
 
 flow.html 项目运行
 

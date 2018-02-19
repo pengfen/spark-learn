@@ -39,7 +39,34 @@ http://localhost:8080/
 bin/spark-shell --master spark://ricky:7077
 bin/spark-shell --master spark://ricky:7077 --executor-cores 2 --executor-memory 2g
 
-7. spark的简单使用
+7. yarn模式 (生产上使用该模式 统一使用YARN进行整个集群作业的资源调度)
+Client
+Driver运行在Client端(提交Spark作业的机器)
+Client会和请求到的Container进行通信来完成作业的调度和执行，Client是不能退出的
+日志信息会在控制台输出：便于我们测试
+
+Cluster
+Driver运行在ApplicationMaster中
+Client只要提交完作业之后就可以关掉，因为作业已经在YARN上运行了
+日志是在终端看不到的，因为日志是在Driver上，只能通过yarn logs -applicationIdapplication_id
+
+如果是yarn cluster模式的话，yarn-cluster
+
+设置 HADOOP_CONF_DIR
+1） export HADOOP_CONF_DIR=/home/ricky/app/hadoop-2.6.0-cdh5.7.0/etc/hadoop
+2) $SPARK_HOME/conf/spark-env.sh
+
+spark-submit \
+--class org.apache.spark.examples.SparkPi \
+--master yarn-cluster \
+--executor-memory 1G \
+--num-executors 1 \
+/home/ricky/app/spark-2.2.0-bin-2.6.0-cdh5.7.0/examples/jars/spark-examples_2.11-2.2.0.jar \
+4
+
+localhost:8088 ---> history ---> logs ---> stdout ---> 查看结果
+
+8. spark的简单使用
 scala> val file = spark.sparkContext.textFile("file:///home/ricky/data/spark/basic/wc.txt")
 file: org.apache.spark.rdd.RDD[String] = file:///home/ricky/data/spark/basic/wc.txt MapPartitionsRDD[5] at textFile at <console>:23
 

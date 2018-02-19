@@ -11,7 +11,7 @@ object MySQLUtils {
     * 获取数据库连接
     */
   def getConnection() = {
-    DriverManager.getConnection("jdbc:mysql://localhost:3306/resource?user=root&password=123456")
+    DriverManager.getConnection("jdbc:mysql://localhost:3306/spark_learn?user=root&password=123456")
   }
 
   /**
