@@ -9,8 +9,7 @@
 
 5. 编写代码 ParquetApp
 
-编写代码 HiveMySQLApp
+6. 编写代码 HiveMySQLApp
 
 
-
-编写代码 SchemaInferApp
+7. 编写代码 SchemaInferApp
