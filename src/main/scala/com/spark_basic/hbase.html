@@ -51,7 +51,13 @@ bin/hbase shell
 version
 status
 create 'member','info','address'
-list
+list #查看所有表
 desc
 describe
-describe 'member'
+describe 'member' #查看表结构
+scan 'member' #查看表数据
+
+错误 Can't get master address from ZooKeeper; znode data == null
+查看日志 logs/hbase-ricky-master-ricky.log
+ricky:9200 ---> ricky:9000 造成的
+重启zk ---> 重启hbase

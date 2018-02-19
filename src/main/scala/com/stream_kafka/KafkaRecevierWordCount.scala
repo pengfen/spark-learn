@@ -14,7 +14,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 ./kafka-topics.sh --list --zookeeper localhost:2181 # 查看topic
 
 4. 通过控制台测试本topic是否能够正常的生产和消费
-./kafka-console-producer.sh --borker-list localhost:9092 --topic kafka_streaming_topic
+./kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_streaming_topic
 
 ./kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafka_streaming_topic
 
