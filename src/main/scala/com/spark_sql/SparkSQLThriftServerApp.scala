@@ -5,7 +5,12 @@ import java.sql.DriverManager
 /**
   * 通过JDBC的方式访问
   *
-  * 添加依赖
+  * 添加依赖 (hive jdbc 依赖)
+  * <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-jdbc</artifactId>
+      <version>1.2.1</version>
+    </dependency>
   *
   * 1. 编写代码
   *

@@ -4,6 +4,12 @@ import org.apache.spark.sql.SparkSession
 
 /**
   * Dataset操作
+  *
+  * 1. 编写代码
+  *
+  * hadoop fs -put sales.csv /
+  *
+  * 2. 测试
   */
 object DatasetApp {
 
@@ -14,20 +20,29 @@ object DatasetApp {
     //注意：需要导入隐式转换
     import spark.implicits._
 
-    val path = "file:///Users/rocky/data/sales.csv"
+    // val path = "file:///home/ricky/data/spark/data/sales.csv"
+    // val path = "/home/ricky/data/spark/data/sales.csv"
+    val path = "hdfs://ricky:9000/sales.csv"
 
     //spark如何解析csv文件？
     val df = spark.read.option("header","true").option("inferSchema","true").csv(path)
-    df.show
+    df.show(2)
+//    +-----+
+//    |value|
+//    +-----+
+//    |    1|
+//      |    2|
+//      +-----+
 
+    // dataFrame ---> dataSet
     val ds = df.as[Sales]
-    ds.map(line => line.itemId).show
+    ds.map(line => line.itemId).show(2)
 
-
-    spark.sql("seletc name from person").show
+    ds.createOrReplaceTempView("sales") // 对应实体类 Sales
+    spark.sql("select customerId from sales").show(2)
 
     //df.seletc("name")
-    df.select("nname")
+    //df.select("name").show(2)
 
     ds.map(line => line.itemId)
 
