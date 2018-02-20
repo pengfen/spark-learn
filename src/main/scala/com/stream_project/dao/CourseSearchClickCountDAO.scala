@@ -13,7 +13,7 @@ import scala.collection.mutable.ListBuffer
   */
 object CourseSearchClickCountDAO {
 
-  val tableName = "imooc_course_search_clickcount"
+  val tableName = "course_search_clickcount"
   val cf = "info"
   val qualifer = "click_count"
 

@@ -23,8 +23,8 @@ public class HBaseUtils {
      */
     private HBaseUtils(){
         configuration = new Configuration();
-        configuration.set("hbase.zookeeper.quorum", "hadoop000:2181");
-        configuration.set("hbase.rootdir", "hdfs://hadoop000:8020/hbase");
+        configuration.set("hbase.zookeeper.quorum", "ricky:2181");
+        configuration.set("hbase.rootdir", "hdfs://ricky:9000/hbase");
 
         try {
             admin = new HBaseAdmin(configuration);
@@ -86,7 +86,7 @@ public class HBaseUtils {
         //HTable table = HBaseUtils.getInstance().getTable("imooc_course_clickcount");
         //System.out.println(table.getName().getNameAsString());
 
-        String tableName = "imooc_course_clickcount" ;
+        String tableName = "course_clickcount" ;
         String rowkey = "20171111_88";
         String cf = "info" ;
         String column = "click_count";

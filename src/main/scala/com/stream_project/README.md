@@ -119,7 +119,7 @@ bin/hbase.sh
 bin/hbase shell
 
 HBase表设计
-创建表 create 'imooc_course_clickcount', 'info'
+创建表 create 'course_clickcount', 'info'
 Rowkey设计
 day_courseid
 
@@ -131,7 +131,7 @@ day_courseid
 
 功能 统计今天到现在为止从搜索引擎引流过来的实战课程的访问量
 HBase 表设计
-create 'imooc_course_search_clickcount','info'
+create 'course_search_clickcount','info'
 rowKey设计 20171111 + search + 1
 
 编写代码 CourseSearchClickCount

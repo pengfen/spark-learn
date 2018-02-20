@@ -11,6 +11,12 @@ import scala.collection.mutable.ListBuffer
 
 /**
   * 使用Spark Streaming处理Kafka过来的数据
+  *
+  * 1. 编写代码
+  *
+  * 2. 本地测试
+  *
+  * 3. 打包 mvn clean package -DSkipTests (注意将java目录下的文件打进包 需要在pom.xml中注释 sourceDirectory,testSourceDirectory)
   */
 object ImoocStatStreamingApp {
 
@@ -53,8 +59,7 @@ object ImoocStatStreamingApp {
       ClickLog(infos(0), DateUtils.parseToMinute(infos(1)), courseId, infos(3).toInt, infos(4))
     }).filter(clicklog => clicklog.courseId != 0)
 
-
-    //    cleanData.print()
+    //cleanData.print()
 
     // 测试步骤三：统计今天到现在为止实战课程的访问量
 
@@ -71,6 +76,7 @@ object ImoocStatStreamingApp {
           list.append(CourseClickCount(pair._1, pair._2))
         })
 
+        //println(list);
         CourseClickCountDAO.save(list)
       })
     })
