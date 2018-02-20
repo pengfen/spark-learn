@@ -21,3 +21,8 @@ spark.xml spark安装
 编写 t.html 泛型
 
 编写 UserLocation
+
+
+elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
+flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
+tomcat (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
