@@ -2,9 +2,15 @@
 
 2. 编写 Master
 
-3. 编写 Basic (变量 条件表达式 循环)
+3. 编写 VariDemo 变量
 
-4. 编写 Method (方法 函数)
+4. 编写 TypeDemo 类型
+
+5. 编写 BlockDemo 块表达式
+
+6. 编写 ForDemo 循环
+
+7. 编写 MethodDemo (方法 函数)
 
 5. 编写 Array (数组)
 

@@ -73,6 +73,7 @@ object ImoocStatStreamingApp {
         val list = new ListBuffer[CourseClickCount]
 
         partitionRecords.foreach(pair => {
+          println(pair)
           list.append(CourseClickCount(pair._1, pair._2))
         })
 
@@ -111,6 +112,7 @@ object ImoocStatStreamingApp {
           list.append(CourseSearchClickCount(pair._1, pair._2))
         })
 
+        println(list)
         CourseSearchClickCountDAO.save(list)
       })
     })

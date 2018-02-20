@@ -2,7 +2,7 @@ package scala.basic
 
 import scala.collection.mutable.ArrayBuffer
 
-object Array {
+object ArrayDemo {
 
   def main(args: Array[String]): Unit = {
     // 1. 定长数组和变长数组
