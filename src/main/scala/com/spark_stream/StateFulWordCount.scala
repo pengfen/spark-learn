@@ -14,12 +14,12 @@ object StateFulWordCount {
   //Option[Int]：以前的结果
 
   //分好组的数据
-  val updateFunc = (iter: Iterator[(String, Seq[Int], Option[Int])]) => {
-    //iter.flatMap(it=>Some(it._2.sum + it._3.getOrElse(0)).map(x=>(it._1,x)))
-    //iter.map{case(x,y,z)=>Some(y.sum + z.getOrElse(0)).map(m=>(x, m))}
-    //iter.map(t => (t._1, t._2.sum + t._3.getOrElse(0)))
-    iter.map{ case(word, current_count, history_count) => (word, current_count.sum + history_count.getOrElse(0)) }
-  }
+//  val updateFunc = (iter: Iterator[(String, Seq[Int], Option[Int])]) => {
+//    //iter.flatMap(it=>Some(it._2.sum + it._3.getOrElse(0)).map(x=>(it._1,x)))
+//    //iter.map{case(x,y,z)=>Some(y.sum + z.getOrElse(0)).map(m=>(x, m))}
+//    //iter.map(t => (t._1, t._2.sum + t._3.getOrElse(0)))
+//    iter.map{ case(word, current_count, history_count) => (word, current_count.sum + history_count.getOrElse(0)) }
+//  }
 
   def main(args: Array[String]) {
     LoggerLevels.setStreamingLogLevels()
@@ -35,9 +35,9 @@ object StateFulWordCount {
 
     val ds = ssc.socketTextStream("localhost", 9999)
 
-    val result = ds.flatMap(_.split(" ")).map((_, 1))
-    val state = result.updateStateByKey[Int](updateFunction _)
-    state.print()
+//    val result = ds.flatMap(_.split(" ")).map((_, 1))
+//    val state = result.updateStateByKey[Int](updateFunction _)
+//    state.print()
     //DStream是一个特殊的RDD
     //hello tom hello jerry
     //val result = ds.flatMap(_.split(" ")).map((_, 1)).updateStateByKey(updateFunc, new HashPartitioner(sc.defaultParallelism), true)
@@ -55,10 +55,10 @@ object StateFulWordCount {
     * @param preValues 以前的数据
     * @return
     */
-  def updateFunction(currentValues: Seq[Int], preValues: Option[Int]): Option[Int] = {
-    val current = currentValues.sum
-    val pre = preValues.getOrElse(0)
-    Some(current + pre)
-  }
+//  def updateFunction(currentValues: Seq[Int], preValues: Option[Int]): Option[Int] = {
+//    val current = currentValues.sum
+//    val pre = preValues.getOrElse(0)
+//    Some(current + pre)
+//  }
 }
 

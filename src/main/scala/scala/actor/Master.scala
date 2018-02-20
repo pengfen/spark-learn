@@ -4,7 +4,6 @@ import scala.concurrent.duration._
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.actor.Actor.Receive
 import com.typesafe.config.ConfigFactory
-import org.apache.hadoop.hbase.protobuf.generated.ZooKeeperProtos.Master
 
 import scala.collection.mutable
 

@@ -76,7 +76,7 @@ object ImoocStatStreamingApp {
           list.append(CourseClickCount(pair._1, pair._2))
         })
 
-        //println(list);
+        println(list);
         CourseClickCountDAO.save(list)
       })
     })
