@@ -34,6 +34,8 @@ d
   (d,1)
 (b,3)
 (c,2)
+  *
+  * mvn clean package -DskipTests
   */
 object KafkaRecevierWordCount {
   def main(args: Array[String]): Unit = {
@@ -45,7 +47,8 @@ object KafkaRecevierWordCount {
 
     val Array(zkQuorum, group, topics, numThreads) = args
 
-    val sparkConf = new SparkConf().setAppName("KafkaRecevierWordCount").setMaster("local[2]")
+    val sparkConf = new SparkConf()
+    //sparkConf.setAppName("KafkaRecevierWordCount").setMaster("local[2]")
 
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 

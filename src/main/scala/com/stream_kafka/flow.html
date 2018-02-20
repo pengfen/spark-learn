@@ -16,7 +16,7 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 -
 bin/kafka-topics.sh --list --zookeeper localhost:2181 # 查看topic
 
 4. 通过控制台测试本topic是否能够正常的生产和消费
-bin/kafka-console-producer.sh --borker-list localhost:9092 --topic kafka_streaming_topic
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_streaming_topic
 
 bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafka_streaming_topic
 
@@ -57,7 +57,7 @@ bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 -
 bin/kafka-topics.sh --list --zookeeper localhost:2181 # 查看topic
 
 4. 通过控制台测试本topic是否能够正常的生产和消费
-bin/kafka-console-producer.sh --borker-list localhost:9092 --topic kafka_streaming_topic
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_streaming_topic
 
 bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic kafka_streaming_topic
 

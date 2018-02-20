@@ -8,6 +8,8 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 /**
   * Spark Streaming对接Kafka的方式二 Direct方式
   *
+  * 打包 mvn clean package -DskipTests
+  *
   *ricky@ricky:~/app/kafka_2.11-0.9.0.0/bin$ ./kafka-console-producer.sh --broker-list localhost:9092 --topic kafka_streaming_topic
 Picked up _JAVA_OPTIONS:   -Dawt.useSystemAAFontSettings=gasp
 a a a a
@@ -32,7 +34,8 @@ object KafkaDirectWordCount {
 
     val Array(brokers, topics) = args
 
-    val sparkConf = new SparkConf().setAppName("KafkaDirectWordCount").setMaster("local[2]")
+    val sparkConf = new SparkConf()
+    //sparkConf.setAppName("KafkaDirectWordCount").setMaster("local[2]")
 
     val ssc = new StreamingContext(sparkConf, Seconds(5))
 
