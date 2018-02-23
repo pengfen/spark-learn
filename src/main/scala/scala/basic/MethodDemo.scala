@@ -61,7 +61,7 @@ object MethodDemo {
 // 方法
 //scala> def m1(a: Int, b: Int): Int = a * b
 //m1: (a: Int, b: Int)Int
-//
+//+
 //scala> m1(3, 5)
 //res14: Int = 15
 //

@@ -12,7 +12,13 @@
 
 7. 编写 MethodDemo (方法 函数)
 
-5. 编写 Array (数组)
+8. 编写 MetaDemo (元组　下划线)
+
+9. 编写 ArrayDemo (数组)
+
+10. 编写 ArrayBufferDemo (变长数组)
+
+11. 编写 ForArray (遍历数组)
 
 6. 编写 Collect (集合)
 
