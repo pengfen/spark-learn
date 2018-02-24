@@ -4,6 +4,7 @@ import kafka.utils.Logging
 import org.apache.hadoop.util.SignalLogger
 import org.apache.spark.SparkConf
 
+object Master {}
 //private[spark] object Master extends Logging{
 //  val systemName = "sparkMaster"
 //  private val actorName = "Master"

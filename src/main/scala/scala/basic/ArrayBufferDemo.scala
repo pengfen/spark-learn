@@ -56,12 +56,12 @@ object ArrayBufferDemo {
 //scala> ab
 //res13: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 4, 5, 6, 7, 8, 9)
 //
-//scala> ab.insert(1, 2, 3)
+//scala> ab.insert(1, 2, 3) // 下标为１的位置添加元素 2 3
 //
 //scala> ab
 //res15: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 2, 3, 4, 5, 6, 7, 8, 9)
 //
-//scala> ab.insert(8, 2, 3)
+//scala> ab.insert(8, 2, 3) // 下标为8的位置添加元素 2 3
 //
 //scala> ab
 //res17: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 3, 2, 3, 4, 5, 6, 2, 3, 7, 8, 9)
@@ -79,17 +79,17 @@ object ArrayBufferDemo {
 //scala> a += 3
 //res20: a.type = ArrayBuffer(1, 2, 3)
 //
-//scala> a.insert(1, 6)
+//scala> a.insert(1, 6) // 下标为1的位置添加元素 6
 //
 //scala> a
 //res22: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 6, 2, 3)
 //
-//scala> a.insert(0, 8)
+//scala> a.insert(0, 8) // 下标为0的位置添加元素 8
 //
 //scala> a
 //res24: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(8, 1, 6, 2, 3)
 
-//scala> a.remove(1, 2)
+//scala> a.remove(1, 2) // 下标为1的位置开始移除数据 移除二个
 //
 //scala> a
 //res26: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(8, 2, 3)

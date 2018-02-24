@@ -44,7 +44,7 @@ object TypeDemo {
 //
 //scala> val z = if (x > 1) 1 else "error"
 //z: Any = error
-//
+// 
 //scala> val m = if (x > 2) 1
 //m: AnyVal = ()
 //

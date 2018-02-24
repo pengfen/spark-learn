@@ -1,5 +1,7 @@
 package scala.basic
 
+// 元组　
+// 下划线
 object MetaDemo {
 
 }

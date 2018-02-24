@@ -38,7 +38,7 @@ object MapArray {
 
 //scala> val arr = Array(1, 2, 3, 4, 5, 6, 7, 8, 9)
 //arr: Array[Int] = Array(1, 2, 3, 4, 5, 6, 7, 8, 9)
-//
+// 求数组中的偶数
 //scala> arr.filter((x: Int) => x % 2 == 0)
 //res6: Array[Int] = Array(2, 4, 6, 8)
 //

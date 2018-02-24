@@ -21,13 +21,13 @@ object VariDemo {
 
 //scala> val i = 1
 //i: Int = 1
-//
+// var定义的变量可以改变值
 //scala> var j = 1
 //j: Int = 1
 //
 //scala> j = 2
 //j: Int = 2
-//
+// 定义时可以强制定义类型
 //scala> val str : String = "welcome"
 //str: String = welcome
 //
