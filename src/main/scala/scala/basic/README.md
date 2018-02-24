@@ -26,6 +26,20 @@
 
 14. 编写 JoinArray (拉链)
 
+
+15. 编写 ListDemo (List)
+
+16. 编写 MutListDemo (可变序列)
+
+17. 编写 ImmutSetDemo (不可变Set)
+
+18. 编写 MutSetDemo (可变set)
+
+19. 编写 MutMapDemo (可变map)
+
+
+20. 编写 Learn (练习)
+
 6. 编写 Collect (集合)
 
 7. 编写 Object (类)
