@@ -37,3 +37,18 @@ object MetaDemo {
 
 //scala> val p = println _
 //p: () => Unit = <function0>
+
+//scala> val t = ("a", 1, 2.0)
+//t: (String, Int, Double) = (a,1,2.0)
+//
+//scala> t._2
+//res34: Int = 1
+// 将三个值分别赋值给 x y z
+//scala> val t, (x, y, z) = ("a", 1, 2.0)
+//t: (String, Int, Double) = (a,1,2.0)
+//x: String = a
+//y: Int = 1
+//z: Double = 2.0
+//
+//scala> x
+//res35: String = a
