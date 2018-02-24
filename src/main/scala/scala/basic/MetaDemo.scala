@@ -33,3 +33,5 @@ object MetaDemo {
 //scala> m2(1, 3)
 //res3: Int = 4
 
+//scala> val p = println _
+//p: () => Unit = <function0>

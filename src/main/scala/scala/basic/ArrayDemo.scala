@@ -28,6 +28,8 @@ object ArrayDemo {
 
     // 2. 遍历数组 (ForArray)
 
+    // 3. 数据转换 (MapArray)
+
 //    scala> val arr = Array(2, 5, 1, 4, 3)
 //    arr: Array[Int] = Array(2, 5, 1, 4, 3)
 //
