@@ -28,18 +28,6 @@ object ForArray {
   }
 }
 
-//    scala> val arr = Array(2, 5, 1, 4, 3)
-//    arr: Array[Int] = Array(2, 5, 1, 4, 3)
-//
-//    scala> arr.sum
-//    res1: Int = 15
-//
-//    scala> arr.max
-//    res2: Int = 5
-//
-//    scala> arr.sorted
-//    res3: Array[Int] = Array(1, 2, 3, 4, 5)
-
 //    scala> val scores = Map("tom" -> 85, "jerry" -> 99, "kitty" -> 90) // 使用箭头
 //    scores: scala.collection.immutable.Map[String,Int] = Map(tom -> 85, jerry -> 99, kitty -> 90)
 //

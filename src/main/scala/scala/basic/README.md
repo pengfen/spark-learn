@@ -20,7 +20,9 @@
 
 11. 编写 ForArray (遍历数组)
 
-12. 编写 MapArray (数组转换)
+12. 编写 TransArray (数组转换)
+
+13. 编写 MapArray (映射)
 
 6. 编写 Collect (集合)
 
