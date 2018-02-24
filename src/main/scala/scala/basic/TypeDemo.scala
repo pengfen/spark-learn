@@ -1,10 +1,14 @@
 package scala.basic
 
+/**
+  * Scala和Java一样 有七种数值类型Byte Char Short Int Long Float Double
+  *
+  * 无包装类型
+  *
+  */
 object TypeDemo {
+
   def main(args: Array[String]): Unit = {
-
-    // Scala和Java一样 有七种数值类型Byte Char Short Int Long Float Double
-
     // 条件表达式
     val x = 1
     // 判断x的值 将结果赋给y

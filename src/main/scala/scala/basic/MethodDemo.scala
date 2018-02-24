@@ -19,6 +19,8 @@ object MethodDemo {
   /**
     * 注意 方法的返回值类型可以不写 编译器可以自动推断出来 但是对于递归函数 必须指定返回值类型
     *
+    * x和y是参数列表   Int方法返回值类型   x * y 方法体
+    *
     * def 定义方法使用def关键字
     * me 方法名
     * @param x 参数
@@ -46,7 +48,7 @@ object MethodDemo {
 
   def main(args: Array[String]): Unit = {
     // 调用m1方法 并传入f1函数
-    val r1 = m1(f1) // ---> m1(f1(2, 6)) ---> 8
+    val r1 = m1(f1) // ---> m1(f1(2, 6)) ---> 8 将函数作为参数传入到方法中
     println(r1) // 8
 
     // 调用m1方法 并传入f2函数

@@ -1,8 +1,12 @@
 package scala.basic
 
+/**
+  * 循环有for 和 while
+  *
+  * for (i <- 表达式/数组/集合)
+  */
 object ForDemo {
   def main(args: Array[String]): Unit = {
-    // 循环
     // for(i <- 表达式）表达式 1 to 10 返回一个Range(区间)
     // 每次循环将区间中的一个值赋给i
     for (i <- 1 to 10)

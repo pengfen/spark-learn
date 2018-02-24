@@ -1,6 +1,8 @@
 package scala.basic
 
 /**
+  * scala 变量
+  *
   * 注意 能用val的地方就用val
   */
 object VariDemo {
