@@ -2,6 +2,9 @@ package scala.basic
 
 import scala.collection.mutable.ArrayBuffer
 
+/**
+  * 变长数组
+  */
 object ArrayBufferDemo {
   def main(args: Array[String]): Unit = {
     // 变长数组(数组缓冲)

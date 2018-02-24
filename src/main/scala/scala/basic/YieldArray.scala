@@ -1,6 +1,20 @@
 package scala.basic
 
-object TransArray {
+/**
+  * 数组转换
+  *
+  * yield关键字 将原始的数组进行转换会产生一个新的数组 原始的数组不变
+  *
+  * scala> val a = Array(1, 2, 3, 4, 5) // 定义一个数组
+  * a: Array[Int] = Array(1, 2, 3, 4, 5)
+  *
+  * scala> for (i <- a) yield i * 10 // 使用yield关键字生成一个新的数组
+  * res0: Array[Int] = Array(10, 20, 30, 40, 50)
+  *
+  * scala> a.map(_ * 10) // map方法更加方便
+  * res5: Array[Int] = Array(10, 20, 30, 40, 50)
+  */
+object YieldArray {
   def main(args: Array[String]): Unit = {
     // 定义一个数组
     val arr = Array(1, 2, 3, 4, 5, 6, 7, 8, 9);

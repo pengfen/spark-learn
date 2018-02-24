@@ -1,7 +1,33 @@
 package scala.basic
 
+/**
+  * 映射
+  */
 object MapArray {
+  def main(args: Array[String]): Unit = {
+    // 构建映射
+    // 1. 使用箭头构建map
+    val scores = Map("tom" -> 85, "jerry" -> 99, "kitty" -> 90) // 使用箭头
+    //scores: scala.collection.immutable.Map[String,Int] = Map(tom -> 85, jerry -> 99, kitty -> 90)
+    println(scores)
 
+    // 2. 使用元组构建map
+    val scores_meta = Map(("tom", 85), ("jerry", 99), ("kitty", 90)) // 使用元组
+    // scores: scala.collection.immutable.Map[String,Int] = Map(tom -> 85, jerry -> 99, kitty -> 90)
+    println(scores_meta)
+
+    val value = scores("jerry") // 获取映射中的值
+    println(value)
+    //    res4: Int = 99
+
+    // 如果映射中有值 返回映射中的值 没有返回默认值
+    val suke = scores.getOrElse("suke", 0)
+    //    res5: Int = 0
+    println(suke)
+    //
+    //    scala> scores.getOrElse("tom", 0)
+    //    res6: Int = 85
+  }
 }
 
 //scala> val m = Map("a" -> 1, "b" -> 2)

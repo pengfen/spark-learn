@@ -1,7 +1,8 @@
 package scala.basic
 
-import scala.collection.mutable.ArrayBuffer
-
+/**
+  * 定义数组
+  */
 object ArrayDemo {
 
   def main(args: Array[String]): Unit = {

@@ -14,15 +14,16 @@ intro.html (介绍 安装）
 
 7. 编写 MethodDemo (方法 函数)
 
+
 8. 编写 MetaDemo (元组　下划线)
 
-9. 编写 ArrayDemo (数组)
+9. 编写 ArrayDemo (定长数组)
 
 10. 编写 ArrayBufferDemo (变长数组)
 
 11. 编写 ForArray (遍历数组)
 
-12. 编写 TransArray (数组转换)
+12. 编写 YieldArray (数组转换)
 
 13. 编写 MapArray (映射)
 
