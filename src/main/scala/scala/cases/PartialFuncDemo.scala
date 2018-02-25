@@ -1,4 +1,4 @@
-package cn.itcast.cases
+package scala.cases
 
 /**
   * Created by ZX on 2016/4/5.

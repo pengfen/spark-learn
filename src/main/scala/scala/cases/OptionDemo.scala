@@ -1,4 +1,5 @@
-package cn.itcast.cases
+package scala.cases
+
 
 object OptionDemo {
   def main(args: Array[String]) {

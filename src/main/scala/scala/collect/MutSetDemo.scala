@@ -1,4 +1,4 @@
-package cn.itcast.collect
+package scala.collect
 
 import scala.collection.mutable
 

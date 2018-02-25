@@ -1,4 +1,4 @@
-package cn.itcast.collect
+package scala.collect
 
 /**
   * Created by ZX on 2016/4/5.

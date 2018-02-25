@@ -1,7 +1,7 @@
-package cn.itcast.collect
+package scala.collect
 
 /**
-  * Created by ZX on 2016/4/6.
+  * word统计
   */
 object WorldCount {
 

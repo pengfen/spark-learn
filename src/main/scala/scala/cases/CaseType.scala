@@ -1,19 +1,21 @@
-package cn.itcast.cases
+package scala.cases
 
 import scala.util.Random
 
 /**
-  * Created by ZX on 2016/4/5.
+  * 匹配类型
   */
-object CaseDemo02 extends App{
+object CaseType extends App{
 
   //val x = 3
   //val v = if(x >= 5) 1 else if(x < 2) 2.0 else "hello"
-  val arr = Array("hello", 1, -2.0, CaseDemo02)
+  val arr = Array("hello", 1, -2.0, CaseType)
   val elem = arr(Random.nextInt(arr.length))
 
   println(elem)
 
+  // 注意 case y: Double if (y >= 0) => ...
+  // 模式匹配的时候可以添加守卫条件 如不符合守卫条件 将掉入case _中
   elem match {
     case x: Int => println("Int " + x)
     case y: Double if(y >= 0) => println("Double "+ y)
