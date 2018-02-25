@@ -62,4 +62,15 @@ intro.html (介绍 安装）
 
 29. 编写 AppDemo (应用程序对象)
 
+类的继承 实现
+30. 编写 Animal
+
+31. 编写 Human
+
+32. 编写 Chinese
+
+32. 编写 Monkey
+
+33. 编写 Flyable
+
 8. Case (匹配) ---> cases 包
