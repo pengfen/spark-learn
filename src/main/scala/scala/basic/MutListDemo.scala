@@ -2,12 +2,19 @@ package scala.basic
 
 import scala.collection.mutable.ListBuffer
 
+/**
+  * 可变的序列 import scala.collection.mutable._
+  *
+  */
 object MutListDemo {
+
   def main(args: Array[String]): Unit = {
     // 构建一个可变列表 初始有三个元素 1,2,3
     val lst0 = ListBuffer[Int](1, 2, 3)
+
     // 创建一个空的可变列表
     val lst1 = new ListBuffer[Int]
+
     // 向lst1中追加元素 注意 没有生成新的集合
     lst1 += 4
     lst1.append(5)

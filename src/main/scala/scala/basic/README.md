@@ -29,7 +29,7 @@ intro.html (介绍 安装）
 
 14. 编写 JoinArray (拉链)
 
-
+集合 (序列Seq 集Set 映射Map) --->　所有的集合都扩展自Iterable特质
 15. 编写 ListDemo (List)
 
 16. 编写 MutListDemo (可变序列)
