@@ -2,9 +2,13 @@ package scala.collect
 
 import scala.collection.immutable.HashSet
 
+/**
+  * 不可变的 Set
+  */
 object ImmutSetDemo extends App{
 
   val set1 = new HashSet[Int]()
+
   //将元素和set1合并生成一个新的set，原有set不变
   val set2 = set1 + 4
 

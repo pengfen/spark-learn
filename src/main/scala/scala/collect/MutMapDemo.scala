@@ -2,7 +2,9 @@ package scala.collect
 
 import scala.collection.mutable
 
-
+/**
+  * 可变的 map
+  */
 object MutMapDemo extends App{
   val map1 = new mutable.HashMap[String, Int]()
   //向map中添加数据

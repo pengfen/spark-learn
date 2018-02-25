@@ -2,6 +2,9 @@ package scala.basic
 
 import scala.collection.mutable
 
+/**
+  * 可变的 map
+  */
 object MutMapDemo {
   def main(args: Array[String]): Unit = {
     val map1 = new mutable.HashMap[String, Int]()
