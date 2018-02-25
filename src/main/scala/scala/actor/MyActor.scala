@@ -1,10 +1,12 @@
-package cn.itcast.actor
+package scala.actor
 
 import scala.actors.Actor
 
-
 /**
-  * Created by ZX on 2016/4/4.
+  * 在act()方法中加入了while(true)循环　就可以不停的接收消息
+  *
+  * 注意 发送start消息和stop的消息是异步的 但是Actor接收到消息执行的过程是同步的按顺序执行
+  *
   */
 class MyActor extends Actor {
 
@@ -28,6 +30,8 @@ class MyActor extends Actor {
   }
 }
 
+// react方式会复用线程　比receive更高效
+// react如果要反复执行消息处理　react外层要用loop　不能用while
 class YourActor extends Actor {
   override def act(): Unit = {
     loop {
@@ -56,7 +60,8 @@ class YourActor extends Actor {
 object Boot {
 
   def main(args: Array[String]) {
-//    val actor = new MyActor
+    // 没有返回值的异步消息
+    val actor = new MyActor
 //    actor.start()
 //    actor ! "start"
 //    actor ! "stop"
@@ -74,7 +79,6 @@ object Boot {
 //    val a3 = new YourActor
 //    a3.start()
 //    a3 ! "start"
-
 
   }
 }

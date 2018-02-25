@@ -1,15 +1,10 @@
-package cn.itcast.actor
-
-/**
-  * Created by ZX on 2016/4/4.
-  */
-package cn.itcast.actor
-
+package scala.actor
 
 import scala.actors.Actor
 
 /**
-  * Created by ZX on 2015/6/20.
+  * 结合case class发送消息
+  *
   */
 class AppleActor extends Actor {
 

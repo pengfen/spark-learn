@@ -1,6 +1,6 @@
-intro.html 介绍
+1. intro.html 介绍
 
-添加依赖
+2. 添加依赖
 <!-- scala actor 依赖 -->
 <dependency>
   <groupId>org.scala-lang</groupId>
@@ -8,7 +8,13 @@ intro.html 介绍
   <version>${scala.version}</version>
 </dependency>
 
-1. 编写 MyActor1
+1. 编写 ActorTest (初识Actor)
+
+2. 编写 MyActor
+
+3. 编写 AppleActor
+
+4. 编写 WorkCount
 
 AKKA
 1. preStart() 该方法在Actor对象构造方法执行后执行 整个Actor生命周期中仅执行一次
