@@ -43,8 +43,23 @@ intro.html (介绍 安装）
 
 20. 编写 Learn (练习)
 
-6. 编写 Collect (集合)
+21. 编写 WelScala (scala特性)
 
-7. 编写 Object (类)
+
+22. 编写 Person
+
+23. 编写 People
+
+24. 编写 Student (介绍主构造器)
+
+25. 编写 Queen (介绍构造器)
+
+26. 编写 SingletonDemo (单例类)
+
+27. 编写 Dog (伴生对象)
+
+28. 编写 ApplyDemo (apply方法)
+
+29. 编写 AppDemo (应用程序对象)
 
 8. Case (匹配) ---> cases 包

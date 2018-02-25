@@ -224,3 +224,16 @@ object Learn {
 //
 //scala> val f1 = m _
 //f1: Int => Int = <function1>
+
+
+//scala> val arr = List(List(1, 2, 3), List(3, 4, 5), List(2), List(0))
+//arr: List[List[Int]] = List(List(1, 2, 3), List(3, 4, 5), List(2), List(0))
+//
+//scala> val result = arr.aggregate(0)(_+_.sum, _+_)
+//result: Int = 20
+//
+//scala> val result = arr.aggregate(10)(_+_.sum, _+_)
+//result: Int = 30
+//
+//scala> val result = arr.par.aggregate(10)(_+_.sum, _+_)
+//result: Int = 60
