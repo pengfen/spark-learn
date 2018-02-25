@@ -1,8 +1,8 @@
-package cn.itcast.thread
+package scala.thread
 
 import java.util.concurrent.{Callable, Executors, TimeUnit}
 /**
-  * Created by ZX on 2016/3/29.
+  * 测试
   */
 object ThreadPool02 {
 

@@ -1,12 +1,9 @@
-package cn.itcast.thread
+package scala.thread
 
 /**
-  * Created by ZX on 2016/3/29.
+  * 根据不同的任务进行不同的处理
   */
 class TaskProcessEventLoop(name:String) extends EventLoop[TaskEvent](name){
-
-
-
 
   /*
   override protected def onReceive(event: TaskEvent): Unit = event match {
@@ -23,8 +20,6 @@ class TaskProcessEventLoop(name:String) extends EventLoop[TaskEvent](name){
     }
   }
   */
-
-
 
   /**
     * Invoked in the event thread when polling events from the event queue.

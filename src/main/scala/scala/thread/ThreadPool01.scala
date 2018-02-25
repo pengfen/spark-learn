@@ -1,9 +1,9 @@
-package cn.itcast.thread
+package scala.thread
 
 import java.util.concurrent.{ExecutorService, Executors, TimeUnit}
 
 /**
-  * Created by ZX on 2016/3/29.
+  * 测试线程池
   */
 object ThreadPool01 {
 
@@ -13,7 +13,7 @@ object ThreadPool01 {
       override def run(): Unit = {
         println(Thread.currentThread().getName)
         println("sub:--->submitting task...")
-        Thread.sleep(10000)
+        Thread.sleep(1000)
         println("sub:--->task finished")
       }
     }

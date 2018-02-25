@@ -1,7 +1,7 @@
-package cn.itcast.thread
+package scala.thread
 
 /**
-  * Created by ZX on 2016/3/29.
+  * 任务类型
   */
 trait TaskEvent
 
