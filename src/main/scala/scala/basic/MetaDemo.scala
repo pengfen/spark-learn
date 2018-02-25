@@ -1,9 +1,39 @@
 package scala.basic
 
-// 元组　
-// 下划线
+/**
+  * 元组
+  *
+  * 下划线
+  */
 object MetaDemo {
+  def main(args: Array[String]): Unit = {
+    // 1. 定义元组时用小括号将多个元素包起来 元素之间用逗号分隔 元素的类型可以不一样 元素个数可以任意多个
+    val t = ("hadoop", 3.14, 65535)
+    println(t)
+    //    t: (String, Double, Int) = (hadoop,3.14,65535)
 
+    // 2. 获取元组中的值
+    val t1,(a,b,c) = ("hadoop", 3.14, 65535)
+    //    t: (String, Double, Int) = (hadoop,3.14,65535)
+    //    a: String = hadoop
+    //    b: Double = 3.14
+    //    c: Int = 65535
+    //
+    //    scala> val r1 = t._1 // 获取元组中的元素可以使用下划线加脚标 需要注意的是元组中的元素脚标是从1开始的
+    println(t1._1)
+    //    r1: String = hadoop
+    //
+    //    scala> val r2 = t._2
+    println(t1._2)
+    //    r2: Double = 3.14
+
+    // 将对偶的集合转换成映射
+    //    scala> val arr = Array(("tom", 88), ("jerry", 95))
+    //    arr: Array[(String, Int)] = Array((tom,88), (jerry,95))
+    //
+    //    scala> arr.toMap // toMap可以将对偶的集合转换成映射
+    //    res10: scala.collection.immutable.Map[String,Int] = Map(tom -> 88, jerry -> 95)
+  }
 }
 //scala> val func1 = (x: Int, y: Double) => (y, x)
 //func1: (Int, Double) => (Double, Int) = <function2>

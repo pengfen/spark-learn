@@ -6,14 +6,20 @@ object Learn {
     val lst0 = List(1, 7, 9, 8, 0, 3, 5, 4, 6, 2);
     // 将lst0中每个元素乘以10后生成一个新的集合
     val lst1 = lst0.map(x => x * 10)
+    // val lst1 = lst0.map(_ * 10)
     // 将lst0中的偶数取出来生成一个新的集合
-    val lst2 = lst0.filter(x => x % 2 == 0)
+    //val lst2 = lst0.filter(x => x % 2 == 0)
+    val lst2 = lst0.filter(_ % 2 == 0)
+    println(lst2) // List(8, 0, 4, 6, 2)
+//    val lst = lst0.filter(_ % 2 == 0).map(_ * 10)
+//    println(lst)
     // 将lst0排序后生成一个新的集合
     val lst3 = lst0.sorted
-    val lst4 = lst0.sortBy(x => x)
-    val lst5 = lst0.sortWith((x, y) => x < y)
+//    val lst4 = lst0.sortBy(x => x)
+//    val lst5 = lst0.sortWith((x, y) => x < y)
     // 反转顺序
-    val lst6 = lst3.reverse
+    val lst6 = lst0.sorted.reverse
+    //val lst6 = lst3.reverse
     // 将lst0中的元素4个一组 类型为Iterator[List[Int]]
     val it = lst0.grouped(4)
     // 将Iterator转换成List
@@ -167,3 +173,13 @@ object Learn {
 //
 //scala> val result = grouped.mapValues(_.foldLeft(0)(_+_._2))
 //result: scala.collection.immutable.Map[String,Int] = Map(wel -> 5, tom -> 2, kitty -> 1, jerry -> 1)
+
+
+//scala> def m(x: Int): Int = x * x
+//m: (x: Int)Int
+//
+//scala> m(3)
+//res0: Int = 9
+//
+//scala> val f1 = m _
+//f1: Int => Int = <function1>

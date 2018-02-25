@@ -1,7 +1,13 @@
 package scala.basic
 
 /**
-  * 映射
+  * 映射 Map
+  *
+  * 注意 scala中 有两种 Map (一个是immutable包下的Map 该Map中的内容不可变   另一个是mutable包下的Map 该Map中的内容可变)
+  *
+  * 注意　通常创建一个集合是会用val这个关键字修饰一个变量(相当于java中的final)
+  * 意味着该变量的引用不可变 该引用中的内容是不是可变 取决天这个引用指向的集合的类型
+  *
   */
 object MapArray {
   def main(args: Array[String]): Unit = {
@@ -27,6 +33,16 @@ object MapArray {
     //
     //    scala> scores.getOrElse("tom", 0)
     //    res6: Int = 85
+
+    // 在Scala中 有两种Map 一个是immutable包下的Map 该Map中的内容不可变 另一个是mutable包下的Map 该Map中的内容可变
+    //    scala> val scores = Map("tom" -> 80, "jerry" -> 90) // 导入mutable包
+    //    scores: scala.collection.mutable.Map[String,Int] = Map(tom -> 80, jerry -> 90) // val定义的scores变量意味着引用不变 但是Map中的内容可变
+    //
+    //    scala> scores("tom") - 88 // 修改Map中的内容
+    //    res7: Int = -8
+    //
+    //    scala> scores += ("kitty" -> 99, "suke" -> 60) // 用+=向原来的Map中追加元素
+    //    res9: scores.type = Map(tom -> 80, kitty -> 99, jerry -> 90, suke -> 60)
   }
 }
 
