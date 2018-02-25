@@ -62,33 +62,49 @@ object Learn {
     println(lst9) // List((hello,4), (jerry,2), (kitty,1), (tom,1))
 
     //并行计算求和
+    //val lst0 = List(1, 7, 9, 8, 0, 3, 5, 4, 6, 2);
+    val lst11 = lst0.sum;
+    println(lst11) // 45
+    lst0.par // 并行
 
     //化简：reduce
+    val lst12 = lst0.par.reduce(_+_) // 并行求和
+    println(lst12) // 45
     //将非特定顺序的二元操作应用到所有元素
+    //reduce ---> reduceLef
 
-    //安装特点的顺序
-
+    //按照特定的顺序
 
     //折叠：有初始值（无特定顺序）
+    // val lst13 = lst0.par.fold(0)(_+_)
+    val lst13 = lst0.fold(100)((x, y) => x + y) // 145
+    println(lst13)
 
     //折叠：有初始值（有特定顺序）
-
-
+    //val lst14 = lst0.foldLeft(0)(_+_)
+    val lst14 = lst0.foldLeft(100)((x, y) => x + y) // 145
+    println(lst14)
 
     //聚合
     val arr = List(List(1, 2, 3), List(3, 4, 5), List(2), List(0))
-
+    val result = arr.aggregate(10)(_+_.sum, _+_) // 30
+    println(result)
 
     val l1 = List(5,6,4,7)
     val l2 = List(1,2,3,4)
     //求并集
+    val r1 = l1.union(l2)
+    println(r1) // List(5, 6, 4, 7, 1, 2, 3, 4)
 
     //求交集
+    val r2 = l1.intersect(l2)
+    println(r2) // List(4)
 
     //求差集
+    val r3 = l1.diff(l2)
+    println(r3) // List(5, 6, 7)
 
-    //println(r3)
-
+    val m = Map(("a", 1))
   }
 }
 
