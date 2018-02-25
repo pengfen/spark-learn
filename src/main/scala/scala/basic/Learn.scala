@@ -1,40 +1,65 @@
 package scala.basic
 
+/**
+  * 集合练习
+  */
 object Learn {
+
   def main(args: Array[String]): Unit = {
     // 创建一个List
     val lst0 = List(1, 7, 9, 8, 0, 3, 5, 4, 6, 2);
+
     // 将lst0中每个元素乘以10后生成一个新的集合
-    val lst1 = lst0.map(x => x * 10)
-    // val lst1 = lst0.map(_ * 10)
+    // val lst1 = lst0.map((x: Int) => x * 10)
+    // val lst1 = lst0.map(x => x * 10)
+    val lst1 = lst0.map(_ * 10)
+    println(lst1) // List(10, 70, 90, 80, 0, 30, 50, 40, 60, 20)
+
     // 将lst0中的偶数取出来生成一个新的集合
-    //val lst2 = lst0.filter(x => x % 2 == 0)
+    // val lst2 = lst0.filter((x: Int) => x % 2 == 0)
+    // val lst2 = lst0.filter(x => x % 2 == 0)
     val lst2 = lst0.filter(_ % 2 == 0)
     println(lst2) // List(8, 0, 4, 6, 2)
-//    val lst = lst0.filter(_ % 2 == 0).map(_ * 10)
-//    println(lst)
+
+    // 将lst0集合中的偶数取出来生成一个乘以10的集合
+    // val lst = lst0.filter(x => x % 2 == 0).map(y => y * 10)
+    val lst = lst0.filter(_ % 2 == 0).map(_ * 10)
+    println(lst) // List(80, 0, 40, 60, 20)
+
     // 将lst0排序后生成一个新的集合
-    val lst3 = lst0.sorted
-//    val lst4 = lst0.sortBy(x => x)
-//    val lst5 = lst0.sortWith((x, y) => x < y)
+    // val lst3 = lst0.sorted
+    // val lst3 = lst0.sortBy(x => x)
+    // val lst3 = lst0.sortWith((x, y) => x < y)
+    val lst3 = lst0.sortWith(_<_)
+    println(lst3) // List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
     // 反转顺序
-    val lst6 = lst0.sorted.reverse
-    //val lst6 = lst3.reverse
+    //val lst4 = lst0.sorted.reverse
+    val lst4 = lst3.reverse
+    println(lst4) // List(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+
     // 将lst0中的元素4个一组 类型为Iterator[List[Int]]
     val it = lst0.grouped(4)
+    println(it) // non-empty iterator
+
     // 将Iterator转换成List
-    val lst7 = it.toList
+    val lst5 = it.toList
+    println(lst5) // List(List(1, 7, 9, 8), List(0, 3, 5, 4), List(6, 2))
+
     // 将多个list压扁成一个List
-    val lst8 = lst7.flatten
+    val lst6 = lst5.flatten
+    println(lst6) // List(1, 7, 9, 8, 0, 3, 5, 4, 6, 2)
 
     // 先按空格切分 再压平
     val a = Array("a b c", "d e f", "h i j")
-    a.flatMap(_.split(" "))
-    val lines = List("hello tom hello jerry", "hello jerry", "hello kitty")
-    //先按空格切分，在压平
-    lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.foldLeft(0)(_+_._2))
-    lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).map(t=>(t._1, t._2.size)).toList.sortBy(_._2).reverse
+    val lst7 = a.flatMap(_.split(" "))
+    println(lst7) // [Ljava.lang.String;@4e718207
 
+    val lines = List("hello tom hello jerry", "hello jerry", "hello kitty")
+    val lst8 = lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.foldLeft(0)(_+_._2))
+    println(lst8) // Map(tom -> 1, kitty -> 1, jerry -> 2, hello -> 4)
+    val lst9 = lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).map(t=>(t._1, t._2.size)).toList.sortBy(_._2).reverse
+    println(lst9) // List((hello,4), (jerry,2), (kitty,1), (tom,1))
 
     //并行计算求和
 
