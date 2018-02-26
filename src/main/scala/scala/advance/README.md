@@ -10,4 +10,16 @@
 
 6. 编写 ImplicitContext
 
+7. 编写 Pair
 
+8. 编写 Boy
+
+9. 编写 Test (测试Boy类)
+
+10. 编写 Girl
+
+11. 编写 Chooser
+
+12. 编写 MyPreDef
+
+13. 编写　MissLeft

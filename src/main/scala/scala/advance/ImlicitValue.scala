@@ -9,7 +9,7 @@ package scala.advance
   *
   * 以implicit关键字声明的带有单个参数的函数
   *
-  * 
+  *
   * 所有的隐式值和隐式方法必须放到object
   */
 object Context {
