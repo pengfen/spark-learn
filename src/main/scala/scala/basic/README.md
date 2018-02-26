@@ -76,4 +76,4 @@ intro.html (介绍 安装）
 34. Case (匹配) ---> cases 包
 
 
-35. 编写 UpperBound (泛型)
+35. 编写 UpperBound (泛型) ---> bound.html
