@@ -1,7 +1,14 @@
 package scala.basic
 
 /**
-  * 定义数组
+  * 定长数组
+  * //3个整数的数据　所有元素为0
+  * val arr1 = new Array[Int](3)
+  * val arr2 = Array(0, 0, 0)
+  * val arr3 = Array("hadoop", "spark"
+  * // 取值　赋值
+  * val str = arr3(1)
+  * arr3(1) = "storm"
   */
 object ArrayDemo {
 

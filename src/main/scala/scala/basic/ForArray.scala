@@ -8,6 +8,14 @@ package scala.basic
   * 2. 好用的until会生成下标 0 until 10 (包含0不包含10)
   * scala> 0 until 10
   * res85: scala.collection.immutable.Range = Range(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  *
+  * 遍历数组和数组缓冲
+  * val arr = Array(1, 2, 3, 4, 5)
+  * // 带下标的for循环
+  * for (i <- (0 until (arr.length, 2)).reverse) {println(arr(i))}
+  * // 增强for循环
+  * for (i <- arr) println(i)
+  *
   */
 object ForArray {
   def main(args: Array[String]): Unit = {

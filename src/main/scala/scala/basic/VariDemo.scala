@@ -4,6 +4,21 @@ package scala.basic
   * scala 变量
   *
   * 注意 能用val的地方就用val
+  *
+  * val 声明不可变的变量
+  * var 声明可变的变量
+  * 推荐使用val
+  * val content: String = "welcome to scala world"
+  * val x, y = 100
+  * 变量声明时可以不指定类型　编译器可以自动推断出来
+  *
+  * 懒值
+  * //变量定义时即被取值
+  * val words = Source.fromFile("/home/ricky/data/scala/words.txt").mkString
+  * //变量被首次使用时取值
+  * lazy val words = Source.fromFile("/home/ricky/data/scala/words.txt").mkString
+  * //每一次调用该方法时都取值
+  * def words = Source.fromFile("/home/ricky/data/scala/words.txt").mkString
   */
 object VariDemo {
   def main(args: Array[String]): Unit = {

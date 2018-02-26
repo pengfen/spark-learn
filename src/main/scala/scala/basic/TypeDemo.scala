@@ -5,6 +5,13 @@ package scala.basic
   *
   * 无包装类型
   *
+  * if 判断
+  * val a = if (x > 0) 1 else -1
+  * // 混合类型
+  * val b = if (x > 0) 1 else "error"
+  * // ()表示"无有用值"
+  * val c = if (x > 0) 1 else ()
+  *
   */
 object TypeDemo {
 

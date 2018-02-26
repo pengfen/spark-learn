@@ -1,6 +1,30 @@
 package scala.basic
 
 /**
+  * 类
+  * var 带getter和setter属性
+  * val 只带getter属性
+  * private和private[this]
+  * 主构造器和辅助构造器
+  * 跟在类名后面的是主构造器
+  * 主构造器执行类定义中的所有语句
+  * 辅助构造器的名称为this
+  * 每一个辅助构造器必须先调用主构造器或其他已经定义好的辅助构造器
+  * object对象
+  * 用对象作为单例或存放工具方法
+  * 可作为伴生对象
+  * 用类的伴生对象的apply方法创建新的实例
+  * 扩展App特质作为main方法使用
+  * 包
+  * 包可见性private[spark]
+  * 重命名import java.util.{HashMap => JHashMap}
+  * 隐式导入 和Java程序一样java.lang总是被默认引入 scala也默认引入
+  * 继承
+  * 重写方法 重写一个非抽象的方法必须使用override修饰符
+  * o.isInstanceOf[CI] //java中的instanceof
+  * o.asInstacnceOf[CI] //java中的(CI) o
+  * classOf[CI] //java中的CI.class
+  *
   * 在 scala 中 类并不用声明为public
   *
   * scala 源文件中可以包含多个类 所有这些类都具有公有可见性

@@ -1,6 +1,29 @@
 package scala.basic
 
 /**
+  * 数组常用算法
+  * val arr = Array(4, 3, 5, 1, 2)
+  * val res = arr.sum
+  * Array("spark", "hadoop", "storm").min
+  * val b = arr.sorted
+  * val c = arr.sortWith(_>_)
+  * val d = arr.count(_>2)
+  *
+  * 映射
+  * val map = Map("a" -> 1, "b" -> 2, "C" -> 3)或val map = Map(("a", 1), ("b", 2), ("c", 3))
+  * // 取值　赋值
+  * map("a")
+  * map.getOrElse("d", 0)
+  * map("b") = 22
+  * map += ("e" -> 8, "f" -> 9)
+  * map -= ("f")
+  * // 迭代
+  * for ((k, v) <- map)
+  * // 交换k,v
+  * for ((k, v) <- map) yield (v, k)
+  * //keySet和values
+  *
+  *
   * 映射 Map
   *
   * 注意 scala中 有两种 Map (一个是immutable包下的Map 该Map中的内容不可变   另一个是mutable包下的Map 该Map中的内容可变)

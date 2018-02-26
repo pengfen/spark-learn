@@ -4,6 +4,28 @@ package scala.basic
   * Scala中的 + - * / % 等操作符的作用与Java一样 位操作符 & | >> << 也一样 只是有一点特别的
   * 这些操作符实际上是方法 a + b ---> a.+(b)  a 方法 b ---> a.方法(b)
   *
+  * 方法
+  * a 方法 b 等价于 a.方法(b)
+  * val a, b = 10
+  * a + b 等价于 a.+(b)
+  * 1 to 10 等价于 1.to(10)
+  * 函数
+  * def fun(x: Int): Int = x + 1
+  * //注意: 参数类型必须声明　返回类型可以不声明　函数是递归的必须声明返回类型
+  * def fac(n: Int): Int = {if(n <= 0) 1 else n * fac(n - 1)}
+  * // 函数默认参数
+  * def fun(a: Int, b: Int = 100) = a + b
+  * // 可变参数
+  * def sum(args: Int*) = {var result = 0; for(i <- args) result += i; println(result)}
+  * 无返回值的函数
+  * def fun1(x: Int) {println(x)}
+  * 或 def fun2(x: Int): Unit = {println(x)}
+  * 匿名函数
+  * // 没有定义方法名字的函数
+  * (x: Int) => x + 1
+  * // 将匿名函数赋给变量
+  * val fun = (x: Int) => x + 1
+  * 
   *
   * 方法和函数的区别
   *

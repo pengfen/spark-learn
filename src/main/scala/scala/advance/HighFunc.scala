@@ -1,5 +1,14 @@
 package scala.advance
 
+/**
+  * 高阶函数
+  * def fun(f: Double => Double) = {f(100)}
+  * fun((x: Double) => 2 * x)
+  * fun(sqrt _)
+  * val fun: Int => (Int, Int) = {x => (x, x * 2)}
+  * fun(100)
+  * val fun: (Int, Double) => (Double, Int) = {(x,y) => (y, x)}
+  */
 object HighFunc {
 
   val func: Int => Int = {x => x * x}

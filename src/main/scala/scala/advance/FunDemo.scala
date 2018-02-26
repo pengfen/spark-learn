@@ -1,5 +1,13 @@
 package scala.advance
 
+/**
+  * 柯里化
+  * 将原来接受两个参数的函数编程接受一个参数的函数的过程
+  * def fun(x: Int)(y: Int) = x * y
+  * fun(6)(7)
+  * fun(6) // (y: Int) => 6 * y
+  * fun(7) // 42
+  */
 object FunDemo {
   def main(args: Array[String]) {
     def f2(x: Int) = x * 2

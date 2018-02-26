@@ -1,8 +1,8 @@
 1. intro.html 高阶函数介绍
 
-2. 编写 HighFunc
+2. 编写 HighFunc　(高阶函数)
 
-3. 编写 FunDemo
+3. 编写 FunDemo (柯里化)
 
 4. 编写 ImplicitValue (隐式转换)
 

@@ -4,6 +4,13 @@ package scala.basic
   * 循环有for 和 while
   *
   * for (i <- 表达式/数组/集合)
+  *
+  * for (i <- 0 to 5) println(i)
+  * for (i <- 0 until 10) println(i)
+  * for (i <- 1 to 3; j <- 1 to 3 if i != j) {println((10 * i + j) + " ")}
+  * for (i <- 1 to 10 if i % 2 == 0) yield i
+  * for (i <- 1 to 10) yield i % 3
+  *
   */
 object ForDemo {
   def main(args: Array[String]): Unit = {

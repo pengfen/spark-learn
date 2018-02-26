@@ -4,7 +4,7 @@ intro.html (介绍 安装）
 
 2. 编写 Master
 
-3. 编写 VariDemo 变量
+3. 编写 VariDemo (变量, 懒值)
 
 4. 编写 TypeDemo 类型
 

@@ -4,6 +4,16 @@ import scala.collection.mutable.ArrayBuffer
 
 /**
   * 变长数组
+  * ArrayBuffer类似Java中的ArrayList
+  * val a = ArrayBuffer[Int]()或val a = new ArrayBuffer[Int]
+  * a += 1 //在尾端添加元素
+  * a += (1, 2, 3) // 追加多个元素
+  * a ++= ArrayBuffer(7, 8, 9) // 追加集合
+  * a.trimEnd(2) // 移除最后两个元素
+  * a.insert(2, 6, 7) // 从下标2之前插入6, 7
+  * a.remove(2, 2) // 从下标2开始移除2个元素
+  * val b = a.toArray // 转变成定长数据组
+  * b.toBuffer // 转变成变长数据组
   */
 object ArrayBufferDemo {
   def main(args: Array[String]): Unit = {

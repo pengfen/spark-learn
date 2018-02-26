@@ -2,6 +2,10 @@ package scala.basic
 
 /**
   * 元组
+  * 元组是不同类型元素的集合
+  * val t = ("hadoop", 1000, "spark")
+  * val a = t._3 //元组中的下标是从1开始
+  * "NewYork".partition(_.isUpper)
   *
   * 下划线
   */
