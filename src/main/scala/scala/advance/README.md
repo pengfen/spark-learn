@@ -22,4 +22,8 @@
 
 12. 编写 MyPreDef
 
-13. 编写　MissLeft
+13. 编写 MissLeft
+
+14. 编写 MissRight
+
+15. 编写 MrRight
