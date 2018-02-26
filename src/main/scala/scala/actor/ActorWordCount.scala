@@ -1,5 +1,7 @@
 package scala.actor
 
+import java.io.File
+
 import scala.actors.{Actor, Future}
 import scala.collection.mutable.{HashSet, ListBuffer}
 import scala.io.Source
@@ -15,6 +17,9 @@ class Task extends Actor {
     loop {
       react {
         case SubmitTask(filename) => {
+          //val lines = Source.fromFile(new File(filename)).getLines().toList
+          //val result = lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.length)
+          //val result = lines.flatMap(_.split(" ")).map((_, 1)).groupBy(_._1).mapValues(_.foldLeft(0)(_ + _._2))
           //局部统计, 结果是Map[String, Int]
           val result = Source.fromFile(filename).getLines().flatMap(_.split(" ")).map((_, 1)).toList
             .groupBy(_._1).mapValues(_.size)
@@ -66,6 +71,8 @@ object ActorWordCount {
     //List((hello, 5), (tom,3), (helllo, 2), (jerry, 2))
     val fr = resultList.flatMap(_.reslut).groupBy(_._1).mapValues(_.foldLeft(0)(_+_._2))
     println(fr) // Map(tom -> 4, jerry -> 2, hello -> 6)
+    //val finalResult = resultList.map(_.result).flatten.groupBy(_._1).mapValues(x => x.foldLeft(0)(_ + _._2))
+    //println(finalResult)
 
   }
 }
