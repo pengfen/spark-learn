@@ -10,6 +10,10 @@ scala.thread   java线程
 
 scala.akka  　　scala并发编程
 
+scala.rpc       akka实现rpc
+
+scala.self_rpc  自定义rpc
+
 scala.advance 　scala高级特性
 
 数据文件 /home/ricky/data/scala

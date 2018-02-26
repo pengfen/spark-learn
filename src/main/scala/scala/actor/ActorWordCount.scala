@@ -1,4 +1,4 @@
-package cn.itcast.actor
+package scala.actor
 
 import scala.actors.{Actor, Future}
 import scala.collection.mutable.{HashSet, ListBuffer}
