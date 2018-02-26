@@ -74,3 +74,6 @@ intro.html (介绍 安装）
 33. 编写 Flyable
 
 34. Case (匹配) ---> cases 包
+
+
+35. 编写 UpperBound (泛型)

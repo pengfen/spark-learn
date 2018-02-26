@@ -20,7 +20,6 @@ object MainApp{
     //导入隐式转换
     import RichFile._
     //import RichFile.file2RichFile
-    println(new File("c://words.txt").read)
-
+    println(new File("/home/ricky/data/scala/words.txt").read)
   }
 }
