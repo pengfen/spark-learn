@@ -24,4 +24,13 @@ case class RegisteredWorker(masterUrl: String) extends RemoteMessage
   */
 case object SendHeartBeat
 
-case class HeartBeat(id : String)
+/**
+  * 心跳 Worker ---> Master
+  * @param id  worker_id
+  */
+case class HeartBeat(id : String) extends RemoteMessage
+
+/**
+  * Master ---> self
+  */
+case object CheckTimeOutWorker

@@ -19,7 +19,8 @@ class Worker(val masterHost: String, val masterPort: Int, val memory: Int, val c
   var master : ActorSelection = _
   // 生成一个UUID，作为Worker的标识
   val workerId = UUID.randomUUID().toString
-  val CHECK_INTERVAL = 10000
+  // 发送心跳的时间间隔
+  val HEART_INTERVAL = 10000
 
   // 建立连接 ---> 构造方法执行完执行一次
   override def preStart(): Unit = {
@@ -40,11 +41,12 @@ class Worker(val masterHost: String, val masterPort: Int, val memory: Int, val c
       println(masterUrl)
       // 定时发送心跳 ---> 启动定时器发送心跳
       import context.dispatcher
-      //启动定时任务，向Master发送心跳
-      context.system.scheduler.schedule(0 millis, CHECK_INTERVAL millis, self, SendHeartBeat)
+      //启动定时任务，向Master发送心跳+
+      context.system.scheduler.schedule(0 millis, HEART_INTERVAL millis, self, SendHeartBeat)
     }
 
     case SendHeartBeat => {
+      println("send heartbeat to master")
       master ! HeartBeat(workerId)
     }
 

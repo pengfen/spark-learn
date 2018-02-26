@@ -24,18 +24,18 @@ class Worker(val masterHost: String, val masterPort: Int) extends Actor{
 
 object Worker {
   def main(args: Array[String]): Unit = {
-//    val host = "127.0.0.1"
-//    val port = 9992
-//    val masterHost = "127.0.0.1"
-//    val masterPort = 9991
+    val host = "127.0.0.1"
+    val port = 9992
+    val masterHost = "127.0.0.1"
+    val masterPort = 9991
 
-    if (args.length != 4) {
-      // 127.0.0.1 9992 127.0.0.1 9991
-      System.err.println("Usage: host port masterHost masterPort")
-      System.exit(1)
-    }
-
-    val Array(host, port, masterHost, masterPort) = args
+//    if (args.length != 4) {
+//      // 127.0.0.1 9992 127.0.0.1 9991
+//      System.err.println("Usage: host port masterHost masterPort")
+//      System.exit(1)
+//    }
+//
+//    val Array(host, port, masterHost, masterPort) = args
 
     //创建ActorSystem的必要参数
     val configStr =

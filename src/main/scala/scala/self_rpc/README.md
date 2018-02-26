@@ -34,3 +34,5 @@ AKKA (http://akka.io)
 3. 编写 Master 类
 
 4. 编写 Worker 类
+
+启动 Master (查看控制台) ---> 启动 Worker (查看控制台) ---> 停止 Worker ---> 查看Master的控制台

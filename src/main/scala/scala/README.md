@@ -14,6 +14,6 @@ scala.rpc       akka实现rpc
 
 scala.self_rpc  自定义rpc
 
-scala.advance 　scala高级特性
+scala.advance 　scala高级特性 (高阶函数)
 
 数据文件 /home/ricky/data/scala

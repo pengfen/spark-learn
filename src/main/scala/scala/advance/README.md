@@ -1,4 +1,4 @@
-1. a.html 高阶函数
+1. intro.html 高阶函数介绍
 
 2. 编写 FunDemo
 
