@@ -56,6 +56,7 @@ Client只要提交完作业之后就可以关掉，因为作业已经在YARN上�
 1） export HADOOP_CONF_DIR=/home/ricky/app/hadoop-2.6.0-cdh5.7.0/etc/hadoop
 2) $SPARK_HOME/conf/spark-env.sh
 
+运行spark第一个程序 ---> 该算法是利用蒙特　卡罗算法求PI
 spark-submit \
 --class org.apache.spark.examples.SparkPi \
 --master yarn-cluster \

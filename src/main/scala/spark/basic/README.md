@@ -1,7 +1,5 @@
 数据输入源 /home/ricky/data/spark/basic
 
-basic.html  基础
-
 [jdk.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/jdk.md)    jdk安装
 
 [tomcat.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/tomcat.md) tomcat安装
@@ -24,12 +22,15 @@ basic.html  基础
 
 [kafka.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/kafka.md) kafka安装
 
-arith.html spark 算子
+spark-install.html spark集群
+
+basic.html  基础
 
 编写 WordCount
 
 编写 UserLocation
 
+spark 算子 ---> rdd包
 
 elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
