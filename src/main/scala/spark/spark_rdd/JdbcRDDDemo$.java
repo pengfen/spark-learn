@@ -1,9 +1,4 @@
-package com.spark_rdd
-
-import java.sql.DriverManager
-
-import org.apache.spark.rdd.JdbcRDD
-import org.apache.spark.{SparkConf, SparkContext}
+package spark.spark_rdd;
 
 object JdbcRDDDemo {
 

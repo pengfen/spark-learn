@@ -34,3 +34,5 @@ spark 算子 ---> rdd包
 
 elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
+
+数据 /home/ricky/data/spark/basic

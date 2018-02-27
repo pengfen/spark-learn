@@ -1,8 +1,4 @@
-package com.spark_rdd
-
-import java.net.URL
-
-import org.apache.spark.{SparkConf, SparkContext}
+package spark.spark_rdd;
 
 /**
   * 取出学科点击前三的

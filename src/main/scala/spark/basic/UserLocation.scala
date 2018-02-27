@@ -7,7 +7,10 @@ object UserLocation {
     val conf = new SparkConf().setAppName("UserLocation").setMaster("local[2]")
     val sc = new SparkContext(conf)
 
-    val rdd1 = sc.textFile("/home/ricky/data/log_1.log").map(x => {
+    //val in = "file:///home/ricky/data/spark/basic/log_1.log"
+    //val in = "/home/ricky/data/spark/basic/log_1.log"
+    //val in = "hdfs://ricky:9000/log_1.log"
+    val rdd1 = sc.textFile("/home/ricky/data/spark/basic/log_1.log").map(x => {
       val arr = x.split(",")
       val mb = (arr(0), arr(2))
       val flag = arr(3)
@@ -20,7 +23,7 @@ object UserLocation {
     val rdd2 = rdd1.reduceByKey(_+_)
     println(rdd2)
 
-    val rdd3 = sc.textFile("/home/ricky/data/info_log.txt").map(x => {
+    val rdd3 = sc.textFile("/home/ricky/data/spark/basic/info_log.txt").map(x => {
       val arr = x.split(",")
       val bs = arr(0)
       (bs, (arr(1), arr(2)))

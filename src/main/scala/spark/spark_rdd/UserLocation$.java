@@ -1,6 +1,4 @@
-package com.spark_rdd
-
-import org.apache.spark.{SparkConf, SparkContext}
+package spark.spark_rdd;
 
 /**
   * 根据日志统计出每个用户在站点所呆时间最长的前2个的信息
