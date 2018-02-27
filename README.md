@@ -7,37 +7,37 @@ version:1.0 --->
 Maven home durectory: /home/ricky/app/maven-3.3.9
 Local repository: /home/ricky/repository ---> Project name：spark-learn
 
-2. 添加依赖
+2. 添加依赖    
 <scala.version>2.11.8</scala.version>
 
-  <properties>
-    <scala.version>2.11.8</scala.version>
-  </properties>
+  <properties>    
+    <scala.version>2.11.8</scala.version>    
+  </properties>    
 
-  <dependencies>
-    <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
-    </dependency>
-  </dependencies>
+  <dependencies>    
+    <dependency>    
+      <groupId>org.scala-lang</groupId>    
+      <artifactId>scala-library</artifactId>    
+      <version>${scala.version}</version>    
+    </dependency>    
+  </dependencies>    
 
   import changes // 导入改变后pom.xml
 
-3. 删除无关的文件
-删除 src/main/scala/com 目录下 App
-删除 src/main/scala/com 目录下 AppTest MySpec
+3. 删除无关的文件    
+删除 src/main/scala/com 目录下 App    
+删除 src/main/scala/com 目录下 AppTest MySpec    
 
-4. 使用上传项目至github
-github上创建项目 spark-learn
+4. 使用上传项目至github    
+github上创建项目 spark-learn    
 
 cd /home/ricky/IdeaProjects/spark-learn
 git init
 
-vi .gitignore  // 设置忽略上传的文件
-.gitignore     // 忽略文件
-.idea/         // 忽略目录
-target/        // 忽略目录
+vi .gitignore  // 设置忽略上传的文件    
+.gitignore     // 忽略文件    
+.idea/         // 忽略目录    
+target/        // 忽略目录    
 
 git add .    
 git commit -a -m f    
