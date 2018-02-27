@@ -1,7 +1,8 @@
 zookeeper 安装(单节点)
 
-1. 下载 http://zookeeper.apache.org/
-百度云下载 https://pan.baidu.com/s/1c3ZEbmw
+1. 下载
+[官网下载](http://zookeeper.apache.org/)
+[百度云下载](https://pan.baidu.com/s/1c3ZEbmw)
 
 2. 解压安装
 tar -zxvf zookeeper-3.4.5-cdh5.7.0 -C ~/app/

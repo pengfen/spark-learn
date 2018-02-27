@@ -1,7 +1,8 @@
 hadoop安装
 1. 下载
-archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz
-百度云安装 https://pan.baidu.com/s/1smLGv85
+[官网下载](hadoop.apache.org)
+[cloud下载](archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz)
+[百度云下载](https://pan.baidu.com/s/1smLGv85)
 
 2. 解压安装
 tar -zxvf hadoop-2.6.0-cdh5.7.0.tar.gz -C ~/app/

@@ -1,7 +1,7 @@
 hbase 安装
 1. 下载
-archive.cloudera.com/cdh5/cdh/5/hbase-1.2.0-cdh5.7.0.tar.gz
-百度云下载 https://pan.baidu.com/s/1nwuKjfN
+[cloud下载](archive.cloudera.com/cdh5/cdh/5/hbase-1.2.0-cdh5.7.0.tar.gz)
+[百度云下载](https://pan.baidu.com/s/1nwuKjfN)
 
 2. 解压安装
 tar -zxvf hbase-1.2.0-cdh5.7.0.tar.gz -C ~/app/

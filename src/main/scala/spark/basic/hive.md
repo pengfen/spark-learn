@@ -1,7 +1,9 @@
 Hive环境
 
-1. Hive 下载 http://archive.cloudera.com/cdh5/chd/5/
+1. Hive 下载
+[官网下载](http://archive.cloudera.com/cdh5/chd/5/)
 wget http://archive.cloudera.com/cdh5/chd/5/hive-1.1.0-cdh5.7.0.tar.gz
+[百度云下载]()
 
 2. 解压安装
 tar -zxvf hive-1.1.0-cdh5.7.0.tar.gz -C ~/app/

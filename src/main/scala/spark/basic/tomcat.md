@@ -17,3 +17,5 @@ netstat -anpt | grep 2465
 
 7. 通过浏览器访问tomcat
 http://192.168.0.101:8080/
+
+tomcat (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
