@@ -15,5 +15,5 @@ export PATH=$PATH:$SCALA_HOME/bin
 4. 检测
 scala
 
-5. 删除无用命令  
+5. 删除无用命令
 删除所有 *.bat ---> cd bin ---> rm -rf *.bat

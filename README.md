@@ -39,10 +39,10 @@ vi .gitignore  // 设置忽略上传的文件
 .idea/         // 忽略目录
 target/        // 忽略目录
 
-git add .
-git commit -a -m f
-git remote add origin https://github.com/pengfen/spark-learn.git
-git push -u origin master
+git add .    
+git commit -a -m f    
+git remote add origin https://github.com/pengfen/spark-learn.git    
+git push -u origin master    
 
 [python](https://github.com/pengfen/spark-learn/tree/master/python) python 学习
 
