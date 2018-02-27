@@ -1,7 +1,7 @@
 scala 的安装
 
 1. 下载scala
-[官网下载](http://www.scala-lang.org/download/2.11.8.html)s
+[官网下载](http://www.scala-lang.org/download/2.11.8.html)
 [百度云下载](https://pan.baidu.com/s/1o92QyHs)
 
 2. 解压安装scala
