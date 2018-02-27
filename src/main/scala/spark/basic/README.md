@@ -2,17 +2,15 @@
 
 basic.html  基础
 
-jdk.md    jdk安装
+[jdk.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/jdk.md)    jdk安装
 
-tomcat.md tomcat安装
+[tomcat.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/tomcat.md) tomcat安装
 
-maven.md maven安装
+[maven.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/maven.md) maven安装
 
 zk.html    zk安装
 
 scala.html scala安装
-
-
 
 hadoop.html hadoop安装
 
