@@ -39,6 +39,22 @@ http://localhost:8080/
 bin/spark-shell --master spark://ricky:7077
 bin/spark-shell --master spark://ricky:7077 --executor-cores 2 --executor-memory 2g
 
+安装配置spark 修改spark配置文件(两个配置文件spark-env.sh和slaves)
+vim spark-env.sh
+export JAVA_HOME=/home/ricky/app/jdk1.8.0_144 #指定JAVA_HOME位置
+export SPARK_MASTER_IP=ricky #指定spark老大Master的IP
+export SPARK_MASTER_PORT=7077 #指定spark老大Master的端口
+export SPARK_WORKER_CORES=2 #指定可用的CPU内核数量(默认 ---> 所有可用)
+export SPARK_WORKER_MEMORY=2g #作业可使用的内存容量　默认格式为1000m或者2g(默认 ---> 所有RAM去掉给操作系统用的1GB)
+
+在slaves文件中加入所有worker的地址
+ricky2
+ricky3
+ricky4
+
+配置高可用 ---> 配置两个spark master实现高可用(首先要配置zookeeper集群 在spark-env.sh添加SPARK_DAEMON_JAVA_OPTS)
+export SPARK_DAEMON_JAVA_OPTS="-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=192.168.1.3:2181 -Dspark.deploy.zookeeper.dir=/home/ricky/app/tmp/spark"
+
 7. yarn模式 (生产上使用该模式 统一使用YARN进行整个集群作业的资源调度)
 Client
 Driver运行在Client端(提交Spark作业的机器)

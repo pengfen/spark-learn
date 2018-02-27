@@ -32,6 +32,10 @@ basic.html  基础
 
 spark 算子 ---> rdd包
 
+spark-test.html spark调试
+
+spark-build.html spark编译
+
 elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
 

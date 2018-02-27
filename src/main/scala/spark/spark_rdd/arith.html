@@ -33,7 +33,7 @@ res34: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[86] at map at 
 scala> sc.textFile("hdfs://ricky:9200/wc").map(x => (x, 1))
 res35: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[89] at map at <console>:25
 
-scala> sc.textFile("hdfs://ricky:9200/wc").map(x => (x, 1)).count
+scala> sc.textFile("hdfs://ricky:9200/wc").map(x => (x, 1)).count // count(action) 开始计算
 res36: Long = 5
 
 scala> sc.textFile("hdfs://ricky:9200/wc").map(x => (x, 1)).collect
