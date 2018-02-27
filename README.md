@@ -46,4 +46,6 @@ git push -u origin master
 
 [python](https://github.com/pengfen/spark-learn/tree/master/python) python 学习
 
+[scala](https://github.com/pengfen/spark-learn/tree/master/src/main/scala/scala) scala 学习
+
 src spark,scala,flume,kafka ... 学习
