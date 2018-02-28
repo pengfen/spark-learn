@@ -1,6 +1,8 @@
 package spark.hadoop;
 
 
+import com.hadoop.SomeService;
+
 public class SomeServiceImpl implements SomeService {
 
     public String heartBeat(String name) {

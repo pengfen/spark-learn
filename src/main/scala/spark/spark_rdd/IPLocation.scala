@@ -1,4 +1,7 @@
-package spark.spark_rdd;
+package spark.spark_rdd
+
+import org.apache.spark.{SparkConf, SparkContext}
+;
 
 object IPLocation {
 

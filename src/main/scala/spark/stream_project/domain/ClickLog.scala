@@ -1,4 +1,4 @@
-package com.stream_project.domain
+package spark.stream_project.domain
 
 /**
   * 清洗后的日志信息

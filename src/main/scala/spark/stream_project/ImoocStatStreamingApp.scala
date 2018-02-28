@@ -1,4 +1,4 @@
-package com.stream_project
+package spark.stream_project
 
 import com.stream_project.dao.{CourseClickCountDAO, CourseSearchClickCountDAO}
 import com.stream_project.domain.{ClickLog, CourseClickCount, CourseSearchClickCount}

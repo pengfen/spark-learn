@@ -42,27 +42,27 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object WordCount {
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
-      // hdfs://ricky:9000/wc.txt hdfs://ricky:9000/out
-      System.err.println("Usage: input_path output_path ")
-      System.exit(1)
-    }
-
-    val Array(in, out) = args
+//    if (args.length != 2) {
+//      // hdfs://ricky:9000/wc.txt hdfs://ricky:9000/out
+//      System.err.println("Usage: input_path output_path ")
+//      System.exit(1)
+//    }
+//
+//    val Array(in, out) = args
 
     // 1. 使用file
     //val in = "file:///home/ricky/data/spark/basic/wc.txt"
     //val in = "/home/ricky/data/spark/basic/wc.txt"
-    //val in = "hdfs://ricky:9000/wc.txt"
+    val in = "hdfs://ricky:9000/wc.txt"
     // 注意 1. cd $HADOOP_HOME ---> sbin/start-dfs.sh hdfs已启动
     // 2. out目录不存在 hadoop fs -rmr /out
-    //val out = "hdfs://ricky:9000/out"
+    val out = "hdfs://ricky:9000/out"
 
     // spark 集群的入口
     val conf = new SparkConf()
 
     // A master URL must be set in your configuration 本地测试时如果没有配置master会出现此错误
-    // conf.setAppName("WC").setMaster("local[2]")
+    conf.setAppName("WC").setMaster("local[2]")
 
     val sc = new SparkContext(conf)
 

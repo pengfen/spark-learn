@@ -1,4 +1,4 @@
-package com.stream_kafka
+package spark.stream_kafka
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils

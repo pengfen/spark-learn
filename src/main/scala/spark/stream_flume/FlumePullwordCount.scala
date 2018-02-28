@@ -1,4 +1,4 @@
-package com.stream_flume
+package spark.stream_flume
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.flume.FlumeUtils

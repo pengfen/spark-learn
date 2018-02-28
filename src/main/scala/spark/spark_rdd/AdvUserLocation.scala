@@ -1,4 +1,7 @@
-package spark.spark_rdd;
+package spark.spark_rdd
+
+import org.apache.spark.{SparkConf, SparkContext}
+;
 
 /**
   * ((fields(0),fields(2)), timeLong) -->reduceByKey(_+_).map --> (lac, (mobile, time))

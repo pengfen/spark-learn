@@ -1,4 +1,4 @@
-package com.stream_kafka
+package spark.stream_kafka
 
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf

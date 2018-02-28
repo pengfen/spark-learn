@@ -23,9 +23,9 @@ object MissRight {
     val g1 = new Girl("hatanao", 98, 28)
     val g2 = new Girl("sora", 95, 33)
 
-    import MyPreDef.girlOrdering
+    //import MyPreDef.girlOrdering
     //val g = mr.choose(g1, g2)
-    val g = mr.select(g1, g2)
-    println(g.name)
+//    val g = mr.select(g1, g2)
+//    println(g.name)
   }
 }
