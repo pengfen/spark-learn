@@ -1,3 +1,11 @@
+start-master.sh
+
+spark-shell \
+--master spark://ricky:7077 \
+--executor-memory 1g \
+--total-executor-cores 2 \
+--jars /home/ricky/software/mysql-connector-java-5.1.27-bin.jar
+
 #常用Transformation(即转换，延迟加载)
 
 #通过并行化scala集合创建RDD

@@ -20,10 +20,11 @@ Partitioner函数不但决定了RDD本身的分片数量，也决定了parent RD
 按照“移动数据不如移动计算”的理念，Spark在进行任务调度的时候，会尽可能地将计算任务分配到其所要处理数据块的存储位置。
 
 3. 创建RDD
-1）由一个已经存在的Scala集合创建。
+1）由一个已经存在的Scala集合创建。(通过scala集合或数组以并行化的方式创建RDD)
 val rdd1 = sc.parallelize(Array(1,2,3,4,5,6,7,8))
 
 2）由外部存储系统的数据集创建，包括本地的文件系统，还有所有Hadoop支持的数据集，比如HDFS、Cassandra、HBase等
+通过HDFS支持的文件系统创建RDD RDD里面没有真正要计算的数据　只记录了一下元数据
 val rdd2 = sc.textFile("hdfs://ricky:9000/words.txt")
 
 4. RDD编写API

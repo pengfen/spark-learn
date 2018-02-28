@@ -2,7 +2,7 @@ spark程序流程
 
 1. 启动spark-shell
 cd $SPARK_HOME
-bin/spark-shell --master spark://ricky:7077 --executor-memory 512m --total-executor-cores 2
+bin/spark-shell --master spark://ricky:7077 --executor-memory 512m --total-executor-cores 2 (先启动start-master.sh)
 bin/spark-shell --master local[2]
 
 2. 上传文件到hdfs上

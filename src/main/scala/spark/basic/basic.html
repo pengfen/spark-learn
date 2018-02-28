@@ -96,7 +96,7 @@ bin/spark-shell --master spark://ricky:7077 --executor-memory 512m --total-execu
 --total-executor-cores 2
 
 参数说明：
---master spark://node1.itcast.cn:7077 指定Master的地址
+--master spark://ricky:7077 指定Master的地址
 --executor-memory 2g 指定每个worker可用内存为2G
 --total-executor-cores 2 指定整个集群使用的cup核数为2个
 
@@ -145,7 +145,7 @@ rdd5: org.apache.spark.rdd.RDD[List[String]] = ParallelCollectionRDD[28] at para
 scala> rdd5.flatMap(_.flatMap(_.split(" "))).collect
 res7: Array[String] = Array(a, b, c, a, b, b, e, f, g, a, f, g, h, i, j, a, a, b)
 
-scala> val rdd6 = sc.parallelize(List(5, 6, 4, 7))
+scala> val rdd6 = sc.parallelize(List(5, 6, 4, 7)) // 使用spark://ricky:7077
 rdd6: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[30] at parallelize at <console>:24
 
 scala> val rdd7 = sc.parallelize(List(1, 2, 3, 4))
