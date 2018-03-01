@@ -1,6 +1,7 @@
-package com.spark_sql
+package spark.sql
 
 import java.sql.DriverManager
+;
 
 /**
   * 通过JDBC的方式访问

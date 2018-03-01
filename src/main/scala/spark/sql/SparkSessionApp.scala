@@ -1,6 +1,7 @@
-package com.spark_sql
+package spark.sql
 
 import org.apache.spark.sql.SparkSession
+;
 
 /**
   * SparkSession的使用

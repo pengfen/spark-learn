@@ -1,28 +1,11 @@
-package com.spark_sql
+package spark.sql
 
 import java.util.Properties
 
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
-import org.apache.spark.{SparkConf, SparkContext}
-
-// spark sql 可以通过jdbc从关系型数据库中读取数据的方式创建DataFrame 通过对DataFrame 一系列的计算后 还可以将数据再写回关系型数据库中
-// val jdbcDF = sqlContext.read.format("jdbc").options(Map("url" -> "jdbc:mysql://localhost:3306/spark-learn", "driver" -> "com.mysql.jdbc.Driver", "dbtable" -> "person", "user" -> "root", "password" -> "123456")).load()
-// jdbcDF.show()
-//id  name   age
-//3   kitty  30
-//2   jerry  20
-
-// 1. 编写代码
-
-// 2. 创建表
-//create table person (
-//id int unsigned not null primary key auto_increment,
-//name varchar(30) not null default "" comment "姓名",
-//age int not null default 0 comment "年龄"
-//) engine=innodb default charset=utf8;
-
-// 3. 运行代码
+;
 
 // 4. 查看结果
 //mysql> select * from person;
