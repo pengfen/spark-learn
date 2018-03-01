@@ -1,7 +1,4 @@
-package com.spark_data
-
-import org.apache.spark.sql.types.{StringType, IntegerType, StructField, StructType}
-import org.apache.spark.sql.{Row, SparkSession}
+package spark.data;
 
 /**
   * DataFrame和RDD的互操作
@@ -126,4 +123,3 @@ object DataFrameRDDApp {
   case class Info(id: Int, name: String, age: Int) // 相当于 java bean
 
 }
-

@@ -1,8 +1,4 @@
-package com.spark_data
-
-import java.util.Properties
-
-import org.apache.spark.sql.SparkSession
+package spark.data;
 
 /**
   * 使用外部数据源综合查询Hive和MySQL的表数据

@@ -42,6 +42,8 @@
 
 7. 编写代码 SQLDemo (DataFrame介绍)
 
+数据源 ---> data包
+
 8. 编写代码 InferringSchema (通过反射推断Schema)
 将程序打成jar包，上传到spark集群，提交Spark任务
 /usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \

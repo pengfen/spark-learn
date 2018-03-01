@@ -1,6 +1,4 @@
-package com.spark_data
-
-import org.apache.spark.sql.SparkSession
+package spark.data;
 
 /**
   * Schema Infer

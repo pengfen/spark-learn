@@ -6,14 +6,15 @@ spark.rdd spark rdd
 
 spark.pro_user 用户在小区的停留时间
 
-com.spark_game spark操作游戏日志
+spark.spark_game spark操作游戏日志
+
 
 spark sql 介绍
-com.spark
+spark.sql
 
-com.spark_data spark 操作数据
+spark.data spark 操作数据
 
-com.spark_project spark sql 项目
+spark.project spark sql 项目
 
 spark streaming 介绍
 com.spark_stream spark streaming 相关介绍
