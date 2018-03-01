@@ -1,7 +1,7 @@
-package com.spark_project
+package spark.pro_sql
 
-import com.spark_project.utils.DateUtils
-import org.apache.spark.sql.{SaveMode, SparkSession}
+import org.apache.spark.sql.SparkSession
+import spark.pro_sql.utils.DateUtils
 
 /**
   * 第一步清洗：抽取出我们所需要的指定列的数据

@@ -1,4 +1,4 @@
-package com.spark_project.domain
+package spark.pro_sql.domain
 
 /**
   * 每天课程访问次数实体类

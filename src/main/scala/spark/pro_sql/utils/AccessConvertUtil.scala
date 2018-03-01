@@ -1,4 +1,4 @@
-package com.spark_project.utils
+package spark.pro_sql.utils
 
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType}

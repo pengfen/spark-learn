@@ -1,10 +1,10 @@
-package com.spark_project
+package spark.pro_sql
 
-import com.spark_project.dao.StatDAO
-import com.spark_project.domain.{DayCityVideoAccessStat, DayVideoAccessStat, DayVideoTrafficsStat}
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SparkSession}
+import spark.pro_sql.dao.StatDAO
+import spark.pro_sql.domain.{DayCityVideoAccessStat, DayVideoAccessStat, DayVideoTrafficsStat}
 
 import scala.collection.mutable.ListBuffer
 

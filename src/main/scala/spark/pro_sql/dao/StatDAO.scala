@@ -1,9 +1,9 @@
-package com.spark_project.dao
+package spark.pro_sql.dao
 
 import java.sql.{Connection, PreparedStatement}
 
-import com.spark_project.domain.{DayCityVideoAccessStat, DayVideoAccessStat, DayVideoTrafficsStat}
-import com.spark_project.utils.MySQLUtils
+import spark.pro_sql.domain.{DayCityVideoAccessStat, DayVideoAccessStat, DayVideoTrafficsStat}
+import spark.pro_sql.utils.MySQLUtils
 
 import scala.collection.mutable.ListBuffer
 

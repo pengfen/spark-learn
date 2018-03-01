@@ -1,7 +1,7 @@
-package com.spark_project
+package spark.pro_sql
 
-import com.spark_project.utils.AccessConvertUtil
 import org.apache.spark.sql.{SaveMode, SparkSession}
+import spark.pro_sql.utils.AccessConvertUtil
 
 /**
   * 使用Spark完成我们的数据清洗操作：运行在YARN之上
