@@ -38,10 +38,39 @@
 5. 编写代码 SparkSQLThriftServerApp
 
 
-6. 编写代码 SQLDemo
+6. intro.html spark sql介绍
 
-7. 编写代码 InferringSchema
+7. 编写代码 SQLDemo (DataFrame介绍)
 
-8. 编写代码 SpecifyingSchema
+8. 编写代码 InferringSchema (通过反射推断Schema)
+将程序打成jar包，上传到spark集群，提交Spark任务
+/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
+--class cn.itcast.spark.sql.InferringSchema \
+--master spark://node1.itcast.cn:7077 \
+/root/spark-mvn-1.0-SNAPSHOT.jar \
+hdfs://node1.itcast.cn:9000/person.txt \
+hdfs://node1.itcast.cn:9000/out
 
-9. 编写代码 JdbcRDD
+查看运行结果
+hdfs dfs -cat  hdfs://node1.itcast.cn:9000/out/part-r-*
+
+9. 编写代码 SpecifyingSchema (通过StructType直接指定Schema)
+将程序打成jar包，上传到spark集群，提交Spark任务
+/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
+--class cn.itcast.spark.sql.InferringSchema \
+--master spark://node1.itcast.cn:7077 \
+/root/spark-mvn-1.0-SNAPSHOT.jar \
+hdfs://node1.itcast.cn:9000/person.txt \
+hdfs://node1.itcast.cn:9000/out1
+
+查看结果
+hdfs dfs -cat  hdfs://node1.itcast.cn:9000/out1/part-r-*
+
+10. 编写代码 JdbcRDD (将数据写入到MySQL中)
+3.将Jar包提交到spark集群
+/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
+--class cn.itcast.spark.sql.JdbcRDD \
+--master spark://node1.itcast.cn:7077 \
+--jars /usr/local/spark-1.5.2-bin-hadoop2.6/mysql-connector-java-5.1.35-bin.jar \
+--driver-class-path /usr/local/spark-1.5.2-bin-hadoop2.6/mysql-connector-java-5.1.35-bin.jar \
+/root/spark-mvn-1.0-SNAPSHOT.jar
