@@ -1,4 +1,4 @@
-package spark.hadoop.rpc;
+package hadoop.rpc;
 
 import hadoop.hdfs.IUserLoginService;
 import org.apache.hadoop.conf.Configuration;

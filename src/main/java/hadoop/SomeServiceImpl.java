@@ -1,7 +1,5 @@
-package spark.hadoop;
+package hadoop;
 
-
-import hadoop.SomeService;
 
 public class SomeServiceImpl implements SomeService {
 

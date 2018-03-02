@@ -1,10 +1,9 @@
-package spark.hadoop.rpc;
-
-import hadoop.hdfs.IUserLoginService;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.ipc.RPC;
+package hadoop.hdfs;
 
 import java.net.InetSocketAddress;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.ipc.RPC;
 
 public class UserLoginAction {
     public static void main(String[] args) throws Exception {

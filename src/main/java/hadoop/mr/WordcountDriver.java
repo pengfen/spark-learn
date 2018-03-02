@@ -1,6 +1,5 @@
-package spark.hadoop.mr;
+package hadoop.mr;
 
-import hadoop.mr.WordcountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
