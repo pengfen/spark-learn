@@ -1,3 +1,4 @@
+启动eclipse --->
 1. 编写 WcMapper
 
 2. 编写 WcReduce

@@ -138,3 +138,6 @@ Master Worker
 Master管理所有的Worker，进而进行资源的调度
 
 Worker管理当前计算节点，Worker会启动一个Executor来完成真正的计算
+
+
+36. 编写 scala-intro.html
