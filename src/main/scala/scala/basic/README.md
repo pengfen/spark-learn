@@ -77,3 +77,64 @@ intro.html (介绍 安装）
 
 
 35. 编写 UpperBound (泛型) ---> bound.html
+scala泛型
+
+class Person[T] {
+
+	def choose[T <: Comparable[T]](firit: T, second: T): T  = {
+		first
+	}
+}
+
+
+
+隐式转换：我自己的隐式上下文 object MyPredef{
+	implicit 函数
+	implicit 值
+}
+
+
+viewbound要求传入一个隐式转换函数
+
+class Chooser[T <% Ordered[T]] {
+	def bigger(first: T, second: T) : T = {
+		if(first > second) first else second
+	}
+}
+
+class Chooser[T] {
+	def bigger(first: T, second: T)(implicit ord: T => Ordered[T]) : T = {
+		if(first > second) first else second
+	}
+}
+
+
+contextbound要求传入一个隐式转换值
+
+class Chooser[T: Ordering] {
+	def bigger(first: T, second: T) : T = {
+		val ord = implicitly[Ordering[T]]
+		if(ord.gt(first, second)) first else second
+	}
+}
+
+class Chooser[T] {
+	def bigger(first: T, second: T)(implicit ord : Ordering[T]) : T = {
+		if(ord.gt(first, second)) first else second
+	}
+}
+
+[+T]
+[-T]
+
+
+spark
+one stack to rules them all
+
+RDD Spark-SQL Spark-Streaming Graphx MLlib
+
+Master Worker
+
+Master管理所有的Worker，进而进行资源的调度
+
+Worker管理当前计算节点，Worker会启动一个Executor来完成真正的计算

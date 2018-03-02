@@ -8,8 +8,9 @@ mapPartitionsWithIndex : 把每个partition中的分区号和对应的值拿出�
 val func = (index: Int, iter: Iterator[(Int)]) => {
 iter.toList.map(x => "[partID:" +  index + ", val: " + x + "]").iterator
 }
-val rdd1 = sc.parallelize(List(1,2,3,4,5,6,7,8,9), 2)
+val rdd1 = sc.parallelize(List(1, 2, 3, 4, 5, 6, 7, 8, 9), 2)
 rdd1.mapPartitionsWithIndex(func).collect
+res11: Array[String] = Array([partID:0, val: 1], [partID:0, val: 2], [partID:0, val: 3], [partID:0, val: 4], [partID:1, val: 5], [partID:1, val: 6], [partID:1, val: 7], [partID:1, val: 8], [partID:1, val: 9])
 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

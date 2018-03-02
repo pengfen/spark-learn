@@ -135,3 +135,43 @@ hadoop checknative -a
 [INFO] Finished at: 2018-01-18T10:31:19+08:00
 [INFO] Final Memory: 101M/452M
 [INFO] ------------------------------------------------------------------------
+
+
+
+cdh版本编译
+1.maven 3.3.9 版本 jdk 7版本
+2.export MAVEN_OPTS="-Xmx2g -Xx:ReservedCodeCacheSize=512m"
+
+下载源码包 (2.
+Choose a Spark release: 2.2.1
+
+Choose a package type: source code
+
+Download Spark: spark-2.2.1.tgz
+
+[root@apeng1 download]# tar -xvf spark-2.2.1.tgz -C /opt/app/
+[root@apeng1 download]# cd /opt/app/spark-2.2.1/
+
+http://spark.apache.org/docs/latest/
+点击 More --- Build spark
+
+echo $HADOP_HOME 查看hadoop版本
+
+./dev/make-distribution.sh --name 2.6.0-cdh5.7.0 --tgz -Pyarn -Phadoop-2.6 -Phive -Phive-thriftserver -Dhadoop.version=2.6.0-cdh5.7.0
+
+t/app/spark-2.1.0/build/mvn help:evaluate -Dexpression=project.version -Pyarn -Phadoop-2.6 -Phive -Phive-thriftserver -Dhadoop.version=2.6.0-cdh5.7.0
+[root@apeng1 spark-2.1.0]#
+[root@apeng1 spark-2.1.0]# ./build/mvn -Pyarn -Phadoop-2.6 -Phive -Phive-thriftserver -Dhadoop.version=2.6.0-cdh5.7.0 -DskipTests clean package
+exec: curl --progress-bar -L https://downloads.typesafe.com/zinc/0.3.9/zinc-0.3.9.tgz
+################################ 44.8%
+
+
+问题1：[ERROR] Failed to execute goal on project spark-launcher_2.11: Could not resolve dependencies for project org.apache.spark:spark-launcher_2.11:jar:2.2.0: Failure to find org.apache.hadoop:hadoop-client:jar:2.6.0-cdh5.7.0 in https://repo1.maven.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced -> [Help 1]
+这是因为默认的是apache的仓库，但是我们hadoop的版本写的是CDH，这时要将CDH的仓库配进来，打开spark目录下的pom.xml文件，将CDH的仓库配进去
+vi /usr/local/spark-test/app/spark-2.2.0/pom.xml 添加如下
+<repository>
+    <id>cloudera</id>
+    <name>cloudera Repository</name>
+    <url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
+</repository>
+这个下面就有要的jar包，没事可以看下 https://repository.cloudera.com/artifactory/cloudera-repos/org/apache/hadoop/hadoop-client/2.6.0-cdh5.7.0/

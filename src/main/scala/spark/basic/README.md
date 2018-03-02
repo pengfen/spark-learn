@@ -10,6 +10,7 @@
 
 [zk.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/zk.md)  zk安装
 
+[hadoop1.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/hadoop1.md) hadoop1.2.1安装
 [hadoop.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/hadoop.md) hadoop安装
 
 [hive.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/hive.md) hive安装
