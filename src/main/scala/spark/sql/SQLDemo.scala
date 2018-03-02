@@ -20,19 +20,20 @@ import org.apache.spark.sql.SQLContext
 object SQLDemo {
 
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
-      // hdfs://ricky:9200/person.txt
-      System.err.println("Usage: <SQLDemo> in_path ")
-      System.exit(1)
-    }
+//    if (args.length != 1) {
+//      // hdfs://ricky:9200/person.txt
+//      System.err.println("Usage: <SQLDemo> in_path ")
+//      System.exit(1)
+//    }
 
     val conf = new SparkConf().setAppName("SQLDemo").setMaster("local[2]")
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
 
     System.setProperty("user.name", "ricky")
-    val personRdd = sc.textFile("hdfs://ricky:9200/person.txt").map(line => {
+    val personRdd = sc.textFile("hdfs://ricky:9000/person.txt").map(line => {
       val fields = line.split(",")
+      println(fields(0))
       //Person(fields(0).toLong, fields(1), fields(2).toInt)
     })
 

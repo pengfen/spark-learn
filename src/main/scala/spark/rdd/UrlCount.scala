@@ -7,6 +7,10 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * 取出学科点击前三的
+  * 日期(年月日时分秒) 学科地址　　　　　　　
+  * 20160321102628	http://java.itcast.cn/java/course/hadoop.shtml
+  *
+  * 数据地址 /home/ricky/data/spark/rdd/subject.log
   */
 object UrlCount {
 

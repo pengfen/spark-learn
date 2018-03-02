@@ -9,6 +9,9 @@ import org.apache.spark.{SparkConf, SparkContext}
   *   2, 以"手机号_站点"为key, 统计每个站点的时间总和, ("手机号_站点", 时间总和)
   *   3, ("手机号_站点", 时间总和) --> (手机号, 站点, 时间总和)
   *   4, (手机号, 站点, 时间总和) --> groupBy().mapValues(以时间排序,取出前2个) --> (手机->((m,s,t)(m,s,t)))
+  *
+  *   手机号       时间(年月日时分秒) 基站标识　　　　　　　　　　　　　　　１表示进入基站 0表示离开基站
+  *   18688888888,20160327082400,16030401EAFB68F1E3CDF819735E1C66,1
   */
 object UserLocation {
   def main(args: Array[String]): Unit = {
@@ -29,7 +32,7 @@ object UserLocation {
     val rdd1 = mbt.groupBy(_._1).mapValues(_.foldLeft(0L)(_ + _._2))
 
     val rdd2 = rdd1.map( t => {
-      val mobile_bs = t._1
+      val mobile_bs = t._1 // 此打断点查看t元素内容
       val mobile = mobile_bs.split("_")(0)
       val lac = mobile_bs.split("_")(1)
       val time = t._2
