@@ -1,4 +1,8 @@
-package spark.data;
+package spark.data
+
+import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
+import org.apache.spark.sql.{Row, SparkSession}
+;
 
 /**
   * DataFrame和RDD的互操作
