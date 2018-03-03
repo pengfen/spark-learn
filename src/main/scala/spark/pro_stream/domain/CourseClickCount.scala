@@ -1,4 +1,4 @@
-package com.stream_project.domain
+package spark.pro_stream.domain
 
 /**
   * 实战课程点击数实体类

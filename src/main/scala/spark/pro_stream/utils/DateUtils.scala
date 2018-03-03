@@ -1,4 +1,4 @@
-package com.stream_project.utils
+package spark.pro_stream.utils
 
 import java.util.Date
 

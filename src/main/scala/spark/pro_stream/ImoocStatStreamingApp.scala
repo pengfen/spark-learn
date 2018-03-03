@@ -1,11 +1,11 @@
-package spark.stream_project
+package spark.pro_stream
 
-import com.stream_project.dao.{CourseClickCountDAO, CourseSearchClickCountDAO}
-import com.stream_project.domain.{ClickLog, CourseClickCount, CourseSearchClickCount}
-import com.stream_project.utils.DateUtils
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+import spark.pro_stream.dao.{CourseClickCountDAO, CourseSearchClickCountDAO}
+import spark.pro_stream.domain.{ClickLog, CourseClickCount, CourseSearchClickCount}
+import spark.pro_stream.utils.DateUtils
 
 import scala.collection.mutable.ListBuffer
 

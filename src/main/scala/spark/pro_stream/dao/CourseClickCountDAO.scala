@@ -1,9 +1,9 @@
-package com.stream_project.dao
+package spark.pro_stream.dao
 
-import com.stream_project.domain.CourseClickCount
 import com.utils.HBaseUtils
 import org.apache.hadoop.hbase.client.Get
 import org.apache.hadoop.hbase.util.Bytes
+import spark.pro_stream.domain.CourseClickCount
 
 import scala.collection.mutable.ListBuffer
 
