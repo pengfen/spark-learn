@@ -1,11 +1,4 @@
-package com.stream_flume
-
-import java.net.InetSocketAddress
-
-import org.apache.spark.SparkConf
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.streaming.flume.FlumeUtils
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream_flume;
 
 object FlumePullWordCountIt {
   def main(args: Array[String]) {
