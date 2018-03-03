@@ -1,4 +1,5 @@
 数据输入源 /home/ricky/data/spark/basic
+脚本 /home/ricky/script/spark/basic
 
 [jdk.md](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/jdk.md)    jdk安装
 
@@ -40,4 +41,5 @@ spark-build.html spark编译
 elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
 
-数据 /home/ricky/data/spark/basic
+
+编写 SQLContextApp
