@@ -1,7 +1,4 @@
-package com.spark_stream
-
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream;
 
 /**
   * Spark Streaming处理Socket数据

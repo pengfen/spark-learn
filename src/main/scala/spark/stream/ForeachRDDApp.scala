@@ -1,9 +1,4 @@
-package com.spark_stream
-
-import java.sql.DriverManager
-
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream;
 
 /**
   * 使用Spark Streaming完成词频统计，并将结果写入到MySQL数据库中

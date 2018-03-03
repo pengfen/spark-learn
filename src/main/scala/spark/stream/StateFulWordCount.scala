@@ -1,8 +1,4 @@
-package com.spark_stream
-
-import com.spark_utils.LoggerLevels
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.{HashPartitioner, SparkConf, SparkContext}
+package spark.stream;
 
 /**
   * 使用 Spark Streaming 完成有状态统计
@@ -61,4 +57,3 @@ object StateFulWordCount {
 //    Some(current + pre)
 //  }
 }
-
