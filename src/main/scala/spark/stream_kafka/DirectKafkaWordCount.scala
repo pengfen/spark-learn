@@ -1,16 +1,4 @@
-package com.stream_kafka
-
-import kafka.serializer.StringDecoder
-import org.apache.log4j.{Level, Logger}
-import org.apache.spark.SparkConf
-import org.apache.spark.rdd.RDD
-//<dependency>
-//<groupId>org.apache.spark</groupId>
-//<artifactId>spark-streaming-kafka_2.10</artifactId>
-//<version>1.6.1</version>
-//</dependency>
-//import org.apache.spark.streaming.kafka.{KafkaManager, KafkaUtils}
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream_kafka;
 
 object DirectKafkaWordCount {
 

@@ -1,10 +1,4 @@
-package com.stream_kafka
-
-import com.spark_utils.LoggerLevels
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.{HashPartitioner, SparkConf}
-import org.apache.spark.streaming.kafka.KafkaUtils
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream_kafka;
 
 object KafkaWordCount {
 
