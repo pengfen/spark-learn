@@ -1,8 +1,4 @@
-package com.stream_concord
-
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.kafka.KafkaUtils
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+package spark.stream_concord;
 
 /**
   * Spark Streaming对接Kafka
