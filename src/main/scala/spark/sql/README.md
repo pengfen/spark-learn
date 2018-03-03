@@ -1,3 +1,6 @@
+数据输入源 /home/ricky/data/spark/basic
+脚本 /home/ricky/script/spark/basic
+
 1. 添加依赖
 <properties>
 <scala.version>2.11.0</scala.version>

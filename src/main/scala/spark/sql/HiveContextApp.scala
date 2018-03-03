@@ -13,6 +13,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * 2. 创建emp表
   * create table emp(empno int, ename string, job string, mgr int, hiredate string, sal double, comm double, deptno int
   ) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+  * load data local inpath '/home/hadoop/data/emp.txt' into table emp;
   *
   * cp hive-site.xml ~/app/spark-2.1.0-bin-2.6.0-cdh5.7.0/conf/
   *

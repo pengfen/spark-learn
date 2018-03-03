@@ -42,4 +42,6 @@ elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
 
 
-编写 SQLContextApp
+编写 SQLContextApp ---> sql包
+
+编写 HiveContextApp ---> sql包
