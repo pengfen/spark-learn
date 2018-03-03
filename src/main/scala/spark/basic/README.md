@@ -29,7 +29,7 @@ basic.html  基础
 
 编写 WordCount
 
-编写 UserLocation --->
+编写 UserLocation ---> pro_user包
 
 spark 算子 ---> rdd包
 

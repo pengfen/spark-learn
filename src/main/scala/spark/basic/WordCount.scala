@@ -75,7 +75,18 @@ object WordCount {
 
     sc.textFile(in).flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
 
-// spark streaming 统计单词
+    // 可以通过spark-shell上运行查看每一步结果
+    //scala> val rdd1 = sc.textFile("hdfs://ricky:9000/wc.txt")
+//    scala> rdd1.flatMap(_.split(",")).collect ---> 1. 压平
+//    res14: Array[String] = Array(hello, world, welcome, hello, welcome)
+//    scala> rdd1.flatMap(_.split(",")).map((_, 1)).collect ---> 2.将单词和1构成元组
+//    res15: Array[(String, Int)] = Array((hello,1), (world,1), (welcome,1), (hello,1), (welcome,1))
+//    scala> rdd1.flatMap(_.split(",")).map((_, 1)).reduceByKey(_ + _).collect ---> 3. 按照key进行reduce并将value累加
+//    res16: Array[(String, Int)] = Array((hello,2), (welcome,2), (world,1))
+//    scala> rdd1.flatMap(_.split(",")).map((_, 1)).reduceByKey(_ + _).sortBy(_._2, false).collect 4. 排序
+//    res17: Array[(String, Int)] = Array((hello,2), (welcome,2), (world,1))
+
+    // spark streaming 统计单词
 //    val ssc = new StreamingContext(conf, Seconds(5));
 //    val lines = ssc.socketTextStream("localhost", 33333)
 //    val words = lines.flatMap(_.split(" "))
