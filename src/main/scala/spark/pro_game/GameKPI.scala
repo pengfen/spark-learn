@@ -1,6 +1,4 @@
-package com.spark_game
-
-import org.apache.spark.{SparkConf, SparkContext}
+package spark.pro_game;
 
 object GameKPI {
 
@@ -48,4 +46,3 @@ object GameKPI {
     sc.stop()
   }
 }
-// create table GameKPI (id, gamename, zone, datetime, dnu, dau, d1rr, d7rr ... )

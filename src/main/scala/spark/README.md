@@ -4,9 +4,10 @@ spark.basic spark基础
 
 spark.rdd spark rdd
 
+项目 (以pro_开头的包)
 spark.pro_user 用户在小区的停留时间
 
-spark.spark_game spark操作游戏日志
+spark.pro_game spark操作游戏日志
 
 
 spark sql 介绍

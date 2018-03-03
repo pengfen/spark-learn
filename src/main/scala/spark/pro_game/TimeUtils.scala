@@ -1,7 +1,4 @@
-package com.spark_game
-
-import java.text.SimpleDateFormat
-import java.util.Calendar
+package spark.pro_game;
 
 object TimeUtils {
 

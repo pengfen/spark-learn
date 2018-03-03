@@ -1,4 +1,4 @@
-package com.spark_game
+package spark.pro_game;
 
 /**
   * 事件类型枚举
