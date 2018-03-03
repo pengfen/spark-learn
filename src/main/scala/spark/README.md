@@ -4,10 +4,13 @@ spark.basic spark基础
 
 spark.rdd spark rdd
 
+spark.utils spark操作相关工具类
+
 项目 (以pro_开头的包)
 spark.pro_user 用户在小区的停留时间
 
 spark.pro_game spark操作游戏日志
+
 
 
 spark sql 介绍
@@ -15,27 +18,21 @@ spark.sql
 
 spark.data spark 操作数据
 
-spark.project spark sql 项目
+spark.pro_sql spark sql 项目
+
+
 
 spark streaming 介绍
-com.spark_stream spark streaming 相关介绍
+spark.stream spark streaming 相关介绍
 
-com.stream_flume saprk streaming 整合 flume
+spark.stream_flume saprk streaming 整合 flume
 
-com.stream_kafka saprk streaming 整合 kafka
+spark.stream_kafka saprk streaming 整合 kafka
 
-com.stream_concord spark streaming 整合流
+spark.stream_concord spark streaming 整合流
 
-com.stream_project spark streaming 项目
+spark.pro_stream spark streaming 项目
 
-hive 介绍
-com.hive
-
-online 电商项目
-
-scala scala 学习
-
-python python 学习
 
 离线处理流程
 1. 模拟产生日志(定时任务每分钟产生五百条)
