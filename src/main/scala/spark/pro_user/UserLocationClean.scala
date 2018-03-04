@@ -14,9 +14,10 @@ import org.apache.spark.{SparkConf, SparkContext}
   * 基站日志信息
   * 基站标识                          经度        纬度
   * 9F36407EAD0629FC166F14DDE7970F68,116.304864,40.050645,6
-  * 数据源 /home/ricky/data/spark/basic/info.log
+  * 数据源 /home/ricky/data/spark/basic/base.log
   *
   * 1. 编写代码
+  * 测试map中的数据(使用take(10).foreach(println)或使用print(user.collect.toBuffer))
   *
   */
 object UserLocationClean {
@@ -38,9 +39,15 @@ object UserLocationClean {
       var time = splits(1).toLong
       if (flag == "1") time = -time
       (mb, time)
-    })//.take(10).foreach(println) //((17868569437,fd66289b5d5da767d9e5e47e7dc7ff41),-20180304123401)
-      .reduceByKey(_ + _)//.take(10).foreach(println) //((14364215117,d02ab8b10881ac71169c1046a5c8f72f),917648)
-      .map(t => (t._1._2, (t._1._1, t._2)))//.take(10).foreach(println) //(d02ab8b10881ac71169c1046a5c8f72f,(14364215117,917648))
+    }).reduceByKey(_ + _).map(t => {
+      val mobile = t._1._1
+      val bs = t._1._2
+      val time = t._2
+      (bs, (mobile, time))
+    })
+    //.take(10).foreach(println) //((17868569437,fd66289b5d5da767d9e5e47e7dc7ff41),-20180304123401)
+      //.reduceByKey(_ + _)//.take(10).foreach(println) //((14364215117,d02ab8b10881ac71169c1046a5c8f72f),917648)
+      //.map(t => (t._1._2, (t._1._1, t._2)))//.take(10).foreach(println) //(d02ab8b10881ac71169c1046a5c8f72f,(14364215117,917648))
 
     // 2. 读取基站日志
     val base = sc.textFile(in_info).map(x => {
@@ -49,8 +56,20 @@ object UserLocationClean {
       (bs, (splits(1), splits(2)))
     })//.take(10).foreach(println) // (b8b16e4373cc69e6a21df56c3b5bf704,(59.515617,23.985352))
 
+    val result = user.join(base).map(t => {
+      val bs = t._1
+      val mobile = t._2._1._1
+      val time = t._2._1._2
+      val x = t._2._2._1
+      val y = t._2._2._2
+      (mobile, bs, time, x, y)
+    }).groupBy(_._1).mapValues(it => {
+      it.toList.sortBy(_._3).reverse.take(2)
+    })
+    println(result.collect.toBuffer) // ArrayBuffer((13239267333,List((13239267333,2238a1063b7345745cd8dec645186a6a,940023,129.569844,285.823592))), (14725998966,List((14725998966,086b7854a
     //println(base.join(user).collect.toBuffer) // ArrayBuffer((eae376b55bc4e20feafc0795148d4a1f,((78.494732,358.554567),(16459869135,107720))),
     // 3. 入库操作
 
+    sc.stop()
   }
 }

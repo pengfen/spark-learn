@@ -24,9 +24,9 @@ object UserLocation {
 
     val sc = new SparkContext(conf)
 
-    //val in = "file:///home/ricky/data/spark/basic/user.log"
+    //val in = "file:///home/ricky/data/spark/basic/bs_user.log"
     val in = "/home/ricky/data/spark/basic/bs_user.log"
-    //val in = "hdfs://ricky:9000/user.log"
+    //val in = "hdfs://ricky:9000/bs_user.log"
     // val rdd1 = sc.textFile(in)
     // 18688888888,20160327082400,16030401EAFB68F1E3CDF819735E1C66,1
     // rdd1.take(10).foreach(println)
@@ -45,9 +45,9 @@ object UserLocation {
     val rdd2 = rdd1.reduceByKey(_+_) // ((手机号,基站), 总时间)
     println(rdd2) // ShuffledRDD[3] at reduceByKey at UserLocation.scala:38
 
-    //val in = "file:///home/ricky/data/spark/basic/info.log"
-    val in_info = "/home/ricky/data/spark/basic/info.log"
-    //val in = "hdfs://ricky:9000/info.log"
+    //val in = "file:///home/ricky/data/spark/basic/base.log"
+    val in_info = "/home/ricky/data/spark/basic/base.log"
+    //val in = "hdfs://ricky:9000/base.log"
     val rdd3 = sc.textFile(in_info).map(x => {
       val arr = x.split(",")
       val bs = arr(0)
