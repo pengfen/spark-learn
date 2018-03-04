@@ -9,12 +9,12 @@ import org.apache.spark.{SparkConf, SparkContext}
   * 手机号       时间(年月日时分秒) 基站标识(32位)　　　　　　　　　　　 １表示进入基站 0表示离开基站
   * 18688888888,20160327082400,16030401EAFB68F1E3CDF819735E1C66,1
   *
-  * 数据源 /home/ricky/data/spark/basic/user.log
+  * 数据源 /home/ricky/data/spark/basic/bs_user.log
   *
   * 基站日志信息
   * 基站标识                          经度        纬度
   * 9F36407EAD0629FC166F14DDE7970F68,116.304864,40.050645,6
-  * 数据源 /home/ricky/data/spark/basic/info.log
+  * 数据源 /home/ricky/data/spark/basic/base.log
   *
   */
 object UserLocation {
@@ -25,7 +25,7 @@ object UserLocation {
     val sc = new SparkContext(conf)
 
     //val in = "file:///home/ricky/data/spark/basic/user.log"
-    val in = "/home/ricky/data/spark/basic/user.log"
+    val in = "/home/ricky/data/spark/basic/bs_user.log"
     //val in = "hdfs://ricky:9000/user.log"
     // val rdd1 = sc.textFile(in)
     // 18688888888,20160327082400,16030401EAFB68F1E3CDF819735E1C66,1
