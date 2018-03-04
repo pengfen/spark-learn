@@ -8,15 +8,16 @@ learn.html RDD练习
 
 transform.html 转换
 
-编写 UserLocation
+编写 UserLocation ---> pro_user包
 
-编写 AdvUserLocation
-
-编写 UrlCount
-
-编写 AdvUrlCount
+编写 AdvUserLocation ---> pro_user包
 
 
+编写 UrlCount ---> pro_subject包
+
+编写 AdvUrlCount ---> pro_subject包
+
+编写 UrlCountPartition ---> pro_subject包
 
 
 
@@ -29,6 +30,3 @@ transform.html 转换
 编写 IPLocation
 
 编写 JdbcRDDDemo
-
-编写 UrlCountPartition
-

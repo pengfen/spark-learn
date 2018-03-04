@@ -7,6 +7,11 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * 根据指定的学科 取出点击量的前三
+  *
+  * 日期(年月日时分秒) 学科地址　　　　　　　
+  * 20160321102628	http://java.itcast.cn/java/course/hadoop.shtml
+  *
+  * 数据源 /home/ricky/data/spark/rdd/subject.log
   */
 object AdvUrlCount {
 
@@ -17,7 +22,10 @@ object AdvUrlCount {
     val sc = new SparkContext(conf)
 
     // rdd1 将数据切分 元组中放的是 (URL, 1)
-    val rdd1 = sc.textFile("/home/ricky/data/itcast.log").map(line => {
+    //val in = "file:///home/ricky/data/spark/rdd/subject.log"
+    val in = "/home/ricky/data/spark/rdd/subject.log"
+    //val in = "hdfs://ricky:9000/subject.log"
+    val rdd1 = sc.textFile(in).map(line => {
       val f = line.split("\t")
       (f(1), 1)
     })

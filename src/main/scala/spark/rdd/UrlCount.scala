@@ -10,16 +10,20 @@ import org.apache.spark.{SparkConf, SparkContext}
   * 日期(年月日时分秒) 学科地址　　　　　　　
   * 20160321102628	http://java.itcast.cn/java/course/hadoop.shtml
   *
-  * 数据地址 /home/ricky/data/spark/rdd/subject.log
+  * 数据源 /home/ricky/data/spark/rdd/subject.log
   */
 object UrlCount {
 
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("UrlCount").setMaster("local[2]")
+    val conf = new SparkConf()
+    conf.setAppName("UrlCount").setMaster("local[2]")
     val sc = new SparkContext(conf)
 
     // rdd1将数据切分 元组中放的是 (URL, 1)
-    val rdd1 = sc.textFile("/home/ricky/data/itcast.log").map(line => {
+    //val in = "file:///home/ricky/data/spark/rdd/subject.log"
+    val in = "/home/ricky/data/spark/rdd/subject.log"
+    //val in = "hdfs://ricky:9000/subject.log"
+    val rdd1 = sc.textFile(in).map(line => {
       val f = line.split("\t")
       (f(1), 1)
     })
@@ -36,7 +40,7 @@ object UrlCount {
       it.toList.sortBy(_._3).reverse.take(3)
     })
 
-    println(rdd2.collect().toBuffer)
+    println(rdd2.collect().toBuffer) // (http://php.itcast.cn/php/course.shtml,459)
     sc.stop()
   }
 }
