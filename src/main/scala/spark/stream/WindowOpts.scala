@@ -1,4 +1,9 @@
-package spark.stream;
+package spark.stream
+
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.{Milliseconds, Seconds, StreamingContext}
+import spark.utils.LoggerLevels
+;
 
 object WindowOpts {
 

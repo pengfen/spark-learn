@@ -45,4 +45,4 @@
   }
 
   $info = gen_user_log(500, $bs);
-  file_put_contents($out_file, $info);
+  file_put_contents($out_file, $info, FILE_APPEND);

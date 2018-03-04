@@ -1,4 +1,10 @@
-package spark.stream_flume;
+package spark.stream_flume
+
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.flume.FlumeUtils
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import spark.utils.LoggerLevels
+;
 
 object FlumePushWordCountIt {
 

@@ -1,4 +1,9 @@
-package spark.utils;
+package spark.utils
+
+
+import org.apache.log4j.{Level, Logger}
+import org.apache.spark.internal.Logging
+;
 
 object LoggerLevels extends Logging {
 

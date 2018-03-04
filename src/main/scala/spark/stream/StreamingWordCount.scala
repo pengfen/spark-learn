@@ -1,4 +1,9 @@
-package spark.stream;
+package spark.stream
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import spark.utils.LoggerLevels
+;
 
 object StreamingWordCount {
 

@@ -1,4 +1,9 @@
-package spark.stream;
+package spark.stream
+
+import org.apache.spark.SparkConf
+import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.streaming.{Seconds, StreamingContext, Time}
 
 /**
   * Spark Streaming整合Spark SQL完成词频统计操作

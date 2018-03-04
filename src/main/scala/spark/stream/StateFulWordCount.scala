@@ -1,4 +1,9 @@
-package spark.stream;
+package spark.stream
+
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.{SparkConf, SparkContext}
+import spark.utils.LoggerLevels
+;
 
 /**
   * 使用 Spark Streaming 完成有状态统计

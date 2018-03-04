@@ -1,4 +1,7 @@
-package spark.pro_game;
+package spark.pro_game
+
+import org.apache.spark.{SparkConf, SparkContext}
+;
 
 object GameKPI {
 

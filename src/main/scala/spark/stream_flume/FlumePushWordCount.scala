@@ -1,4 +1,9 @@
-package spark.stream_flume;
+package spark.stream_flume
+
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.flume.FlumeUtils
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+;
 
 /**
   * Spark Streaming整合Flume的第一种方式之push

@@ -1,4 +1,8 @@
-package spark.stream;
+package spark.stream
+
+import org.apache.spark.SparkConf
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+;
 
 /**
   * 黑名单过滤
