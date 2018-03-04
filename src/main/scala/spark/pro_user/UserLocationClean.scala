@@ -1,6 +1,9 @@
 package spark.pro_user
 
+import org.apache.spark.sql.SaveMode
+import org.apache.spark.sql.types._
 import org.apache.spark.{SparkConf, SparkContext}
+import spark.pro_user.domain.User
 
 /**
   * 根据日志统计出每个用户在站点所呆时间最长的前2个的信息
@@ -30,6 +33,7 @@ object UserLocationClean {
 
     val in_user = "/home/ricky/data/pro/user/bs_user.log"
     val in_info = "/home/ricky/data/spark/basic/base.log"
+    val out = "/home/ricky/data/spark-out/basic"
 
     // 1. 读取用户日志
     val user = sc.textFile(in_user).map(x => {
@@ -62,13 +66,16 @@ object UserLocationClean {
       val time = t._2._1._2
       val x = t._2._2._1
       val y = t._2._2._2
-      (mobile, bs, time, x, y)
-    }).groupBy(_._1).mapValues(it => {
-      it.toList.sortBy(_._3).reverse.take(2)
-    })
-    println(result.collect.toBuffer) // ArrayBuffer((13239267333,List((13239267333,2238a1063b7345745cd8dec645186a6a,940023,129.569844,285.823592))), (14725998966,List((14725998966,086b7854a
+      //(mobile, bs, time, x, y)
+      mobile + "," + bs + "," + time + "," + x + "," + y
+    })//.take(10).foreach(println)
+        .saveAsTextFile(out)
+
+//    val a = result.groupBy(_._1).mapValues(it => {
+//      it.toList.sortBy(_._3).reverse.take(2)
+//    })//.saveAsTextFile(out)
+    //println(a.collect.toBuffer) // ArrayBuffer((13239267333,List((13239267333,2238a1063b7345745cd8dec645186a6a,940023,129.569844,285.823592))), (14725998966,List((14725998966,086b7854a
     //println(base.join(user).collect.toBuffer) // ArrayBuffer((eae376b55bc4e20feafc0795148d4a1f,((78.494732,358.554567),(16459869135,107720))),
-    // 3. 入库操作
 
     sc.stop()
   }

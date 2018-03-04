@@ -1,4 +1,4 @@
-根据日志统计出每个用户在站点所呆时间最长的前2个的信息
+根据日志统计出每天站点所呆时间最长的前十个用户
 
 1. 编写日志产生脚本 gen_base_station.php(基站标识生成器)
 
@@ -14,6 +14,10 @@
 参考[UserLocation](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/basic/UserLocation.scala)
 [UserLocation](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/rdd/UserLocation.scala)
 [AdvUserLocation](https://github.com/pengfen/spark-learn/blob/master/src/main/scala/spark/rdd/AdvUserLocation.scala)
+
+6. 编写实体类 User
+
+7. 编写dao
 
 6. 入库
 

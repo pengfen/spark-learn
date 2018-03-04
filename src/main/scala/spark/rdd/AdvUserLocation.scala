@@ -67,9 +67,9 @@ object AdvUserLocation {
     val rdd5 = rdd4.mapValues(it => {
       it.toList.sortBy(_._3).reverse.take(2)
     })
-    println(rdd1.join(rdd2).collect().toBuffer)
-    //    println(rdd5.collect().toBuffer)
-    rdd5.saveAsTextFile("/home/ricky/data/out")
+    //println(rdd1.join(rdd2).collect().toBuffer)
+        println(rdd5.collect().toBuffer)
+    //rdd5.saveAsTextFile("/home/ricky/data/out")
     sc.stop()
   }
 }
