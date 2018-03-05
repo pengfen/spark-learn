@@ -37,6 +37,7 @@ object UrlCountPartition {
 
     val ints = rdd3.map(_._1).distinct().collect()
 
+    // hashParitioner  相同Key的数据一定会在同一个reducer中，一个reducer中就只有一个Key
     val hostParitioner = new HostParitioner(ints)
 
     //val rdd4 = rdd3.partitionBy(new HashPartitioner(ints.length))
