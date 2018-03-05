@@ -6,6 +6,9 @@ import org.apache.spark.rdd.JdbcRDD
 import org.apache.spark.{SparkConf, SparkContext}
 ;
 
+/**
+  * spark操作MySQL ---> util包中 MySQLUtils
+  */
 object JdbcRDDDemo {
 
   def main(args: Array[String]): Unit = {

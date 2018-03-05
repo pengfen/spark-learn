@@ -39,6 +39,13 @@ import org.apache.spark.{SparkConf, SparkContext}
   *
   * 7. 编写脚本 word_count.sh
   *
+  * spark集群提交任务过程
+  * 1. spark-submit提交任务　申请资源
+  * 2. master节点分配资源
+  * 3. worker节点启动Exector
+  * 4. 提交计算任务(stage)
+  * 注意: 提交计算任务不经过master worker中有任务的信息(master分配资源时给的)
+  *
   */
 object WordCount {
   def main(args: Array[String]): Unit = {

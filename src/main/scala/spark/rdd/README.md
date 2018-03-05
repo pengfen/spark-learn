@@ -36,3 +36,5 @@ transform.html 转换
 缓存 cache
 sc.textFile(file).cache.map ...
 使用cache后, 会将file中的数据缓存进内存
+
+编写 CheckpointDemo
