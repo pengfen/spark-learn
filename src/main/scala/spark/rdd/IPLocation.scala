@@ -3,6 +3,11 @@ package spark.rdd
 import org.apache.spark.{SparkConf, SparkContext}
 ;
 
+/**
+  * IP地址处理
+  *
+  * 数据源 /home/ricky/data/spark/rdd/ip.txt
+  */
 object IPLocation {
 
   def ip2Long(ip: String): Long = {
@@ -32,7 +37,7 @@ object IPLocation {
     val conf = new SparkConf().setMaster("local[2]").setAppName("IpLocation")
     val sc = new SparkContext(conf)
 
-    val ipRulesRdd = sc.textFile("/home/ricky/data/ip/ip.txt").map(line => {
+    val ipRulesRdd = sc.textFile("/home/ricky/data/spark/rdd/ip.txt").map(line => {
       val fields = line.split("\\|")
       val start_num = fields(2)
       val end_num = fields(3)
@@ -47,7 +52,7 @@ object IPLocation {
     val ipRulesBroadcast = sc.broadcast(ipRulesArray)
 
     // 加载要处理的数据
-    val ipsRDD = sc.textFile("/home/ricky/data/ip/ip.txt").map(line => {
+    val ipsRDD = sc.textFile("/home/ricky/data/spark/rdd/ip.txt").map(line => {
       val fields = line.split("\\|")
       fields(1)
     })

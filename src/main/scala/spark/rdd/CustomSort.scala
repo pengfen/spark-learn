@@ -4,6 +4,9 @@ import java.util.Comparator
 
 import org.apache.spark.{SparkConf, SparkContext}
 
+/**
+  * 自定义排序
+  */
 object OrderContext {
   implicit val girlOrdering = new Ordering[Girl] {
     override def compare(x: Girl, y: Girl): Int = {

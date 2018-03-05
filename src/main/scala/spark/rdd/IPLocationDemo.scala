@@ -5,6 +5,11 @@ import java.io.{BufferedReader, FileInputStream, InputStreamReader}
 import scala.collection.mutable.ArrayBuffer
 ;
 
+/**
+  * IP地址处理
+  *
+  * 数据源 /home/ricky/data/spark/rdd/ip.txt
+  */
 object IPLocationDemo {
 
   def ip2Long(ip: String): Long = {
@@ -52,7 +57,7 @@ object IPLocationDemo {
     val ip = "120.55.180.60"
     val ipNum = ip2Long(ip)
     println(ipNum) //2016916540
-    val lines = readData("/home/ricky/data/ip/ip.txt")
+    val lines = readData("/home/ricky/data/spark/rdd/ip.txt")
     val index = binarySearch(lines, ipNum) //120.55.0.0|120.55.255.255|2016870400|2016935935|亚洲|中国|浙江|杭州||阿里巴巴|330100|China|CN|120.153576|30.287459
     //println(lines);
     println("index:" + index) // 45110

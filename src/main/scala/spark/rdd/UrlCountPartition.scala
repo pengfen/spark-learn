@@ -65,8 +65,10 @@ class HostParitioner(ins: Array[String]) extends Partitioner {
     count += 1
   }
 
+  // 分区数量
   override def numPartitions: Int = ins.length
 
+  // 得到分区
   override def getPartition(key: Any): Int = {
     parMap.getOrElse(key.toString, 0)
   }
