@@ -51,3 +51,16 @@ export SPARK_DAEMON_JAVA_OPTS="-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.dep
 
 1.在ricky节点上修改slaves配置文件内容指定worker节点
 2.在ricky上执行sbin/start-all.sh脚本，然后在ricky2上执行sbin/start-master.sh启动第二个Master
+
+
+spark集群启动过程
+Master节点                Worker节点               Worker节点
+192.168.1.128            192.168.1.128            192.168.1.128
+spark-env.sh             spark-env.sh             spark-env.sh
+master_ip 192.168.1.128  master_ip 192.168.1.128  master_ip 192.168.1.128
+slaves
+192.168.1.129
+192.168.1.130
+
+sbin/start-all.sh
+sbin/start-master.sh     sbin/start-slaves.sh
