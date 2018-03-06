@@ -19,6 +19,10 @@
 
 7. 编写dao UserDao
 
-6. 入库 DataLoad
+8. 入库 DataLoad
+
+9. 编写　UserLocation　(合并 UserLocationClean DataLoad)
+
+10. 编写 move_bs_user.sh (数据移动后运行spark进行清理入库)
 
 7. 可视化显示

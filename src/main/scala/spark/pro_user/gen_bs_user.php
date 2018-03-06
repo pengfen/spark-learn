@@ -7,8 +7,9 @@
   * 18688888888,20160327082400,16030401EAFB68F1E3CDF819735E1C66,1
   */
 
+  $date = date("Ymd", time());
   $in_file = "/home/ricky/data/spark/basic/base.log";
-  $out_file = "/home/ricky/data/spark/basic/bs_user.log";
+  $out_file = "/home/ricky/data/spark/basic/bs_user_$date.log";
   function gen_user_log($num, $bs) {
       $info = "";
       for($i = 0; $i < $num; $i ++) {
