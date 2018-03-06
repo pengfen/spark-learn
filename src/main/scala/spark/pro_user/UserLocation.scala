@@ -1,9 +1,6 @@
 package spark.pro_user
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.{SparkConf, SparkContext}
-import spark.pro_subject.dao.SubjectDao
-import spark.pro_subject.domain.Subject
 import spark.pro_user.dao.UserDao
 import spark.pro_user.domain.User
 
@@ -89,13 +86,13 @@ object UserLocation {
 
         partitionOfRecords.foreach(info => {
           //(mobile, bs, time, x, y)
-          //val day = info.getAs[String]("day")
+          val day = info.getAs[String]("day")
           val mobile = info.getAs[Long]("mobile")
           val bs = info.getAs[String]("bs")
           val time = info.getAs[String]("time")
           val x = info.getAs[Double]("x")
           val y = info.getAs[Double]("y")
-          list.append(User(mobile, bs, time, x, y))
+          list.append(User(day, mobile, bs, time, x, y))
         })
 
         UserDao.insertUserTonN(list)

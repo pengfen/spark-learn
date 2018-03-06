@@ -66,8 +66,9 @@ object UserLocationClean {
       val time = t._2._1._2
       val x = t._2._2._1
       val y = t._2._2._2
+      val day = ""
       //(mobile, bs, time, x, y)
-      mobile + "," + bs + "," + time + "," + x + "," + y
+      day + "," + mobile + "," + bs + "," + time + "," + x + "," + y
     })//.take(10).foreach(println)
         .saveAsTextFile(out)
 

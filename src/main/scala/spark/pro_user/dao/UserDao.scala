@@ -25,15 +25,16 @@ object UserDao {
       connection.setAutoCommit(false) //设置手动提交
 
       // (mobile, bs, time, x, y)
-      val sql = "insert into bs_user(mobile, bs, time, x, y) values (?,?,?,?,?) "
+      val sql = "insert into bs_user(day, mobile, bs, time, x, y) values (?,?,?,?,?,?) "
       pstmt = connection.prepareStatement(sql)
 
       for (ele <- list) {
-        pstmt.setLong(1, ele.mobile)
-        pstmt.setString(2, ele.bs)
-        pstmt.setString(3, ele.time)
-        pstmt.setDouble(4, ele.x)
-        pstmt.setDouble(5, ele.y)
+        pstmt.setString(1, ele.day)
+        pstmt.setLong(2, ele.mobile)
+        pstmt.setString(3, ele.bs)
+        pstmt.setString(4, ele.time)
+        pstmt.setDouble(5, ele.x)
+        pstmt.setDouble(6, ele.y)
 
         pstmt.addBatch()
       }

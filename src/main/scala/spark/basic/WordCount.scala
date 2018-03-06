@@ -73,10 +73,10 @@ object WordCount {
 
     val sc = new SparkContext(conf)
 
-    // textFile 读取文件
-    // flatMap(line => line.split(",")) ---> latMap(_.split(",")) 先map再压平
-    // map((word => (word, 1))) ---> map((_, 1)) // 将单词和1构成元组
-    // reduceByKey(_+_) 按照key进行reduce并将value累加
+    // textFile 读取文件 ---> 会产生两个RDD HadoopRDD MapPartitionsRDD
+    // flatMap(line => line.split(",")) ---> latMap(_.split(",")) 先map再压平 ---> 产生一个RDD MapPartitionsRDD
+    // map((word => (word, 1))) ---> map((_, 1)) // 将单词和1构成元组 ---> 产生一个RDD MapPartitionsRDD
+    // reduceByKey(_+_) 按照key进行reduce并将value累加 ---> 会产生一个RDD ShuffledRDD
     // saveAsTextFile 将结果写到
     // sc.textFile(in).flatMap(_.split(",")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
 
