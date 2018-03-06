@@ -19,7 +19,15 @@ userDF: org.apache.spark.sql.DataFrame = [name: string, favorite_color: string .
 object ParquetApp {
 
   def main(args: Array[String]) {
+    // spark 集群的入口 ---> spark2以前
+    //    val conf = new SparkConf()
+    //
+    //    // A master URL must be set in your configuration 本地测试时如果没有配置master会出现此错误
+    //    conf.setAppName("WordCount").setMaster("local[2]")
+    //
+    //    val sc = new SparkContext(conf)
 
+    // spark2
     val spark = SparkSession.builder().appName("SparkSessionApp")
       .master("local[2]").getOrCreate()
 
