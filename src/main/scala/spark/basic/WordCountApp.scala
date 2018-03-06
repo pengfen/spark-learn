@@ -1,7 +1,6 @@
 package spark.basic
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * 1. 编写代码
@@ -48,23 +47,23 @@ import org.apache.spark.{SparkConf, SparkContext}
   * 注意: 提交计算任务不经过master worker中有任务的信息(master分配资源时给的)
   *
   */
-object WordCount {
+object WordCountApp {
   def main(args: Array[String]): Unit = {
-//    if (args.length != 2) {
-//      // hdfs://ricky:9000/wc.txt hdfs://ricky:9000/out
-//      System.err.println("Usage: input_path output_path ")
-//      System.exit(1)
-//    }
-//
-//    val Array(in, out) = args
+    if (args.length != 2) {
+      // hdfs://ricky:9000/wc.txt hdfs://ricky:9000/out
+      System.err.println("Usage: input_path output_path ")
+      System.exit(1)
+    }
+
+    val Array(in, out) = args
 
     // 1. 使用file
     //val in = "file:///home/ricky/data/spark/basic/wc.txt"
     //val in = "/home/ricky/data/spark/basic/wc.txt"
-    val in = "hdfs://ricky:9000/wc.txt"
+    //val in = "hdfs://ricky:9000/wc.txt"
     // 注意 1. cd $HADOOP_HOME ---> sbin/start-dfs.sh hdfs已启动
     // 2. out目录不存在 hadoop fs -rmr /out
-    val out = "hdfs://ricky:9000/out"
+    // val out = "hdfs://ricky:9000/out"
 
     // spark 集群的入口 ---> spark2以前
 //    val conf = new SparkConf()
@@ -74,23 +73,10 @@ object WordCount {
 //
 //    val sc = new SparkContext(conf)
 
-    val spark = SparkSession.builder().appName("SparkSessionApp")
-      .master("local[2]").getOrCreate()
+    val spark = SparkSession.builder().getOrCreate()
     val sc = spark.sparkContext;
 
-//    scala> val rdd = sc.textFile("hdfs://ricky:9000/wc.txt").flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _)
-//    rdd: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[4] at reduceByKey at <console>:24
-//
-//      scala> rdd.toDebugString
-//      res1: String =
-//      (2) ShuffledRDD[4] at reduceByKey at <console>:24 []
-//        +-(2) MapPartitionsRDD[3] at map at <console>:24 []
-//          |  MapPartitionsRDD[2] at flatMap at <console>:24 []
-//            |  hdfs://ricky:9000/wc.txt MapPartitionsRDD[1] at textFile at <console>:24 []
-//              |  hdfs://ricky:9000/wc.txt HadoopRDD[0] at textFile at <console>:24 []
-
-
-                // textFile 读取文件 ---> 会产生两个RDD HadoopRDD MapPartitionsRDD
+    // textFile 读取文件 ---> 会产生两个RDD HadoopRDD MapPartitionsRDD
     // flatMap(line => line.split(",")) ---> latMap(_.split(",")) 先map再压平 ---> 产生一个RDD MapPartitionsRDD
     // map((word => (word, 1))) ---> map((_, 1)) // 将单词和1构成元组 ---> 产生一个RDD MapPartitionsRDD
     // reduceByKey(_+_) 按照key进行reduce并将value累加 ---> 会产生一个RDD ShuffledRDD

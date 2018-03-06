@@ -1,5 +1,6 @@
 package spark.basic
 
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -19,10 +20,16 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object UserLocation {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf()
-    conf.setAppName("UserLocation").setMaster("local[2]")
+    //spark2以前
+//    val conf = new SparkConf()
+//    conf.setAppName("UserLocation").setMaster("local[2]")
+//
+//    val sc = new SparkContext(conf)
 
-    val sc = new SparkContext(conf)
+    // spark2
+    val spark = SparkSession.builder().appName("SparkSessionApp")
+      .master("local[2]").getOrCreate()
+    val sc = spark.sparkContext;
 
     //val in = "file:///home/ricky/data/spark/basic/bs_user.log"
     val in = "/home/ricky/data/spark/basic/bs_user.log"

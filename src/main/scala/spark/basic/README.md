@@ -28,7 +28,9 @@ spark-install.html spark集群
 
 basic.html  基础
 
-编写 WordCount
+编写 WordCount (本地测试)
+
+编写 WordCountApp (打包上线运行 ---> word_count.sh)
 
 编写 UserLocation ---> pro_user包
 
