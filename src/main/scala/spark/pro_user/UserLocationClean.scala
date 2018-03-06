@@ -4,6 +4,7 @@ import org.apache.spark.sql.SaveMode
 import org.apache.spark.sql.types._
 import org.apache.spark.{SparkConf, SparkContext}
 import spark.pro_user.domain.User
+import spark.utils.DateUtils
 
 /**
   * 根据日志统计出每个用户在站点所呆时间最长的前2个的信息
@@ -66,7 +67,7 @@ object UserLocationClean {
       val time = t._2._1._2
       val x = t._2._2._1
       val y = t._2._2._2
-      val day = ""
+      val day = DateUtils.getCurrTime()
       //(mobile, bs, time, x, y)
       day + "," + mobile + "," + bs + "," + time + "," + x + "," + y
     })//.take(10).foreach(println)

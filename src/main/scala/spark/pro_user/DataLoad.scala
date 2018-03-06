@@ -31,7 +31,7 @@ object DataLoad {
 
     //注意：需要导入隐式转换 (注意使用sparkSession)
     import spark.implicits._
-    val userDF = userRDD.map(_.split(",")).map(line => User(line(0).toLong, line(1), line(2), line(3).toDouble, line(4).toDouble)).toDF
+    val userDF = userRDD.map(_.split(",")).map(line => User(line(0), line(1).toLong, line(2), line(3), line(4).toDouble, line(5).toDouble)).toDF
     val userTopNDF = userDF.orderBy("time").limit(10)
     /**
       * 将统计结果写入到MySQL中
@@ -42,13 +42,13 @@ object DataLoad {
 
         partitionOfRecords.foreach(info => {
           //(mobile, bs, time, x, y)
-          //val day = info.getAs[String]("day")
+          val day = info.getAs[String]("day")
           val mobile = info.getAs[Long]("mobile")
           val bs = info.getAs[String]("bs")
           val time = info.getAs[String]("time")
           val x = info.getAs[Double]("x")
           val y = info.getAs[Double]("y")
-          list.append(User(mobile, bs, time, x, y))
+          list.append(User(day, mobile, bs, time, x, y))
         })
 
         UserDao.insertUserTonN(list)

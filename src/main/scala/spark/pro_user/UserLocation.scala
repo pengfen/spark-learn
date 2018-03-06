@@ -1,8 +1,10 @@
 package spark.pro_user
 
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.types._
 import spark.pro_user.dao.UserDao
 import spark.pro_user.domain.User
+import spark.utils.DateUtils
 
 import scala.collection.mutable.ListBuffer
 
@@ -67,16 +69,21 @@ object UserLocation {
 
     val result = user.join(base).map(t => {
       val bs = t._1
-      val mobile = t._2._1._1
-      val time = t._2._1._2
-      val x = t._2._2._1
-      val y = t._2._2._2
-      (mobile, bs, time, x, y)
+      val mobile = t._2._1._1.toLong
+      val time = t._2._1._2.toString
+      val x = t._2._2._1.toDouble
+      val y = t._2._2._2.toDouble
+      val day = DateUtils.getCurrTime();
+      (day, mobile, bs, time, x, y)
     })
 
     import spark.implicits._
     val userDF = result.toDF()
-    val userTopNDF = userDF.orderBy("time").limit(10)
+    // (day, mobile, bs, time, x, y) ---> (_1, _2, _3, _4, _5, _6)
+    val userTopNDF = userDF.orderBy($"_4".desc).limit(10)
+
+    //userTopNDF.show()
+
     /**
       * 将统计结果写入到MySQL中
       */
@@ -86,12 +93,13 @@ object UserLocation {
 
         partitionOfRecords.foreach(info => {
           //(mobile, bs, time, x, y)
-          val day = info.getAs[String]("day")
-          val mobile = info.getAs[Long]("mobile")
-          val bs = info.getAs[String]("bs")
-          val time = info.getAs[String]("time")
-          val x = info.getAs[Double]("x")
-          val y = info.getAs[Double]("y")
+          val day = info.getAs[String]("_1") // day
+          val mobile = info.getAs[Long]("_2") // mobile
+          val bs = info.getAs[String]("_3") // bs
+          val time = info.getAs[String]("_4") // time
+          // java.lang.String cannot be cast to java.lang.Double 对于错误在result中进行强转
+          val x = info.getAs[Double]("_5") // x
+          val y = info.getAs[Double]("_6") // y
           list.append(User(day, mobile, bs, time, x, y))
         })
 
