@@ -92,7 +92,14 @@ spark-shell \
 --driver-class-path /home/ricky/software/mysql-connector-java-5.1.27-bin.jar
 2.从mysql中加载数据
 
+Spark Core
+Spark SQL的核心是把已有的RDD 带上Schema信息　然后注册成类似sql里的"Table" 对其进行sql查询
+这里面主要分两部分　一是生成SchemaRDD 二是执行查询
 
+正如RDD的各种变换实际上只是在构造RDD DAG, DataFrame的各种变换同样也是lazy的 它们并不直接求出计算结果
+而是将各种变换组装成与RDD DAG类似的逻辑查询计划　如前所述　由于DataFrame带有schema元信息
+Spark SQL的查询优化器得以洞察数据和计算的精细结构　从而施行具有很强针对性的优化
+随后　经过优化的逻辑执行计划被翻译为物理执行计划　并最终落实为RDD DAG
 
 //1.读取数据，将每一行的数据使用列分隔符分割
 val lineRDD = sc.textFile("hdfs://ricky:9000/person.txt", 1).map(_.split(" "))
