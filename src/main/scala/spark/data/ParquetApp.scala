@@ -4,6 +4,11 @@ import org.apache.spark.sql.SparkSession
 ;
 
 /**
+  * Apache Parquet 最初的设计动机是存储嵌套式数据　比如Protocolbuffer thrift json等
+  * 将这类数据存储成列式格式　以方便对其高效压缩和编码　且使用昜少的IO操作取出需要的数据
+  * 这也是Parquet相比于ORC的优势　它能够透明地将Protobuf和thrift类型的数据进行列式存储
+  *
+  *
   * Parquet文件操作
   *
   * 1. 编写代码

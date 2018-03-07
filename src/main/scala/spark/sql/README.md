@@ -78,3 +78,6 @@ spark-submit \
 --jars /home/ricky/software/mysql-connector-java-5.1.27-bin.jar \
 --driver-class-path /home/ricky/software/mysql-connector-java-5.1.27-bin.jar \
 /home/ricky/spark-jar/spark-learn-1.0.jar
+
+
+spark_sql_hive.html spark sql 结合 hive
