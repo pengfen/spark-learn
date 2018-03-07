@@ -1,25 +1,7 @@
 file ---> settings ---> Maven ---> Maven home directory: /home/ricky/app/maven-3.3.9 --- Apply (设置maven仓库)
 spark streaming整合flume之push方式
 
-1. 编写配置文件
-flume agent的编写 flume_push_streaming.conf
-
-simple-agent.sources = netcat-source
-simple-agent.sinks = avro-sink
-simple-agent.channels = memory-channel
-
-simple-agent.sources.netcat-source.type = netcat
-simple-agent.sources.netcat-source.bind = ricky
-simple-agent.sources.netcat-source.port = 44444
-
-simple-agent.sinks.avro-sink.type = avro
-simple-agent.sinks.avro-sink.hostname = ricky
-simple-agent.sinks.avro-sink.port = 41414
-
-simple-agent.channels.memory-channel.type = memory
-
-simple-agent.sources.netcat-source.channels = memory-channel
-simple-agent.sinks.avro-sink.channel = memory-channel
+1. 编写配置文件 flume_push_streaming.conf
 
 知识点
 sublime 列选择(鼠标右键 + shift)
@@ -70,24 +52,7 @@ ricky@ricky:~/IdeaProjects/spark$ pwd
 ricky@ricky:~/IdeaProjects/spark$ mvn clean package -DskipTests
 
 spark streaming整合flume之pull方式
-1. 编写配置文件
-ricky@ricky:~/app/flume-1.6.0-cdh5.7.0/conf$ cat flume_pull_streaming.conf
-simple-agent.sources = netcat-source
-simple-agent.sinks = spark-sink
-simple-agent.channels = memory-channel
-
-simple-agent.sources.netcat-source.type = netcat
-simple-agent.sources.netcat-source.bind = ricky
-simple-agent.sources.netcat-source.port = 44444
-
-simple-agent.sinks.spark-sink.type = org.apache.spark.streaming.flume.sink.SparkSink
-simple-agent.sinks.spark-sink.hostname = ricky
-simple-agent.sinks.spark-sink.port = 41414
-
-simple-agent.channels.memory-channel.type = memory
-
-simple-agent.sources.netcat-source.channels = memory-channel
-simple-agent.sinks.spark-sink.channel = memory-channel
+1. 编写配置文件 flume_pull_streaming.conf
 
 2. 添加依赖
 groupId = org.apach.spark

@@ -25,7 +25,7 @@ spark.pro_sql spark sql 项目
 spark streaming 介绍
 spark.stream spark streaming 相关介绍
 
-spark.stream_flume saprk streaming 整合 flume
+spark.stream_flume ---> flume.stream (saprk streaming 整合 flume)
 
 spark.stream_kafka saprk streaming 整合 kafka
 

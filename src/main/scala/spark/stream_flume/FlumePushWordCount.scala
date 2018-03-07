@@ -51,6 +51,7 @@ object FlumePushWordCount {
   def main(args: Array[String]): Unit = {
 
     if (args.length != 2) {
+      // ricky 41414
       System.err.println("Usage: FlumePushWordCount <hostname> <port>")
       System.exit(1)
     }

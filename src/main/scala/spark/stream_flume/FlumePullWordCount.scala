@@ -33,7 +33,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
   * ricky@ricky:~$ telnet localhost 44444
 Trying 127.0.0.1...
 Connected to localhost.
-Escape character is '^]'.
+Escape character is
 aaaa
 OK
 bbbb
@@ -53,9 +53,11 @@ OK
 (ccc,1)
   */
 object FlumePullWordCount {
+
   def main(args: Array[String]): Unit = {
 
     if (args.length != 2) {
+      // ricky 41414
       System.err.println("Usage: FlumePullWordCount <hostname> <port>")
       System.exit(1)
     }
