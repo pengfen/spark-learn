@@ -1,7 +1,8 @@
-package com.spark_sql
+package spark.sql
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
+import spark.sql.domain.Person
 
 /**
   *
@@ -67,4 +68,3 @@ object InferringSchema {
   }
 }
 
-case class Person(id: Int, name: String, age: Int)

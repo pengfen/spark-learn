@@ -76,6 +76,9 @@ object UserLocation {
       val day = DateUtils.getCurrTime();
       (day, mobile, bs, time, x, y)
     })
+    // val personRDD = lineRDD.map(x => Person(x(0).toInt, x(1), x(2).toInt))
+//    val result = user.join(base).map(x => User(DateUtils.getCurrTime(), x._2._1._1.toLong, x._1,
+//      x._2._1._2.toString, x._2._2._1.toDouble, x._2._2._2.toDouble))
 
     import spark.implicits._
     val userDF = result.toDF()

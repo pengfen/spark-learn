@@ -49,33 +49,32 @@
 
 8. 编写代码 InferringSchema (通过反射推断Schema)
 将程序打成jar包，上传到spark集群，提交Spark任务
-/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
---class cn.itcast.spark.sql.InferringSchema \
---master spark://node1.itcast.cn:7077 \
-/root/spark-mvn-1.0-SNAPSHOT.jar \
-hdfs://node1.itcast.cn:9000/person.txt \
-hdfs://node1.itcast.cn:9000/out
+spark-submit \
+--class spark.sql.InferringSchema \
+--master spark://ricky:7077 \
+/home/ricky/spark-jar/spark-learn-1.0.jar \
+hdfs://ricky:9000/person.txt hdfs://ricky:9000/out
 
 查看运行结果
-hdfs dfs -cat  hdfs://node1.itcast.cn:9000/out/part-r-*
+hdfs dfs -cat hdfs://ricky:9000/out/part-r-*
 
 9. 编写代码 SpecifyingSchema (通过StructType直接指定Schema)
 将程序打成jar包，上传到spark集群，提交Spark任务
-/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
---class cn.itcast.spark.sql.InferringSchema \
---master spark://node1.itcast.cn:7077 \
-/root/spark-mvn-1.0-SNAPSHOT.jar \
-hdfs://node1.itcast.cn:9000/person.txt \
-hdfs://node1.itcast.cn:9000/out1
+spark-submit \
+--class spark.sql.InferringSchema \
+--master spark://ricky:7077 \
+/home/ricky/spark-jar/spark-learn-1.0.jar \
+hdfs://ricky:9000/person.txt \
+hdfs://ricky:9000/out1
 
 查看结果
 hdfs dfs -cat  hdfs://node1.itcast.cn:9000/out1/part-r-*
 
 10. 编写代码 JdbcRDD (将数据写入到MySQL中)
 3.将Jar包提交到spark集群
-/usr/local/spark-1.5.2-bin-hadoop2.6/bin/spark-submit \
---class cn.itcast.spark.sql.JdbcRDD \
+spark-submit \
+--class spark.sql.JdbcRDD \
 --master spark://node1.itcast.cn:7077 \
---jars /usr/local/spark-1.5.2-bin-hadoop2.6/mysql-connector-java-5.1.35-bin.jar \
---driver-class-path /usr/local/spark-1.5.2-bin-hadoop2.6/mysql-connector-java-5.1.35-bin.jar \
-/root/spark-mvn-1.0-SNAPSHOT.jar
+--jars /home/ricky/software/mysql-connector-java-5.1.27-bin.jar \
+--driver-class-path /home/ricky/software/mysql-connector-java-5.1.27-bin.jar \
+/home/ricky/spark-jar/spark-learn-1.0.jar
