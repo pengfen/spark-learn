@@ -27,7 +27,7 @@ spark.stream spark streaming 相关介绍
 
 spark.stream_flume ---> flume.stream (saprk streaming 整合 flume)
 
-spark.stream_kafka saprk streaming 整合 kafka
+spark.stream_kafka ---> kafka.stream (saprk streaming 整合 kafka)
 
 spark.stream_concord spark streaming 整合流
 
