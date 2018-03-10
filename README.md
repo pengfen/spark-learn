@@ -44,10 +44,36 @@ git commit -a -m f
 git remote add origin https://github.com/pengfen/spark-learn.git    
 git push -u origin master    
 
+数据采集
+Kettle
+Logstash
+Flume
+
+数据传输
+kafka
+
+数据存储
+HDFS
+Hive
+Hbase
+
+数据处理
+Presto
+Phoenix
+Kylin
+
+搜索引擎
+Elasticsearch
+
+分布式集群
+Zookeeper
+
+分布式计算
+Mapreduce
+[Spark](https://github.com/pengfen/spark-learn/tree/master/src/main/scala/spark)
+
+其它
 [python](https://github.com/pengfen/spark-learn/tree/master/python) python 学习
 
 [scala](https://github.com/pengfen/spark-learn/tree/master/src/main/scala/scala) scala 学习
 
-[spark](https://github.com/pengfen/spark-learn/tree/master/src/main/scala/spark) spark 学习
-
-src spark,scala,flume,kafka ... 学习

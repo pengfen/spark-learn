@@ -35,6 +35,8 @@ elasticsearch.url: "http://172.16.0.14:9200"
 编写配置文件 flow-kafka-es.conf
 /home/ricky/app/logstash-6.2.2/bin/logstash agent -f /home/ricky/app/logstash-6.2.2/conf/flow-kafka-es.conf
 
+kafka-es.conf (解决乱码)
+
 
 kafka server.properties hostname问题
 https://discuss.elastic.co/t/logstash-kafka-output-plugins-not-working-on-windows/25253

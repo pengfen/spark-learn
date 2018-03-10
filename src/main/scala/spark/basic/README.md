@@ -40,6 +40,8 @@ spark-test.html spark调试
 
 spark-build.html spark编译
 
+spark-start.html spark启动
+
 elasticsearch (删除所有 *.bat ---> cd bin ---> rm -rf *.bat)
 flume (删除所有 *.cmd ---> cd bin ---> rm -rf *.cmd)
 
