@@ -31,7 +31,8 @@ public class WcMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         String line = value.toString();
 
         // 将这一行切分出各个单词
-        String[] words = line.split(" ");
+        //String[] words = line.split(" ");
+        String[] words = line.split(",");
 
         //遍历数组 输出<单词, 1>
         for (String word:words) {

@@ -36,17 +36,18 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  *
  * 6. 打包 mvn clean package -DskipTests
  *
- * 7. 准备数据 cat wc.txt
- * 在hdfs上创建输入数据文件夹 ---> hadoop   fs  mkdir  -p  /wordcount/input
- * 将words.txt上传到hdfs上 ---> hadoop  fs  –put  /home/hadoop/words.txt  /wordcount/input
+ * 7. 准备数据 cat wc.txt (/home/ricky/data/spark/basic/wx.txt)
+ * 在hdfs上创建输入数据文件夹 ---> hadoop fs -mkdir -p /wc/input
+ * 将wc.txt上传到hdfs上 ---> hadoop fs –put wc.txt /wc/input
  *
  * 8. 将程序jar包上传到集群的任意一台服务器上
+ * cp target/spark-learn-1.0.jar ~/spark-jar/
  *
  * 9. 使用命令启动执行wordcount程序jar包
- * hadoop jar spark-learn-1.0.jar hadoop.first.JobRun /wordcount/input /wordcount/out
+ * hadoop jar spark-learn-1.0.jar hadoop.first.JobRun
  *
  * 10. 查看执行结果
- * hadoop fs –cat /wordcount/out/part*
+ * hadoop fs –cat /wc/out/part*
  */
 public class JobRun {
 
@@ -57,7 +58,7 @@ public class JobRun {
         conf.set("mapred.job.tracker", "ricky:9000");
         try {
             Job job = new Job(conf);
-            // job.setJar("/home/ricky/wordcount.jar"); //指定我这个job所在的jar包
+            // job.setJar("/home/ricky/spark-jar/spark-learn-1.0.jar"); //指定我这个job所在的jar包
 
             job.setJarByClass(JobRun.class);
             job.setMapperClass(WcMapper.class);
@@ -74,9 +75,9 @@ public class JobRun {
             // job.setNumReduceTasks(1); // 设置 reduce 任务的个数
 
             // mapreduce 输入数据所在目录或者文件 ---> 指定要处理的数据所在的位置
-            FileInputFormat.addInputPath(job, new Path("/usr/input/wc/"));
+            FileInputFormat.addInputPath(job, new Path("/wc/input"));
             // mapreduce 执行之后的输出数据的目录 ---> 指定处理完成之后的结果所保存的位置
-            FileOutputFormat.setOutputPath(job, new Path("/usr/output/wc/"));
+            FileOutputFormat.setOutputPath(job, new Path("/wc/out"));
 
             //向yarn集群提交这个job
             boolean res = job.waitForCompletion(true);
