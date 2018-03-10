@@ -176,7 +176,10 @@ public class HdfsStreamAccess {
     }
 
     /**
-     * 读取指定的block
+     * 在mapreduce spark等运算框架中 有一个核心思想就是将运算移往数据　或者说 就是要在并发计算中尽可能让运算本地化
+     * 这就需要获取数据所在位置的信息并进行相应用范围读取
+     *
+     * 获取一个文件的所有block位置信息　然后读取指定block中的内容
      * @throws IOException
      * @throws IllegalArgumentException
      */
@@ -187,7 +190,6 @@ public class HdfsStreamAccess {
         FileStatus[] listStatus = fs.listStatus(new Path("/input/dept.txt"));
         //获取这个文件的所有block的信息
         BlockLocation[] fileBlockLocations = fs.getFileBlockLocations(listStatus[0], 0L, listStatus[0].getLen());
-
 
         //第一个block的长度
         long length = fileBlockLocations[0].getLength();
