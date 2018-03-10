@@ -13,10 +13,23 @@
 # date -d"15 day ago 2017-04-16" +%Y-%m-%d
 
 #获取当前日期 如20160903
-date_now=`date +%Y%m%d`
+#date_now=`date +%Y%m%d`
+date_yes=`date -d "yesterday" +%Y%m%d`
 
 # 1. 先备份数据 bs_user.log.bak_20180304
-cp -a /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/spark/basic/bs_user._${date_now}.log.bak
+#cp -a /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/spark/basic/bs_user._${date_now}.log.bak
+cp -a /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/spark/basic/bs_user._${date_yes}.log.bak
 
 # 2. 移到数据至data/pro/user
-mv /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/pro/user
+#mv /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/pro/user
+mv /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/pro/user
+
+# 3. spark作业
+spark-submit \
+--class spark.pro_user.UserLocationYARN \
+--name UserLocationYARN \
+--master yarn \
+--executor-memory 1g \
+--num-executors 1 \
+/home/ricky/spark-jar/spark-learn-1.0.jar \
+hdfs://ricky:9000/spark_user/input hdfs://ricky:9000/spark_sql/clean
