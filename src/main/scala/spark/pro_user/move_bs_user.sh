@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# 1. 获取今天的日期
+# date+'%Y-%m-%d'或者date -d "now" +%Y-%m-%d
+
+# 2. 获取昨天的日期
+# date -d "yesterday" +%Y-%m-%d或者date -d "1 days ago" +%Y-%m-%d
+
+# 3. 获取前天的日期
+# date -d "1 days ago" +%Y-%m-%d
+
+# 4. 获取具体日期的前几天
+# date -d"15 day ago 2017-04-16" +%Y-%m-%d
+
 #获取当前日期 如20160903
 date_now=`date +%Y%m%d`
 
