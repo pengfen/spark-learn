@@ -17,6 +17,7 @@ hadoop-build.html hadoop编译
 reduce包 ---> mapreduce的使用
 [first](https://github.com/pengfen/spark-learn/tree/master/src/main/java/hadoop/first) hadoop第一个例子
 序列化 ---> mr_seri包
+排序　---> mr_sort包
 
 mapreduce与yarn ---> yarn包
 
