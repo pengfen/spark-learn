@@ -19,6 +19,7 @@ reduce包 ---> mapreduce的使用
 序列化 ---> mr_seri包
 排序   ---> mr_sort包
 分区   ---> mr_part包
+数据压缩 ---> compress.html
 
 mapreduce与yarn ---> yarn包
 
