@@ -64,6 +64,7 @@ join算法 ---> mr_join
 
 自定义inputFormat ---> mr_input
 
+自定义outputFormat ---> mr_output
 
 编写 InverIndexStepOne
 

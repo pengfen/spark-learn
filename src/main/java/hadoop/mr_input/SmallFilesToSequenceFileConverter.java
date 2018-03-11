@@ -38,7 +38,7 @@ public class SmallFilesToSequenceFileConverter extends Configured implements
         }
     }
 
-    
+
     public int run(String[] args) throws Exception {
         Configuration conf = new Configuration();
         System.setProperty("HADOOP_USER_NAME", "hdfs");
