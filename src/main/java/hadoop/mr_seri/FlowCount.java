@@ -30,8 +30,14 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  * 3. 打包
  * mvn clean package -DskipTests
  *
- * 4. 运行
+ * 4. 运行jar至服务器
+ * cp target/spark-learn-1.0.jar /home/ricky/spark-jar/
+ *
+ * 5. 运行
  * hadoop jar spark-learn-1.0.jar hadoop.mr_seri.FlowCount /flow/in /flow/out
+ *
+ * 6. 查看结果
+ * hadoop fs -cat /flow/out/part*
  */
 public class FlowCount {
 

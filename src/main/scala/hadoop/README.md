@@ -18,4 +18,6 @@ reduce包 ---> mapreduce的使用
 [first](https://github.com/pengfen/spark-learn/tree/master/src/main/java/hadoop/first) hadoop第一个例子
 序列化 ---> mr_seri包
 
+mapreduce与yarn ---> yarn包
+
 hdfs包 ---> hdfs使用
