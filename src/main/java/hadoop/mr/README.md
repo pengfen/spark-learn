@@ -55,12 +55,15 @@ join算法 ---> mr_join
 3. 编写 LogEnhanceOutputFormat
 
 
+好友分析 ---> mr_friend
+1. 编写 SharedFriendsStepOne
+
+2. 编写 SharedFriendsStepTwo
+/home/ricky/data/hadoop/friend.txt
+
+
 编写 InverIndexStepOne
 
 编写 IndexStepTwo
 
 
-编写 SharedFriendsStepOne
-
-编写 SharedFriendsStepTwo
-/home/ricky/data/friend.txt
