@@ -1,12 +1,13 @@
-1. 编写 WordcountMapper
+1. 编写 WordcountMapper ---> first_yarn包
 
-2. 编写 WordcountReducer
+2. 编写 WordcountReducer ---> first_yarn包
 
-3. 编写 WordcountDriver
+3. 编写 WordcountDriver ---> first_yarn包
 打包 ---> 上传至服务器 ---> 运行
 hadoop jar spark-learn.jar com.hadoop.mr /wc/in /wc/out (未设置参数)
 hadoop jar spark-learn.jar com.hadoop.mr
 spark-learn.jar ---> pom.xml (artifactId)
+
 
 4. 编写 FlowBean
 

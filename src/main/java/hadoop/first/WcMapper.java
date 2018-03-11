@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 public class WcMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     /**
-     * 次调用 map 方法全传入 split 中一行数据 key 该行数据所有文件中的位置下标 value 这行行数据
+     * 调用 map 方法全传入 split 中一行数据 key 该行数据所有文件中的位置下标 value 这行行数据
      *
      * 方法的生命周期　框架每传一行数据就被调用一次
      * @param key 这一行的起始点在文件中的偏移量

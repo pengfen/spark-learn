@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.first_yarn;
 
 import java.io.IOException;
 
