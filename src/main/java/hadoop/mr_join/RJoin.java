@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_join;
 
 import java.io.IOException;
 import java.util.ArrayList;

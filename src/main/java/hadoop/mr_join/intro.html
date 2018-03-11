@@ -1,0 +1,19 @@
+1 reduce端join算法实现
+
+1、需求：
+订单数据表t_order：
+id	date	pid	amount
+1001	20150710	P0001	2
+1002	20150710	P0001	3
+1002	20150710	P0002	3
+
+商品信息表t_product
+id	name	category_id	price
+P0001	小米5	C01	2
+P0002	锤子T1	C01	3
+
+假如数据量巨大，两表的数据是以文件的形式存储在HDFS中，需要用mapreduce程序来实现一下SQL查询运算：
+select  a.id,a.date,b.name,b.category_id,b.price from t_order a join t_product b on a.pid = b.id
+
+2、实现机制：
+通过将关联的条件作为map输出的key，将两表满足join条件的数据并携带数据所来源的文件信息，发往同一个reduce task，在reduce中进行数据的串联
