@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_flow;
 
 import java.io.IOException;
 import java.util.HashMap;

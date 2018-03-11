@@ -47,7 +47,7 @@ join算法 ---> mr_join
 编写 WeblogPreProcess
 
 
-流量日志
+流量日志 ---> mr_flow
 1. 编写 DBLoader
 
 2. 编写 LogEnhance
