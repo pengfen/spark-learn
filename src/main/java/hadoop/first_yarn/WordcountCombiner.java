@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.first_yarn;
 
 import java.io.IOException;
 
@@ -19,8 +19,6 @@ public class WordcountCombiner extends Reducer<Text, IntWritable, Text, IntWrita
 
         context.write(key, new IntWritable(count));
 
-
     }
-
 
 }

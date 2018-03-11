@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_sort;
 
 import hadoop.mr_seri.FlowBean;
 

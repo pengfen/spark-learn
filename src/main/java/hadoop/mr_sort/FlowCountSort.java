@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_sort;
 
 import java.io.IOException;
 
@@ -17,7 +17,31 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  * 13480253104 180 180 360 13502468823 7335 110349 117684 13560436666 1116 954
  * 2070
  *
- * @author
+ *  * 统计每一个用户(手机号)所耗费的总上行流量 下行流量 总流量
+ * map 读一行 切分字段
+ * 抽取手机号 上行流量 下行流量
+ * context.write(手机号, bean)
+ *
+ * 1. 编写代码
+ *
+ * 2. 上传输入文件
+ * flow.log文件内容 (数据源 /home/ricky/data/hadoop/flow.log)
+ * 1363157985066 	13726230503	00-FD-07-A4-72-B8:CMCC	120.196.100.82	i02.c.aliimg.com		24	27	2481	24681	200
+ * hadoop fs -mkdir -p /flow/in
+ * hadoop fs -put flow.log /flow/in/
+ * hadoop fs -cat /flow/in/flow.log
+ *
+ * 3. 打包
+ * mvn clean package -DskipTests
+ *
+ * 4. 运行jar至服务器
+ * cp target/spark-learn-1.0.jar /home/ricky/spark-jar/
+ *
+ * 5. 运行
+ * hadoop jar spark-learn-1.0.jar hadoop.mr_seri.FlowCount /flow/in /flow/out
+ *
+ * 6. 查看结果
+ * hadoop fs -cat /flow/out/part*
  *
  */
 public class FlowCountSort {
@@ -105,9 +129,6 @@ public class FlowCountSort {
         boolean res = job.waitForCompletion(true);
         System.exit(res?0:1);
 
-
     }
-
-
 
 }

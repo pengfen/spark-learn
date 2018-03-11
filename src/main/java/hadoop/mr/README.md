@@ -8,24 +8,31 @@ hadoop jar spark-learn.jar com.hadoop.mr /wc/in /wc/out (未设置参数)
 hadoop jar spark-learn.jar com.hadoop.mr
 spark-learn.jar ---> pom.xml (artifactId)
 
+4. 编写 WordcountCombiner
+
 
 序列化 ---> mr_seri包
-4. 编写 FlowBean
+5. 编写 FlowBean
 
-5. 编写 FlowCount
+6. 编写 FlowCount
 
 
-自定义切分
+排序 ---> mr_sort包
+7. 编写 FlowBean
+
+8. 编写 FlowCountSort
+
+9. 编写 Test (测试排序)排序
+
+
+自定义切分(分区) ---> mr_part包
 6. 编写 ProvincePartitioner
 
 7. 编写 ProvinceFlowCount (修改FlowCount)
 
-编写 WordcountCombiner
 
-排序
-1. 编写 FlowCountSort
 
-2. 编写 Test (测试排序)
+
 
 3. 编写 InfoBean
 

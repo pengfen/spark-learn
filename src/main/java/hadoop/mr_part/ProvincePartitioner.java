@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_part;
 
 import java.util.HashMap;
 
@@ -7,9 +7,12 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
 /**
- * K2  V2  对应的是map输出kv的类型
- * @author
+ * 定义自己的从map到reduce之间的数据(分组)分发规则
+ * 按照手机号所属的省份来分发(分组)ProvincePartitioner
  *
+ * 默认的分组组件是HashPartitioner
+ *
+ * K2  V2  对应的是map输出kv的类型
  */
 public class ProvincePartitioner extends Partitioner<Text, FlowBean>{
 

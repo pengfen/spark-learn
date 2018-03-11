@@ -1,7 +1,8 @@
-package hadoop.mr;
+package hadoop.mr_part;
 
 import java.io.IOException;
 
+import hadoop.mr_part.ProvincePartitioner;
 import hadoop.mr_seri.FlowBean;
 import hadoop.mr_seri.FlowCount;
 import org.apache.hadoop.conf.Configuration;
