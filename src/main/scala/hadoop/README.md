@@ -21,6 +21,7 @@ reduce包 ---> mapreduce的使用
 分区   ---> mr_part包
 数据压缩 ---> compress.html
 join算法 ---> mr_join包
+日志处理 ---> mr_log包
 
 mapreduce与yarn ---> yarn包
 

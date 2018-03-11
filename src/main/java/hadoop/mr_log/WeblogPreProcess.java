@@ -1,4 +1,4 @@
-package hadoop.mr;
+package hadoop.mr_log;
 
 import java.io.IOException;
 
@@ -12,6 +12,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+/**
+ * mapreduce程序
+ */
 public class WeblogPreProcess {
 
     static class WeblogPreProcessMapper extends Mapper<LongWritable, Text, Text, NullWritable> {

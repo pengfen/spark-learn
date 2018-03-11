@@ -31,27 +31,15 @@ spark-learn.jar ---> pom.xml (artifactId)
 7. 编写 ProvinceFlowCount (修改FlowCount)
 
 
+join算法 ---> mr_join
+1. 编写 InfoBean
+
+2. 编写 RJoin
+
+3. 编写 MapSideJoin
 
 
-
-3. 编写 InfoBean
-
-4. 编写 RJoin
-
-编写 MapSideJoin
-
-
-编写 InverIndexStepOne
-
-编写 IndexStepTwo
-
-
-编写 SharedFriendsStepOne
-
-编写 SharedFriendsStepTwo
-/home/ricky/data/friend.txt
-
-
+日志预处理 ---> mr_log
 编写 WebLogBean
 
 编写 WebLogParser
@@ -65,3 +53,14 @@ spark-learn.jar ---> pom.xml (artifactId)
 2. 编写 LogEnhance
 
 3. 编写 LogEnhanceOutputFormat
+
+
+编写 InverIndexStepOne
+
+编写 IndexStepTwo
+
+
+编写 SharedFriendsStepOne
+
+编写 SharedFriendsStepTwo
+/home/ricky/data/friend.txt
