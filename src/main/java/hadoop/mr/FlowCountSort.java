@@ -2,6 +2,7 @@ package hadoop.mr;
 
 import java.io.IOException;
 
+import hadoop.mr_seri.FlowBean;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;

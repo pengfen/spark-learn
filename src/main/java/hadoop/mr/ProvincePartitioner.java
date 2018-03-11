@@ -2,6 +2,7 @@ package hadoop.mr;
 
 import java.util.HashMap;
 
+import hadoop.mr_seri.FlowBean;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 

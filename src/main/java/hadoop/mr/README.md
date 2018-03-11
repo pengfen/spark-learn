@@ -9,9 +9,11 @@ hadoop jar spark-learn.jar com.hadoop.mr
 spark-learn.jar ---> pom.xml (artifactId)
 
 
+序列化 ---> mr_seri包
 4. 编写 FlowBean
 
 5. 编写 FlowCount
+
 
 自定义切分
 6. 编写 ProvincePartitioner

@@ -1,5 +1,7 @@
 package hadoop.mr;
 
+import hadoop.mr_seri.FlowBean;
+
 import java.util.ArrayList;
 
 public class Test {
