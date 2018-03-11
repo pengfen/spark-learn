@@ -62,6 +62,9 @@ join算法 ---> mr_join
 /home/ricky/data/hadoop/friend.txt
 
 
+自定义inputFormat ---> mr_input
+
+
 编写 InverIndexStepOne
 
 编写 IndexStepTwo
