@@ -66,7 +66,11 @@ join算法 ---> mr_join
 
 自定义outputFormat ---> mr_output
 
-3.自定义GroupingComparator ---> mr_group
+自定义GroupingComparator ---> mr_group
+
+DistributedCache应用 ---> mr_distr
+
+mr_other (计算器, )
 
 编写 InverIndexStepOne
 
