@@ -66,6 +66,8 @@ join算法 ---> mr_join
 
 自定义outputFormat ---> mr_output
 
+3.自定义GroupingComparator ---> mr_group
+
 编写 InverIndexStepOne
 
 编写 IndexStepTwo

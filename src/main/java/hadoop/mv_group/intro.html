@@ -1,0 +1,16 @@
+自定义GroupingComparator
+
+1. 需求
+有如下订单数据
+订单id	商品id	成交金额
+Order_0000001	Pdt_01	222.8
+Order_0000001	Pdt_05	25.8
+Order_0000002	Pdt_03	522.8
+Order_0000002	Pdt_04	122.4
+Order_0000003	Pdt_01	222.8
+
+现在需要求出每一个订单中成交金额最大的一笔交易
+
+2. 分析
+1、利用“订单id和成交金额”作为key，可以将map阶段读取到的所有订单数据按照id分区，按照金额排序，发送到reduce
+2、在reduce端利用groupingcomparator将订单id相同的kv聚合成组，然后取第一个即是最大值
