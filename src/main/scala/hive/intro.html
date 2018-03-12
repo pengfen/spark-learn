@@ -1,4 +1,8 @@
-/**
+Hive简介
+
+1. 什么是Hive
+Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。
+
 Hive 是基于 Hadoop 之上的数据仓库
 
 数据仓库就是数据库
@@ -11,6 +15,37 @@ Hive 是构建在 hadoop HDFS 上的一个数据仓库
 Hive 的体系结构是什么
 Hive 如何与 hadoop HDFS 进行相互操作
 Hive 数据与 Hadoop 中的文件之间的关系
+
+2. 为什么使用Hive
+直接使用hadoop所面临的问题
+人员学习成本太高
+项目周期要求太短
+MapReduce实现复杂查询逻辑开发难度太大
+
+为什么要使用Hive
+操作接口采用类SQL语法，提供快速开发的能力。
+避免了去写MapReduce，减少开发人员的学习成本。
+扩展功能很方便。
+
+3. Hive的特点
+可扩展
+Hive可以自由的扩展集群的规模，一般情况下不需要重启服务。
+
+延展性
+Hive支持用户自定义函数，用户可以根据自己的需求来实现自己的函数。
+
+容错
+良好的容错性，节点出现问题SQL仍可完成执行。
+
+4.Hive架构
+Jobtracker是hadoop1.x中的组件，它的功能相当于： Resourcemanager+AppMaster
+
+TaskTracker 相当于：  Nodemanager  +  yarnchild
+
+
+
+
+
 
 Hive 数据模型与操作
 
