@@ -8,6 +8,8 @@ off-line.html 离线流程
 
 hadoop.md hadoop单节点
 
+hadoop-quest.html hadoop相关问题
+
 hadoop-many.html hadoop集群
 
 hadoop-shell.html hadoop shell操作
