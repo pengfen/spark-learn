@@ -1,7 +1,6 @@
 package spark.pro_user
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.types._
 import spark.pro_user.dao.UserDao
 import spark.pro_user.domain.User
 import spark.utils.DateUtils
@@ -26,9 +25,17 @@ import scala.collection.mutable.ListBuffer
   * 测试map中的数据(使用take(10).foreach(println)或使用print(user.collect.toBuffer))
   *
   */
-object UserLocation {
+object UserLocationYARN {
 
   def main(args: Array[String]): Unit = {
+    if (args.length != 2) {
+      // /home/ricky/data/pro/user/bs_user_" + day + ".log  /home/ricky/data/spark/basic/base.log
+      System.err.println("Usage: input_user_path input_base_path ")
+      System.exit(1)
+    }
+
+    val Array(in_user, in_info) = args
+
     //spark1.6
 //    val conf = new SparkConf()
 //    conf.setAppName("UserLocationClean").setMaster("local[2]")
@@ -40,9 +47,6 @@ object UserLocation {
     val sc = spark.sparkContext;
 
     val day = DateUtils.getCurrTime();
-
-    val in_user = "/home/ricky/data/pro/user/bs_user_" + day + ".log"
-    val in_info = "/home/ricky/data/spark/basic/base.log"
 
     // 1. 读取用户日志
     val user = sc.textFile(in_user).map(x => {
