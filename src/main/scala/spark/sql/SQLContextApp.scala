@@ -52,7 +52,7 @@ object SQLContextApp {
     }
 
     val path = args(0)
-    
+
     //val path = "file:///home/ricky/data/spark/sql/people.txt"
     //val path = "/home/ricky/data/spark/sql/people.txt"
     //val path = "hdfs://ricky:9000/people.txt"
@@ -81,6 +81,8 @@ object SQLContextApp {
 //      |  4,caopeng4,40|
 //      |  5,caopeng5,50|
 //      +---------------+
+
+    //people.toDF(); --> 数据入库
 
     //3)关闭资源
     sc.stop()
