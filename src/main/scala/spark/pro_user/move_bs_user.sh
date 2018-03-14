@@ -24,15 +24,19 @@ cp -a /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/spar
 #mv /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/pro/user
 mv /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/pro/user
 
-/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -mkdir -p /user/input/${date_now}
-/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -put /home/ricky/data/pro/user/bs_user_${date_yes}.log /user/input/${date_now}
+# 3. 创建目录
+/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -mkdir -p /user/input/${date_yes}
 
-# 3. spark作业
+# 4. 提交日志至hdfs上
+/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -put /home/ricky/data/pro/user/bs_user_${date_yes}.log /user/input/${date_yes}
+
+# 5. spark作业
 /home/ricky/app/spark-2.2.0-bin-2.6.0-cdh5.7.0/bin/spark-submit \
 --class spark.pro_user.UserLocationYARN \
 --name UserLocationYARN \
 --master yarn \
 --executor-memory 1g \
 --num-executors 1 \
+--jars /home/ricky/software/mysql-connector-java-5.1.27-bin.jar \
 /home/ricky/spark-jar/spark-learn-1.0.jar \
-/user/input/${date_now} /user/input/base
+hdfs://ricky:9000/user/input/${date_now} hdfs://ricky:9000/base.log
