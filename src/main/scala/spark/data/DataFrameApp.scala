@@ -24,6 +24,8 @@ object DataFrameApp {
     // 将json文件加载成一个dataframe
     val peopleDF = spark.read.format("json").load(in)
 
+    //peopleDF.toDF() ---> 入库
+
     // 输出dataframe对应的schema信息
     peopleDF.printSchema()
 //    root
