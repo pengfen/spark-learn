@@ -24,12 +24,15 @@ cp -a /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/spar
 #mv /home/ricky/data/spark/basic/bs_user_${date_now}.log /home/ricky/data/pro/user
 mv /home/ricky/data/spark/basic/bs_user_${date_yes}.log /home/ricky/data/pro/user
 
+/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -mkdir -p /user/input/${date_now}
+/home/ricky/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop fs -put /home/ricky/data/pro/user/bs_user_${date_yes}.log /user/input/${date_now}
+
 # 3. spark作业
-spark-submit \
+/home/ricky/app/spark-2.2.0-bin-2.6.0-cdh5.7.0/bin/spark-submit \
 --class spark.pro_user.UserLocationYARN \
 --name UserLocationYARN \
 --master yarn \
 --executor-memory 1g \
 --num-executors 1 \
 /home/ricky/spark-jar/spark-learn-1.0.jar \
-hdfs://ricky:9000/spark_user/input hdfs://ricky:9000/spark_sql/clean
+/user/input/${date_now} /user/input/base

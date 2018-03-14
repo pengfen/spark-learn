@@ -97,7 +97,7 @@ object WordCount {
     // saveAsTextFile 将结果写到
     // sc.textFile(in).flatMap(_.split(",")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
 
-    sc.textFile(in).flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
+    sc.textFile(in).flatMap(_.split(",")).map((_, 1)).reduceByKey(_+_).sortBy(_._2, false).saveAsTextFile(out)
 
     // 可以通过spark-shell上运行查看每一步结果
     //scala> val rdd1 = sc.textFile("hdfs://ricky:9000/wc.txt")
