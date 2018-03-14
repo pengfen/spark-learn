@@ -17,3 +17,7 @@ shell.html hive相关命令
 hql.html hql语句
 
 cli.html hive函数
+
+hive-use.html hive使用方式
+
+table包 表操作
