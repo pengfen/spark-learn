@@ -45,16 +45,16 @@ import org.apache.spark.{SparkConf, SparkContext}
 object SQLContextApp {
 
   def main(args: Array[String]) {
-//    if (args.length != 1) {
-//      // file:///home/ricky/data/people.json
-//      System.err.println("Usage: <SQLContextApp> in_path")
-//      System.exit(1)
-//    }
+    if (args.length != 1) {
+      // file:///home/ricky/data/people.json
+      System.err.println("Usage: <SQLContextApp> in_path")
+      System.exit(1)
+    }
 
     //val path = args(0)
     //val path = "file:///home/ricky/data/spark/sql/people.txt"
     //val path = "/home/ricky/data/spark/sql/people.txt"
-    val path = "hdfs://ricky:9000/people.txt"
+    //val path = "hdfs://ricky:9000/people.txt"
 
     //1)创建相应的Contextjm
     val sparkConf = new SparkConf()
