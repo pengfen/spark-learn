@@ -51,7 +51,8 @@ object SQLContextApp {
       System.exit(1)
     }
 
-    //val path = args(0)
+    val path = args(0)
+    
     //val path = "file:///home/ricky/data/spark/sql/people.txt"
     //val path = "/home/ricky/data/spark/sql/people.txt"
     //val path = "hdfs://ricky:9000/people.txt"
