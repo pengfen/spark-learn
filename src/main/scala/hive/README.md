@@ -16,3 +16,4 @@ shell.html hive相关命令
 
 hql.html hql语句
 
+cli.html hive函数
