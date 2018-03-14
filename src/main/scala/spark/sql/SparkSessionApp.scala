@@ -70,6 +70,8 @@ object SparkSessionApp {
 //      |  5,caopeng5,50|
 //      +---------------+
 
+    //people.toDF() ---> 数据入库
+
     spark.stop()
   }
 }
