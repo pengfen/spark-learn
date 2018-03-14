@@ -21,3 +21,5 @@ cli.html hive函数
 hive-use.html hive使用方式
 
 table包 表操作
+
+combat.html hive实战
