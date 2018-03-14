@@ -14,3 +14,5 @@ user.html 用户画像
 
 shell.html hive相关命令
 
+hql.html hql语句
+
