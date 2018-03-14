@@ -1,3 +1,9 @@
+intro.html
+
+install.html
+
+flume_to_hdfs.html
+
 1. 编写 flume_to_console.conf
 
 2. 编写 flume_to_console.html
