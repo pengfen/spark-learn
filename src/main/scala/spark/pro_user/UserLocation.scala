@@ -39,7 +39,8 @@ object UserLocation {
     val spark = SparkSession.builder().appName("DataFrameRDDApp").master("local[2]").getOrCreate()
     val sc = spark.sparkContext;
 
-    val day = DateUtils.getCurrTime();
+    //val day = DateUtils.getCurrTime();
+    val day = DateUtils.getYestTime()
 
     val in_user = "/home/ricky/data/pro/user/bs_user_" + day + ".log"
     val in_info = "/home/ricky/data/spark/basic/base.log"

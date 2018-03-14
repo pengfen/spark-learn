@@ -46,7 +46,8 @@ object UserLocationYARN {
     val spark = SparkSession.builder().appName("DataFrameRDDApp").master("local[2]").getOrCreate()
     val sc = spark.sparkContext;
 
-    val day = DateUtils.getCurrTime();
+    //val day = DateUtils.getCurrTime();
+    val day = DateUtils.getYestTime()
 
     // 1. 读取用户日志
     val user = sc.textFile(in_user).map(x => {
