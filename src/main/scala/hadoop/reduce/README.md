@@ -9,3 +9,5 @@ first.html  mapreduce示例
 startup.html mapreduce运行
 
 shuffle.html shuffle机制
+
+mr.html mapreduce总结
