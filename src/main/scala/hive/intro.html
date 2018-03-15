@@ -200,26 +200,26 @@ select * from t_emp;
 
 create table t_person (
 id int,
-name string,
+name string,s
 like array<string>,
-    tedian map<string,string>
-    )
-    ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ','
-    COLLECTION ITEMS TERMINATED BY '_'
-    MAP KEYS TERMINATED BY ':';
+tedian map<string,string>
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+COLLECTION ITEMS TERMINATED BY '_'
+MAP KEYS TERMINATED BY ':';
 
-    1,zhangsan,sports_books_tv,sex:男_color:red
+1,zhangsan,sports_books_tv,sex:男_color:red
 
-    hive 在运行时有一些元数据需要保存 默认保存到 DBMS
-    hadoop 生态系统
-    HDFS 分布式文件系统
-    MapReduce 分布式计算框架 （基于磁盘 DISK IO）
-    HBase 分布式的数据库
-    Hive 数据仓库
-    Sqoop 工具
-    Flume ETL 数据采集的工具
-    Kafka 分布式的消息队列
-    Zookeeper 解决分布式一致性问题的
+hive 在运行时有一些元数据需要保存 默认保存到 DBMS
+hadoop 生态系统
+HDFS 分布式文件系统
+MapReduce 分布式计算框架 （基于磁盘 DISK IO）
+HBase 分布式的数据库
+Hive 数据仓库
+Sqoop 工具
+Flume ETL 数据采集的工具
+Kafka 分布式的消息队列
+Zookeeper 解决分布式一致性问题的
 
-    Spark 基于内存的分布式计算框架
+Spark 基于内存的分布式计算框架

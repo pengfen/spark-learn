@@ -74,8 +74,7 @@ object WordCount {
 //
 //    val sc = new SparkContext(conf)
 
-    val spark = SparkSession.builder().appName("SparkSessionApp")
-      .master("local[2]").getOrCreate()
+    val spark = SparkSession.builder().appName("SparkSessionApp").master("local[2]").getOrCreate()
     val sc = spark.sparkContext;
 
 //    scala> val rdd = sc.textFile("hdfs://ricky:9000/wc.txt").flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _)

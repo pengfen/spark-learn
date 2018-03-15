@@ -30,3 +30,5 @@ mapreduce与yarn ---> yarn包
 hadoop高可用 ---> ha包
 
 hdfs包 ---> hdfs使用
+
+点击流 --->  pro_click
