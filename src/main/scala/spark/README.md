@@ -34,6 +34,8 @@ spark.stream_concord spark streaming 整合流
 spark.pro_stream spark streaming 项目
 
 
+spark.pro_log 日志统计
+
 离线处理流程
 1. 模拟产生日志(定时任务每分钟产生五百条)
 2. shell脚本移到日志到指定目录(定时任务)
