@@ -17,9 +17,11 @@ zk_cli.html        zk客户端
 api.html           zk API操作
 
 编码：ZooKeeperConnection.java ---> zk包
-ZKCreate.java ---> zk包
-ZKExists.java ---> zk包
-ZKGetData.java ---> zk包
-
+编码：ZKCreate.java ---> zk包
+编码：ZKExists.java ---> zk包
+编码：ZKGetData.java ---> zk包
+编码：ZKSetData.java ---> zk包
+编码：ZKGetChildren.java ---> zk包
+编码：ZKDelete.java ---> zk包
 
 app.html           zk应用
