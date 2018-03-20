@@ -1,4 +1,4 @@
-package com.zk;
+package zk;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;

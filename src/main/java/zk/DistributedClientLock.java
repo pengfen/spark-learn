@@ -1,4 +1,4 @@
-package com.zk;
+package zk;
 
 import java.util.Collections;
 import java.util.List;
