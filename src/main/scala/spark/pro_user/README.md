@@ -28,3 +28,5 @@
 11. 部署上线 (UserLocationYARN)
 
 12. 可视化显示 (visual.html)
+
+13. 运行 run.html
